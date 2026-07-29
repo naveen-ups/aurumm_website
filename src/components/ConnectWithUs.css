@@ -1,0 +1,172 @@
+/* ========================
+   CONNECT WITH US
+   Reference: Screenshots 171316, 171330
+   Background: cream #F5F0E8
+   Title: "Connect With Us" — italic Cormorant calligraphic
+   Left: 3 white cards stacked (address, phone+email grid, hours)
+   Right: Google map embed
+   ======================== */
+
+.connect {
+  background: #F5F0E8;
+  padding: 80px 0 100px;
+}
+
+.connect__inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* ---- HEADER ---- */
+.connect__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.connect__eyebrow {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #B8963E;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* Title: "Connect With Us" — reference shows large italic Cormorant */
+.connect__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #2C1810;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+/* ---- TWO COLUMN LAYOUT ---- */
+.connect__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ---- LEFT COLUMN: White cards ---- */
+.connect__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* White card — reference shows off-white/white rounded rect */
+.connect__card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 20px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.connect__card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.connect__icon {
+  font-size: 16px;
+  color: #5C0A20;
+  flex-shrink: 0;
+}
+
+.connect__card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2C1810;
+}
+
+.connect__address p {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  color: #5A4A3E;
+  line-height: 1.7;
+}
+
+/* Phone & Email in a 2-col grid */
+.connect__grid-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.connect__card--small {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.connect__detail-label {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B8963E;
+  margin-bottom: 4px;
+}
+
+.connect__detail-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2C1810;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hours card */
+.connect__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.connect__hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  color: #5A4A3E;
+}
+
+.connect__hours-val {
+  font-weight: 600;
+  color: #2C1810;
+}
+
+/* ---- RIGHT: Map ---- */
+.connect__map {
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.connect__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  display: block;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .connect__content { grid-template-columns: 1fr; }
+  .connect__grid-small { grid-template-columns: 1fr; }
+  .connect__inner { padding: 0 24px; }
+  .connect__map { min-height: 280px; }
+}

@@ -1,0 +1,197 @@
+/* ========================
+   HERITAGE REDESIGN
+   Exact Match to Target Image 3
+   Background: soft light cream #FAF7F2 / #F5F0E8
+   Two-column layout: Left text & bullets, Right side-by-side grey cards + caption bar
+   ======================== */
+
+.heritage {
+  background: #FAF7F2;
+  padding: 90px 0 100px;
+}
+
+.heritage__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 52px;
+  align-items: start;
+}
+
+/* ---- LEFT COLUMN ---- */
+.heritage__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.heritage__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: #A8864A;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.heritage__label-icon {
+  font-size: 13px;
+  color: #A8864A;
+}
+
+/* Title matching Target Image 3:
+   HONOURING THE PAST,
+   REIMAGINING THE FUTURE */
+.heritage__title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-weight: 400;
+  color: #2C1810;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.heritage__divider {
+  display: flex;
+  align-items: center;
+  margin: 8px 0 20px;
+}
+
+.heritage__diamond {
+  color: #C9A96E;
+  font-size: 13px;
+}
+
+.heritage__para {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #5A4A3E;
+  margin-bottom: 14px;
+}
+
+/* Feature Bullet Points matching Target Image 3 */
+.heritage__features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heritage__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  color: #5A4A3E;
+  line-height: 1.5;
+}
+
+.heritage__feat-icon {
+  color: #C9A96E;
+  font-size: 11px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ENQUIRE NOW button matching Target Image 3 */
+.heritage__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: #3D0613;
+  color: #FAF7F2;
+  border-radius: 6px;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 16px rgba(61, 6, 19, 0.25);
+}
+
+.heritage__cta-btn:hover {
+  background: #5C0A20;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(61, 6, 19, 0.35);
+}
+
+/* ---- RIGHT COLUMN ---- */
+.heritage__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Two side-by-side grey image cards matching Target Image 3 */
+.heritage__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.heritage__img {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #C8C2BA;
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.heritage__img--right {
+  margin-top: 24px;
+}
+
+.heritage__img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #C4BDB5;
+}
+
+/* Dark Caption Bar matching Target Image 3 */
+.heritage__caption {
+  background: #2C1810;
+  border-radius: 12px;
+  padding: 20px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.heritage__caption-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #FAF7F2;
+  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+}
+
+.heritage__caption-sub {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+@media (max-width: 900px) {
+  .heritage__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+  .heritage__img--right {
+    margin-top: 0;
+  }
+}

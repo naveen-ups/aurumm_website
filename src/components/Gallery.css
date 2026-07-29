@@ -1,0 +1,131 @@
+/* ========================
+   PORTFOLIO & GALLERY
+   Reference: Screenshots 171213 + 171226
+   Background: white
+   Title: "Portfolio & Gallery" — Cormorant Garamond regular italic large
+   Cards: 2x2 pastel polaroid grid
+   Yellow, Pink, Gold, Blue backgrounds
+   Inner grey box placeholder
+   Bottom label: full italic Cormorant calligraphic text
+   ======================== */
+
+.gallery {
+  background: #FFFFFF;
+  padding: 100px 0 80px;
+}
+
+.gallery__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* ---- HEADER ---- */
+.gallery__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.gallery__eyebrow {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #B8963E;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Title: "Portfolio & Gallery" 
+   Reference shows Cormorant Garamond light italic around ~40-48px */
+.gallery__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #2C1810;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* ---- 2x2 POLAROID GRID ---- */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 52px;
+}
+
+/* Polaroid card: colored background frame (the border) */
+.gallery__card {
+  border-radius: 16px;
+  padding: 18px 18px 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.gallery__card:hover {
+  transform: translateY(-5px);
+}
+
+/* Inner grey image box — square ish, large, like a picture mat */
+.gallery__img-box {
+  width: 100%;
+  aspect-ratio: 4 / 3.5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #C4C4C4;
+}
+
+.gallery__img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #C8C2BA;
+}
+
+/* Bottom ribbon label — italic Cormorant calligraphic text */
+.gallery__label {
+  padding: 14px 8px 16px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #2C1810;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* ---- CTA ---- */
+.gallery__cta {
+  text-align: center;
+}
+
+.gallery__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 34px;
+  background: transparent;
+  border: 1.5px solid #5C0A20;
+  color: #5C0A20;
+  border-radius: 4px;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.gallery__cta-btn:hover {
+  background: #5C0A20;
+  color: #FAF7F2;
+}
+
+@media (max-width: 768px) {
+  .gallery__inner { padding: 0 20px; }
+  .gallery__grid { grid-template-columns: 1fr; gap: 20px; }
+}

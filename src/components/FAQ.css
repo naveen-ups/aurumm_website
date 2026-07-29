@@ -1,0 +1,162 @@
+/* ========================
+   FAQ
+   Reference: Screenshot 171251
+   Background: cream #F5F0E8
+   Title: "Frequently Asked Questions" — italic Cormorant large
+   Items: white rounded cards with chevron down
+   Small inter/lato body text in questions
+   "Still have questions?" footer with "GET IN TOUCH →" link
+   ======================== */
+
+.faq {
+  background: #F5F0E8;
+  padding: 100px 0;
+}
+
+.faq__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ---- HEADER ---- */
+.faq__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.faq__eyebrow {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #B8963E;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* Title: "Frequently Asked Questions"
+   Reference shows Cormorant italic ~55-60px, light weight, with swash F, A, Q */
+.faq__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #2C1810;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+/* ---- FAQ ACCORDION ITEMS ---- */
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+/* White rounded cards matching reference */
+.faq__item {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: box-shadow 0.25s;
+}
+
+.faq__item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.faq__question {
+  width: 100%;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Question text: reference shows small EB Garamond / Cormorant body text */
+.faq__question-text {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.1rem;
+  color: #2C1810;
+  line-height: 1.4;
+}
+
+/* Chevron down */
+.faq__chevron {
+  font-size: 14px;
+  color: #B8963E;
+  font-weight: 400;
+  flex-shrink: 0;
+  width: 22px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.faq__item--open .faq__chevron {
+  transform: rotate(180deg);
+}
+
+/* Animated answer panel */
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+
+.faq__item--open .faq__answer {
+  max-height: 400px;
+  padding: 0 24px 20px;
+}
+
+.faq__answer p {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6A5A4E;
+}
+
+/* ---- FOOTER ---- */
+.faq__footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq__footer p {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  color: #7A685B;
+}
+
+/* "GET IN TOUCH →" link */
+.faq__contact-link {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5C0A20;
+  text-decoration: none;
+  border-bottom: 1.5px solid #5C0A20;
+  padding-bottom: 2px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.faq__contact-link:hover {
+  color: #B8963E;
+  border-color: #B8963E;
+}
+
+@media (max-width: 768px) {
+  .faq__inner { padding: 0 20px; }
+  .faq__question { padding: 16px 18px; }
+}

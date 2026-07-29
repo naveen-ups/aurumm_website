@@ -1,0 +1,341 @@
+/* ========================
+   OUR PROCESS
+   Reference: Screenshots 171040, 171055, 171106
+   Background: deep maroon #3D0613
+   Cards: translucent dark panels
+   Title: Cormorant Garamond italic + Cinzel uppercase
+   ======================== */
+
+.process {
+  background: #3D0613;
+  padding: 110px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.process__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- HEADER ---- */
+.process__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.process__eyebrow {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: rgba(201, 169, 110, 0.8);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* Title must look like reference:
+   Big calligraphic "Our Process" — the O and P use Cormorant Italic large,
+   rest is Cinzel spaced caps */
+.process__title {
+  font-family: 'Cormorant Garamond', 'Cinzel', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #FAF7F2;
+  letter-spacing: 0.06em;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+/* The "OUR" and "ROCESS" parts inside the title - Cinzel caps non-italic */
+.process__title .caps {
+  font-style: normal;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.15em;
+}
+
+/* Horizontal rule with diamond icon centered */
+.process__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
+  max-width: 300px;
+}
+
+.process__rule::before,
+.process__rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+.process__rule-icon {
+  color: rgba(201, 169, 110, 0.8);
+  font-size: 12px;
+}
+
+.process__subtitle {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14.5px;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ---- CARDS WRAPPER with Background AURUMM watermark ---- */
+.process__wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.process__bg-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(100px, 22vw, 320px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ---- CARD ROWS ---- */
+.process__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards: translucent dark border boxes, reference shows 
+   slight transparency with gold border */
+.process__card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 12px;
+  padding: 28px 24px 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.process__card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(201, 169, 110, 0.45);
+}
+
+/* Top row of each card: number (italic large light gold) + icon (small gold) */
+.process__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+/* The number style: 01, 02 etc. - very large, italic, light gold opacity */
+.process__card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(201, 169, 110, 0.4);
+  line-height: 1;
+}
+
+.process__card-icon {
+  font-size: 15px;
+  color: rgba(201, 169, 110, 0.7);
+  margin-top: 6px;
+}
+
+/* Card title: Cormorant Garamond medium */
+.process__card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #FAF7F2;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+/* Card description text: small serif */
+.process__card-desc {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.62);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+/* Tag pill at bottom of card */
+.process__card-tag-wrap {
+  margin-top: auto;
+}
+
+.process__card-tag {
+  display: inline-block;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.55);
+  border: 1px solid rgba(201, 169, 110, 0.22);
+  background: rgba(0, 0, 0, 0.18);
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+
+/* ---- FLOW CONTINUES ---- */
+.process__flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 28px 0;
+  position: relative;
+  z-index: 1;
+  gap: 12px;
+}
+
+.process__flow-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.18);
+}
+
+.process__flow-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.process__arrow {
+  color: rgba(201, 169, 110, 0.7);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.process__continues-text {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: rgba(201, 169, 110, 0.5);
+}
+
+/* ---- TIMELINE BAR ---- */
+.process__timeline-bar {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(201, 169, 110, 0.18);
+  border-radius: 12px;
+  padding: 22px 36px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.process__tl-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.process__tl-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(212, 175, 122, 0.4);
+}
+
+.process__tl-divider {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.2);
+  max-width: 100px;
+}
+
+.process__tl-time {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.85);
+  margin-top: 5px;
+}
+
+.process__tl-label {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 11px;
+  color: rgba(245, 240, 232, 0.6);
+}
+
+/* ---- QUOTE ---- */
+.process__quote-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.process__quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(245, 240, 232, 0.8);
+  letter-spacing: 0.02em;
+}
+
+/* ---- GOLD BUTTON ---- */
+.process__cta-wrap {
+  text-align: center;
+}
+
+/* Reference shows a bordered gold/cream rectangular button */
+.process__gold-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: #FDE087;
+  color: #2C1810;
+  border-radius: 4px;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.process__gold-btn:hover {
+  background: #FFE8A3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .process__row { grid-template-columns: 1fr; gap: 16px; }
+  .process__inner { padding: 0 24px; }
+  .process__timeline-bar { flex-wrap: wrap; gap: 16px; padding: 20px; }
+  .process__tl-divider { display: none; }
+}

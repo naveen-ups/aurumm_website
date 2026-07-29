@@ -1,0 +1,255 @@
+/* ========================
+   GEMSTONE CONSULTATION
+   Reference: Screenshot 171153
+   Background: deep maroon #3D0613
+   Header: centered, "GEMSTONE CONSULTATION" with calligraphic G and C
+   Left grid: 2 top large cards + 3x2 bottom grid, cream/off-white cards
+   Right: serif heading + text + 3 service pill rows
+   ======================== */
+
+.gemstone {
+  background: #3D0613;
+  padding: 100px 0;
+}
+
+.gemstone__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* ---- HEADER ---- */
+.gemstone__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gemstone__eyebrow {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: rgba(201, 169, 110, 0.75);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* Reference title: "Gemstone Consultation"
+   Big calligraphic italic — G and C are large script, rest is smaller spaced Cinzel */
+.gemstone__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #FAF7F2;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.gemstone__subtitle {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ---- CONTENT: Left grid + Right info ---- */
+.gemstone__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.gemstone__left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Top 2 cards: 2-column grid */
+.gemstone__top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Bottom 6 cards: 3-column grid */
+.gemstone__bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Gemstone Card: cream off-white background, centered */
+.gemstone__card {
+  background: #FAF7F2;
+  border-radius: 8px;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gemstone__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Large card for top row */
+.gemstone__card--large {
+  padding: 28px 20px 22px;
+}
+
+/* Gemstone orb */
+.gemstone__orb {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.gemstone__orb--sm {
+  width: 52px;
+  height: 52px;
+}
+
+.gemstone__orb-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset -4px -4px 12px rgba(0, 0, 0, 0.25), inset 4px 4px 12px rgba(255, 255, 255, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gem name: italic Cormorant swash */
+.gemstone__gem-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #2C1810;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.gemstone__gem-name--sm {
+  font-size: 0.95rem;
+}
+
+.gemstone__gem-planet {
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #B8963E;
+}
+
+/* ---- INFO PANEL (right column) ---- */
+.gemstone__info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* "Where Vedic Wisdom Meets Gemology" — reference shows a large bold serif heading */
+.gemstone__info-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #FAF7F2;
+  margin-bottom: 20px;
+  line-height: 1.25;
+  font-style: normal;
+}
+
+.gemstone__info-para {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(245, 240, 232, 0.68);
+  margin-bottom: 16px;
+}
+
+/* Service pill rows */
+.gemstone__services {
+  margin: 24px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gemstone__service-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.22);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.3s;
+}
+
+.gemstone__service-item:hover {
+  border-color: rgba(201, 169, 110, 0.5);
+}
+
+.gemstone__service-icon {
+  color: #C9A96E;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.gemstone__service-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FAF7F2;
+  margin-bottom: 2px;
+}
+
+.gemstone__service-desc {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.55);
+}
+
+.gemstone__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: transparent;
+  border: 1.5px solid rgba(201, 169, 110, 0.55);
+  color: #FAF7F2;
+  border-radius: 4px;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+.gemstone__cta:hover {
+  background: rgba(201, 169, 110, 0.12);
+  border-color: rgba(201, 169, 110, 0.8);
+}
+
+@media (max-width: 900px) {
+  .gemstone__content { grid-template-columns: 1fr; gap: 40px; }
+  .gemstone__inner { padding: 0 24px; }
+}
+
+@media (max-width: 480px) {
+  .gemstone__bottom-grid { grid-template-columns: repeat(2, 1fr); }
+}

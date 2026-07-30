@@ -16,7 +16,7 @@ export default function Gallery() {
           Our Work
         </p>
         <h2 className="text-[#40312A] font-cormorant font-light text-[clamp(22px,5vw,48px)] leading-[48px] tracking-normal text-center mb-10 md:mb-14">
-          <span className="swash">P</span>ORTFOLIO &amp; <span className="swash">G</span>ALLERY
+          PORTFOLIO &amp; GALLERY
         </h2>
 
         {/* 4 Polaroid Cards with plain cement box matching 13.png, 14.png & figma.tsx lines 1520-1548 */}

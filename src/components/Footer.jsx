@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full bg-[#3E1122] py-10 md:py-12 px-4 sm:px-6 text-white">
       <div className="max-w-[1152px] mx-auto flex flex-col items-center">
         {/* Top footer row matching 19.png & figma.tsx lines 2834-2908 */}
-        <div className="pb-8 md:pb-10 border-b border-[rgba(255,255,255,0.10)] w-full">
+        <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 w-full">
             {/* Brand column matching figma.tsx lines 2836-2848 */}
             <div className="flex flex-col items-start">
@@ -58,24 +58,6 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom copyright row matching 19.png & figma.tsx lines 2909-2932 */}
-        <div className="pt-6 md:pt-8 flex flex-col sm:flex-row justify-between items-center w-full gap-3 sm:gap-4 text-center sm:text-left">
-          <p className="font-inter text-[rgba(255,255,255,0.40)] text-xs leading-4">
-            © 2024 Aurumm. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
-            <a href="#" className="font-inter text-[rgba(255,255,255,0.40)] text-xs leading-4 hover:text-[#C5A882] transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="font-inter text-[rgba(255,255,255,0.40)] text-xs leading-4 hover:text-[#C5A882] transition-colors">
-              Terms of Service
-            </a>
-            <a href="#contact" className="font-inter text-[rgba(255,255,255,0.40)] text-xs leading-4 hover:text-[#C5A882] transition-colors">
-              Contact
-            </a>
           </div>
         </div>
       </div>

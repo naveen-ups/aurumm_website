@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Pinyon+Script&family=Parisienne&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Androgy Demo';
+  src: url('/Androgy Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,7 +71,7 @@ section, div {
 /* ── Figma Font Classes ── */
 .font-androgyDemo,
 .font-androgy-demo {
-  font-family: 'Pinyon Script', 'Parisienne', 'Great Vibes', cursive, serif !important;
+  font-family: 'Androgy Demo', 'Pinyon Script', 'Parisienne', 'Great Vibes', cursive, serif !important;
 }
 
 .font-inter {
@@ -99,7 +106,7 @@ section, div {
 /* ── Calligraphic Swash Initial Letter ── */
 .swash,
 .title-script {
-  font-family: 'Pinyon Script', 'Parisienne', 'Great Vibes', cursive !important;
+  font-family: 'Androgy Demo', 'Pinyon Script', 'Parisienne', 'Great Vibes', cursive !important;
   font-style: normal;
   font-weight: 400;
   font-size: 1.1em;

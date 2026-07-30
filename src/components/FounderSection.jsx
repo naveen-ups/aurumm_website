@@ -21,7 +21,7 @@ export default function FounderSection() {
             <img 
               src="/flower_top_left.png" 
               alt="" 
-              className="absolute left-[-32px] top-[20%] w-[64px] h-[80px] object-contain opacity-60 z-10 pointer-events-none"
+              className="absolute left-[-32px] top-[20%] w-[64px] h-[80px] object-contain opacity-90 z-10 pointer-events-none"
             />
             <div className="rounded-2xl bg-[#BCBCBC] w-full h-[320px] sm:h-[420px] lg:h-[548px] overflow-hidden shadow-lg rotate-[3deg]">
             </div>
@@ -29,7 +29,7 @@ export default function FounderSection() {
             <img 
               src="/flower_bottom_right.png" 
               alt="" 
-              className="absolute right-[-32px] bottom-[20%] w-[64px] h-[96px] object-contain opacity-60 z-10 pointer-events-none"
+              className="absolute right-[-32px] bottom-[20%] w-[64px] h-[96px] object-contain opacity-80 z-10 pointer-events-none"
             />
           </div>
 

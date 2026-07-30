@@ -15,10 +15,22 @@ export default function FounderSection() {
 
         {/* Content layout */}
         <div className="flex gap-10 lg:gap-16 items-start flex-wrap lg:flex-nowrap">
-          {/* Left Container: Plain gray box without image matching figma.tsx line 135 & 5.png */}
+          {/* Left Container: Plain gray box with decorative flower overlays matching Figma specs */}
           <div className="relative shrink-0 w-full lg:w-[457px]">
-            <div className="rounded-2xl bg-[#BCBCBC] w-full h-[320px] sm:h-[420px] lg:h-[548px] overflow-hidden shadow-lg">
+            {/* Top-Left Flower overlay */}
+            <img 
+              src="/flower_top_left.png" 
+              alt="" 
+              className="absolute left-[-32px] top-[20%] w-[64px] h-[80px] object-contain opacity-60 z-10 pointer-events-none"
+            />
+            <div className="rounded-2xl bg-[#BCBCBC] w-full h-[320px] sm:h-[420px] lg:h-[548px] overflow-hidden shadow-lg rotate-[3deg]">
             </div>
+            {/* Bottom-Right Flower overlay */}
+            <img 
+              src="/flower_bottom_right.png" 
+              alt="" 
+              className="absolute right-[-32px] bottom-[20%] w-[64px] h-[96px] object-contain opacity-60 z-10 pointer-events-none"
+            />
           </div>
 
           {/* Right Bio matching figma.tsx lines 149-220 */}

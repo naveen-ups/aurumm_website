@@ -13,7 +13,7 @@ export default function CustomJewellery() {
         {/* Header matching 6.png & figma.tsx lines 269-284 */}
         <p className="section-label mb-2 text-center">CRAFTED FOR YOU ALONE</p>
         <h2 className="text-[#40312A] font-serif text-[clamp(22px,5vw,48px)] leading-tight text-center mb-4">
-          <span className="swash">C</span>USTOM <span className="swash" style={{ fontFamily: "'Great Vibes', cursive" }}>J</span>EWELLERY
+          <span className="swash">C</span>USTOM <span className="swash">J</span>EWELLERY
         </h2>
         <p className="font-inter text-[#6B5348] text-[15px] leading-[24.38px] max-w-[672px] text-center mb-10 md:mb-14">
           From a first sketch to the final polish, your bespoke piece is an entirely personal journey — shaped by your vision and perfected by our craft.

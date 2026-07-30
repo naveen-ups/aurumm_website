@@ -61,7 +61,7 @@ export default function OurProcess() {
 
         {/* Divider matching 8.png with background AURUMM watermark centered right behind it */}
         <div className="flex py-8 justify-center items-center gap-4 w-full relative z-0 my-4 md:my-8">
-          <p className="select-none pointer-events-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center font-cormorant text-[clamp(100px,24vw,360px)] text-[rgba(255,255,255,0.06)] font-light leading-none whitespace-nowrap z-0">
+          <p className="select-none pointer-events-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center font-cormorant text-[clamp(65px,16vw,360px)] text-[rgba(255,255,255,0.06)] font-light leading-none whitespace-nowrap z-0">
             AURUMM
           </p>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[rgba(197,168,130,0.30)] relative z-10"></div>

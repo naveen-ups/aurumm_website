@@ -4,26 +4,26 @@ const TAGS = ['GIA Certified Gemologist', 'Vedic Astrology', '3D CAD Design', 'E
 
 export default function FounderSection() {
   return (
-    <section id="founder" className="bg-[#3F101B] w-full overflow-hidden relative py-24 px-6">
+    <section id="founder" className="bg-[#3F101B] w-full overflow-hidden relative py-12 md:py-20 px-4 sm:px-6">
       <div className="max-w-[1152px] mx-auto relative z-10">
         {/* Heading matching 5.png & figma.tsx line 128 */}
-        <div className="text-center mb-16">
-          <h2 className="section-title text-white text-center">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-white font-serif text-[clamp(22px,5vw,48px)] leading-tight text-center">
             <span className="swash">M</span>EET THE <span className="swash">F</span>OUNDER
           </h2>
         </div>
 
         {/* Content layout */}
-        <div className="flex gap-16 items-start flex-wrap lg:flex-nowrap">
+        <div className="flex gap-10 lg:gap-16 items-start flex-wrap lg:flex-nowrap">
           {/* Left Container: Plain gray box without image matching figma.tsx line 135 & 5.png */}
-          <div className="relative shrink-0 w-full lg:w-[457px] h-[548px]">
-            <div className="rounded-2xl bg-[#BCBCBC] w-full lg:w-[457px] h-[548px] overflow-hidden shadow-lg">
+          <div className="relative shrink-0 w-full lg:w-[457px]">
+            <div className="rounded-2xl bg-[#BCBCBC] w-full h-[320px] sm:h-[420px] lg:h-[548px] overflow-hidden shadow-lg">
             </div>
           </div>
 
           {/* Right Bio matching figma.tsx lines 149-220 */}
-          <div className="flex flex-col items-start flex-1 min-w-[280px]">
-            <h3 className="font-heading text-white text-3xl leading-9">Kashissh Garg</h3>
+          <div className="flex flex-col items-start flex-1 min-w-[280px] w-full">
+            <h3 className="font-heading text-white text-2xl sm:text-3xl leading-9">Kashissh Garg</h3>
             <p className="font-body text-[#C5A882] text-xs leading-5 tracking-[0.1em] mt-1 uppercase">
               JEWELLERY DESIGNER &amp; GEMOLOGIST
             </p>
@@ -46,7 +46,7 @@ export default function FounderSection() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-8">
               {TAGS.map(tag => (
                 <span key={tag} className="py-1.5 px-3 rounded-full bg-[rgba(255,255,255,0.10)] font-body text-[rgba(255,255,255,0.90)] text-xs tracking-[0.025em]">
                   {tag}
@@ -54,8 +54,8 @@ export default function FounderSection() {
               ))}
             </div>
 
-            <div className="pt-8">
-              <a href="#book" className="inline-flex items-center gap-2 bg-[#FBEFAB] font-body text-[#151414] text-xs font-semibold py-3.5 px-6 rounded hover:opacity-90 transition-opacity tracking-[0.1em] uppercase">
+            <div className="pt-8 w-full sm:w-auto">
+              <a href="#book" className="inline-flex justify-center items-center gap-2 bg-[#FBEFAB] font-body text-[#151414] text-xs font-semibold py-3.5 px-6 rounded hover:opacity-90 transition-opacity tracking-[0.1em] uppercase w-full sm:w-auto text-center">
                 BOOK A SESSION →
               </a>
             </div>

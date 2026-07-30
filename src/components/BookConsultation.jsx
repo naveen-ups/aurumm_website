@@ -6,28 +6,28 @@ export default function BookConsultation() {
   const [activeType, setActiveType] = useState('Custom Jewellery');
 
   return (
-    <section id="book" className="py-24 px-6 flex flex-col items-center w-full bg-[#3E1122] text-white">
+    <section id="book" className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[#3E1122] text-white">
       <div className="max-w-[896px] flex flex-col items-center w-full">
         {/* Header matching 17.png, 18.png & figma.tsx lines 2434-2448 */}
         <p className="text-[#C5A882] font-inter text-xs leading-4 tracking-[0.35em] uppercase text-center mb-2">
           Reserve Your Time
         </p>
-        <h2 className="text-white font-androgyDemo text-5xl leading-[48px] text-center mb-4">
+        <h2 className="text-white font-androgyDemo text-[clamp(30px,6vw,56px)] leading-tight text-center mb-4">
           <span className="swash">B</span>ook a <span className="swash">C</span>onsultation
         </h2>
-        <p className="text-[rgba(255,255,255,0.70)] font-inter text-[15px] leading-[24.38px] text-center mb-16 max-w-[576px]">
+        <p className="text-[rgba(255,255,255,0.70)] font-inter text-[15px] leading-[24.38px] text-center mb-10 md:mb-16 max-w-[576px]">
           Every exceptional piece begins with a single conversation. Tell us about your vision and we will make it a reality.
         </p>
 
         {/* Form Box matching 18.png & figma.tsx lines 2451-2608 */}
-        <div className="p-8 md:p-12 rounded-2xl bg-[#F8F3E9] text-[#40312A] w-full shadow-lg">
-          <form className="flex flex-col gap-6" onSubmit={e => e.preventDefault()}>
+        <div className="p-5 sm:p-8 md:p-12 rounded-2xl bg-[#F8F3E9] text-[#40312A] w-full shadow-lg">
+          <form className="flex flex-col gap-5 sm:gap-6" onSubmit={e => e.preventDefault()}>
             {/* Consultation Type Tabs */}
             <div>
               <p className="text-[#9C7C5E] font-inter text-xs font-medium leading-4 tracking-[0.1em] mb-3 uppercase">
                 Consultation Type
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
                 {TYPES.map((type) => (
                   <button
                     type="button"
@@ -46,7 +46,7 @@ export default function BookConsultation() {
             </div>
 
             {/* Date & Time */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <p className="text-[#9C7C5E] font-inter text-xs font-medium leading-4 tracking-[0.1em] mb-2 uppercase">Preferred Date</p>
                 <input type="date" className="w-full p-3 rounded-[10px] border border-[rgba(197,168,130,0.40)] bg-white font-inter text-sm text-[#40312A] focus:outline-none focus:border-[#4A0612]" />
@@ -58,7 +58,7 @@ export default function BookConsultation() {
             </div>
 
             {/* Name & Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <p className="text-[#9C7C5E] font-inter text-xs font-medium leading-4 tracking-[0.1em] mb-2 uppercase">Full Name</p>
                 <input type="text" placeholder="Your name" className="w-full p-3 rounded-[10px] border border-[rgba(197,168,130,0.40)] bg-white font-inter text-sm text-[#40312A] placeholder-[#B5ABA1] focus:outline-none focus:border-[#4A0612]" />
@@ -70,7 +70,7 @@ export default function BookConsultation() {
             </div>
 
             {/* Phone & Budget */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <p className="text-[#9C7C5E] font-inter text-xs font-medium leading-4 tracking-[0.1em] mb-2 uppercase">Phone Number</p>
                 <input type="tel" placeholder="+44 7700 000000" className="w-full p-3 rounded-[10px] border border-[rgba(197,168,130,0.40)] bg-white font-inter text-sm text-[#40312A] placeholder-[#B5ABA1] focus:outline-none focus:border-[#4A0612]" />
@@ -95,7 +95,7 @@ export default function BookConsultation() {
             {/* Drag & drop upload box */}
             <div>
               <p className="text-[#9C7C5E] font-inter text-xs font-medium leading-4 tracking-[0.1em] mb-2 uppercase">Upload Reference Images</p>
-              <div className="border-[1.48px] border-dashed border-[rgba(197,168,130,0.40)] rounded-[10px] p-8 text-center bg-white cursor-pointer hover:border-[#4A0612] transition-colors">
+              <div className="border-[1.48px] border-dashed border-[rgba(197,168,130,0.40)] rounded-[10px] p-6 sm:p-8 text-center bg-white cursor-pointer hover:border-[#4A0612] transition-colors">
                 <p className="font-inter text-sm text-[#4A0612]">
                   Drag &amp; drop images here, or <span className="underline font-semibold">browse</span>
                 </p>

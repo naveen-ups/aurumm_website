@@ -12,6 +12,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close menu on outside click
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e) => {
+      if (!e.target.closest('nav')) setMenuOpen(false);
+    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, [menuOpen]);
+
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Customize', href: '#custom' },
@@ -26,14 +36,22 @@ export default function Navbar() {
           <Logo height={32} color="#4A0612" />
         </a>
 
+        {/* Desktop links */}
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {navLinks.map(link => (
             <li key={link.label}>
               <a href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
             </li>
           ))}
+          {/* Mobile-only CTA inside the dropdown menu — shown only on small screens via CSS */}
+          <li className="navbar__mobile-cta-item">
+            <a href="#book" className="navbar__mobile-cta" onClick={() => setMenuOpen(false)}>
+              Get your jewellery now
+            </a>
+          </li>
         </ul>
 
+        {/* Desktop CTA — hidden on mobile via CSS */}
         <a href="#book" className="navbar__cta" id="nav-book-now">
           Get your jewellery now
         </a>

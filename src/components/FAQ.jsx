@@ -13,13 +13,13 @@ export default function FAQ() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section id="faq" className="py-24 px-6 flex flex-col items-center w-full bg-[#F8F3E9]">
+    <section id="faq" className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[#F8F3E9]">
       <div className="max-w-[768px] flex flex-col items-center w-full">
         {/* Header matching 16.png & figma.tsx lines 2128-2136 */}
         <p className="text-[#9C7C5E] font-inter text-xs leading-4 tracking-[0.35em] uppercase text-center mb-2">
           Common Questions
         </p>
-        <h2 className="text-[#40312A] font-androgyDemo text-5xl leading-[48px] text-center mb-16">
+        <h2 className="text-[#40312A] font-androgyDemo text-[clamp(28px,6vw,56px)] leading-tight text-center mb-10 md:mb-16">
           <span className="swash">F</span>requently <span className="swash">A</span>sked <span className="swash">Q</span>uestions
         </h2>
 
@@ -28,16 +28,16 @@ export default function FAQ() {
           {FAQS.map((faq, i) => (
             <div key={i} className="rounded-[14px] border border-[rgba(197,168,130,0.20)] bg-[#FEFEFE] w-full overflow-hidden shadow-xs">
               <button
-                className="flex py-5 px-6 justify-between items-center w-full text-left font-timesNewNormal text-[#40312A] text-lg leading-7 cursor-pointer"
+                className="flex py-4 sm:py-5 px-5 sm:px-6 justify-between items-center w-full text-left font-timesNewNormal text-[#40312A] text-sm sm:text-base leading-snug cursor-pointer gap-3 bg-transparent border-none"
                 onClick={() => setOpen(open === i ? null : i)}
               >
-                <span>{faq.q}</span>
-                <span className={`transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}>
+                <span className="text-[#40312A]">{faq.q}</span>
+                <span className={`shrink-0 text-[#9C7C5E] transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}>
                   ▼
                 </span>
               </button>
               {open === i && (
-                <div className="px-6 pb-5 font-inter text-[#6B5348] text-sm leading-[22.75px]">
+                <div className="px-5 sm:px-6 pb-5 font-inter text-[#6B5348] text-sm leading-[22.75px]">
                   {faq.a}
                 </div>
               )}
@@ -46,9 +46,9 @@ export default function FAQ() {
         </div>
 
         {/* Footer note matching 16.png */}
-        <div className="pt-12 text-center flex flex-col items-center gap-3">
+        <div className="pt-10 md:pt-12 text-center flex flex-col items-center gap-3">
           <p className="font-inter text-[#6B5348] text-sm">Still have questions? We would love to help.</p>
-          <a href="#contact" className="inline-flex items-center gap-1 font-inter text-[#4A0612] text-xs font-semibold tracking-[0.15em] border-b border-[#4A0612] pb-0.5 hover:opacity-80 uppercase">
+          <a href="#contact" className="inline-flex items-center gap-1 font-inter text-[#4A0612] text-xs font-semibold tracking-[0.15em] border-b border-[#4A0612] pb-0.5 hover:opacity-80 uppercase" style={{ color: '#4A0612' }}>
             Get In Touch →
           </a>
         </div>

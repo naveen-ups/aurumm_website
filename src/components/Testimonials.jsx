@@ -32,20 +32,20 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 px-6 flex flex-col items-center w-full bg-[#3E1122] text-white relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[#3E1122] text-white relative overflow-hidden">
       <div className="max-w-[1152px] flex flex-col items-center w-full relative z-10">
         {/* Header matching 15.png & figma.tsx lines 1602-1610 */}
         <p className="text-white font-inter text-xs leading-4 tracking-[0.35em] uppercase text-center mb-2">
           Client Voices
         </p>
-        <h2 className="text-white font-androgyDemo text-6xl md:text-[75px] leading-[81.95px] text-center mb-16">
+        <h2 className="text-white font-androgyDemo text-[clamp(32px,7vw,75px)] leading-tight md:leading-[81.95px] text-center mb-10 md:mb-16">
           What our Clients Say
         </h2>
 
         {/* 3 Review Cards matching 15.png & figma.tsx lines 1614-1750 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {TESTIMONIALS.map((t, i) => (
-            <div key={i} className="flex p-8 flex-col items-start gap-4 rounded-2xl shadow-md" style={{ backgroundColor: t.bg }}>
+            <div key={i} className="flex p-6 sm:p-8 flex-col items-start gap-4 rounded-2xl shadow-md w-full" style={{ backgroundColor: t.bg }}>
               {/* 5 Stars */}
               <div className="flex items-center gap-1 text-[#39190D]">
                 {[...Array(5)].map((_, j) => (

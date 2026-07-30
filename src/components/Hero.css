@@ -8,7 +8,7 @@
 .hero__image-wrap {
   position: relative;
   width: 100%;
-  height: 520px;
+  height: clamp(300px, 55vw, 520px);
   background-color: #C4C4C4;
   display: flex;
   align-items: center;
@@ -25,11 +25,12 @@
   z-index: 2;
   width: 90%;
   max-width: 900px;
+  padding: 0 16px;
 }
 
 .hero__eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: clamp(10px, 2.5vw, 12px);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: #655348;
@@ -39,12 +40,12 @@
 
 .hero__heading {
   font-family: 'Cinzel', 'Times New Normal', 'Apple Garamond', serif;
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
   font-weight: 400;
   color: #40312A;
   letter-spacing: 0.1em;
   line-height: 1.15;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -55,10 +56,10 @@
   background: #4A0612;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 14px);
   font-weight: 500;
   letter-spacing: 0.05em;
-  padding: 13px 32px;
+  padding: 12px 28px;
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -76,10 +77,11 @@
   background: #F8F3E9;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 50px 60px;
+  padding: 40px 24px;
   position: relative;
   max-width: 1152px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hero__feature {
@@ -87,7 +89,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 16px 30px;
+  padding: 16px 20px;
   position: relative;
 }
 
@@ -111,7 +113,7 @@
 
 .hero__feature-title {
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 400;
   color: #40312A;
   margin-bottom: 6px;
@@ -120,28 +122,46 @@
 
 .hero__feature-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: clamp(12px, 1.8vw, 14px);
+  line-height: 1.6;
   color: #6B5348;
   max-width: 260px;
 }
 
+/* Tablet */
 @media (max-width: 768px) {
   .hero__image-wrap {
-    height: 420px;
+    height: clamp(260px, 70vw, 420px);
   }
   .hero__heading {
-    font-size: 2.2rem;
     margin-bottom: 20px;
   }
   .hero__features {
+    padding: 32px 16px;
+  }
+}
+
+/* Mobile: stack feature pillars vertically */
+@media (max-width: 600px) {
+  .hero__features {
     grid-template-columns: 1fr;
-    padding: 30px 24px;
+    padding: 24px 16px;
+    gap: 0;
+  }
+  .hero__feature {
+    padding: 20px 16px;
+    border-top: 1px solid rgba(197, 168, 130, 0.25);
+  }
+  .hero__feature:first-child {
+    border-top: none;
   }
   .hero__feature--center {
     border-left: none;
     border-right: none;
-    border-top: 1px solid rgba(197, 168, 130, 0.3);
-    border-bottom: 1px solid rgba(197, 168, 130, 0.3);
+    border-top: 1px solid rgba(197, 168, 130, 0.25);
+    border-bottom: none;
+  }
+  .hero__feature-desc {
+    max-width: 100%;
   }
 }

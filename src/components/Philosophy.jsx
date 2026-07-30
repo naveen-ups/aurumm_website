@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function Philosophy() {
   return (
-    <section id="about" className="flex py-24 px-6 flex-col items-center w-full bg-[#F8F3E9]">
-      <div className="flex max-w-[1152px] justify-center items-center gap-16 w-full flex-wrap lg:flex-nowrap">
+    <section id="about" className="flex py-12 md:py-20 px-4 sm:px-6 flex-col items-center w-full bg-[#F8F3E9]">
+      <div className="flex max-w-[1152px] justify-center items-center gap-10 lg:gap-16 w-full flex-wrap lg:flex-nowrap">
         {/* Left Container: Plain light cement box without image matching figma.tsx & 4.png */}
-        <div className="flex flex-col items-start shrink-0 w-full lg:w-[544px] h-[680px]">
-          <div className="flex flex-col items-start shrink-0 rounded-2xl w-full h-[680px] overflow-hidden bg-[#C4C4C4] shadow-xs">
+        <div className="flex flex-col items-start shrink-0 w-full lg:w-[544px]">
+          <div className="rounded-2xl w-full h-[360px] sm:h-[480px] lg:h-[680px] overflow-hidden bg-[#C4C4C4] shadow-xs">
           </div>
         </div>
 
@@ -17,8 +17,13 @@ export default function Philosophy() {
           </p>
 
           <div className="pt-4 w-full">
-            <h2 className="text-[#40312A] font-serif text-5xl leading-[60px]">
-              WHERE <span className="font-androgyDemo text-6xl italic">A</span>RTISTRY MEETS <span className="font-androgyDemo text-6xl italic">M</span>EANING
+            <h2 className="text-[#40312A] font-timesNewNormal text-3xl sm:text-4xl lg:text-[45px] leading-tight lg:leading-[55px] font-normal tracking-[0.03em] block">
+              <span className="whitespace-nowrap inline-block">
+                <span className="mr-3 lg:mr-4 select-none">WHERE</span>
+                <span className="font-androgyDemo text-[1.25em] inline-block align-baseline leading-none text-[#40312A] mr-[-0.05em]">A</span>RTISTRY MEETS
+              </span>
+              <br />
+              <span className="font-androgyDemo text-[1.25em] inline-block align-baseline leading-none text-[#40312A] mr-[-0.05em]">M</span>EANING
             </h2>
           </div>
 
@@ -46,9 +51,9 @@ export default function Philosophy() {
 
           {/* 2x2 Stats Grid matching figma.tsx lines 61-112 */}
           <div className="pt-10 w-full">
-            <div className="grid grid-cols-2 gap-x-12 gap-y-6 w-full">
+            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-6 w-full">
               <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-3xl font-bold leading-9">
+                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
                   500+
                 </p>
                 <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
@@ -57,7 +62,7 @@ export default function Philosophy() {
               </div>
 
               <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-3xl font-bold leading-9">
+                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
                   100%
                 </p>
                 <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
@@ -66,7 +71,7 @@ export default function Philosophy() {
               </div>
 
               <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-3xl font-bold leading-9">
+                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
                   15+
                 </p>
                 <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
@@ -75,7 +80,7 @@ export default function Philosophy() {
               </div>
 
               <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-3xl font-bold leading-9">
+                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
                   5★
                 </p>
                 <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">

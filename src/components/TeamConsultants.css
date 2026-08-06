@@ -8,8 +8,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* ── Section background — dark gradient ── */
-.tm-page-bg {
+/* ── Section background — dark gradient matching Figma outer container ── */
+.tc-section-bg {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,23 +18,23 @@
   box-sizing: border-box;
 }
 
-/* ── Testimonial card — Figma 145deg gradient ── */
-.tm-card {
+/* ── Card background — matches Figma 145deg gradient ── */
+.tc-card-bg {
   background: linear-gradient(
     145deg,
     #252320 6.17%,
-    #1E1C15 58.77%,
-    #222020 93.83%
+    #1E1C14 58.77%,
+    #222018 93.83%
   );
 }
 
-#reviews {
+#team {
   box-sizing: border-box;
 }
 
-/* ── Responsive: tighten padding on mobile ── */
+/* ── Responsive: smaller padding on mobile ── */
 @media (max-width: 640px) {
-  #reviews > div {
+  #team > div {
     padding-top: 56px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;

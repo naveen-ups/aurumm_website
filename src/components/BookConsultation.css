@@ -1,267 +1,42 @@
-/* ========================
-   BOOK A CONSULTATION
-   Reference: Screenshots 171302, 171316
-   Background: deep maroon #3D0613
-   Title: "Book a Consultation" — italic Cormorant large
-   Subtitle: small serif italic
-   Form card: off-white/cream #F5F0E8 rounded rectangle
-   Form fields: labels as small caps, white inputs
-   4 pill type selectors at top
-   ======================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-.booking {
-  background: #3D0613;
-  padding: 100px 0;
+.font-cinzel {
+  font-family: 'Cinzel', serif;
 }
 
-.booking__inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 40px;
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ---- HEADER ---- */
-.booking__header {
-  text-align: center;
-  margin-bottom: 44px;
+.bc-page-bg {
+  background: linear-gradient(to bottom, #0f0f10 0%, #15110d 50%, #0f0f10 100%);
 }
 
-.booking__eyebrow {
-  font-family: 'Josefin Sans', 'Lato', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  color: rgba(201, 169, 110, 0.75);
-  margin-bottom: 14px;
-  text-transform: uppercase;
+.bc-two-col {
+  display: inline-grid;
+  max-width: 1509.445px;
+  grid-template-columns: 646.62px 646.62px;
+  grid-template-rows: 790.76px;
+  row-gap: 83.858px;
+  column-gap: 83.858px;
 }
 
-/* Reference title: "Book a Consultation" — large italic Cormorant calligraphic */
-.booking__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-  font-weight: 400;
-  font-style: italic;
-  color: #FAF7F2;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  margin-bottom: 16px;
-}
-
-.booking__subtitle {
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 14.5px;
-  font-style: italic;
-  line-height: 1.75;
-  color: rgba(245, 240, 232, 0.65);
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-/* ---- FORM CARD ---- */
-.booking__card {
-  background: #F5F0E8;
-  border-radius: 16px;
-  padding: 40px 44px;
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35);
-}
-
-.booking__form {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.booking__field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Labels: very small all-caps spaced */
-.booking__label {
-  font-family: 'Josefin Sans', 'Lato', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #B8963E;
-}
-
-/* 4 consultation type pills */
-.booking__types {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.booking__type-pill {
-  padding: 11px 10px;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 13.5px;
-  color: #5A4A3E;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.booking__type-pill:hover {
-  border-color: #B8963E;
-}
-
-.booking__type-pill--active {
-  border: 2px solid #5C0A20;
-  color: #5C0A20;
-  font-weight: 600;
-}
-
-/* 2-column rows */
-.booking__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.booking__field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-/* White inputs */
-.booking__input,
-.booking__textarea {
-  width: 100%;
-  padding: 13px 16px;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 14px;
-  color: #2C1810;
-  transition: border-color 0.3s, box-shadow 0.3s;
+#book {
   box-sizing: border-box;
 }
 
-.booking__input:focus,
-.booking__textarea:focus {
-  outline: none;
-  border-color: #5C0A20;
-  box-shadow: 0 0 0 3px rgba(92, 10, 32, 0.08);
+@media (max-width: 900px) {
+  .bc-two-col {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 40px;
+    column-gap: 0px;
+  }
 }
 
-.booking__input::placeholder,
-.booking__textarea::placeholder {
-  color: rgba(90, 74, 62, 0.4);
-}
-
-.booking__textarea {
-  resize: vertical;
-}
-
-/* Upload box */
-.booking__upload-box {
-  border: 1.5px dashed rgba(184, 150, 62, 0.4);
-  border-radius: 10px;
-  padding: 24px 20px;
-  text-align: center;
-  background: #FFFFFF;
-  position: relative;
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
-
-.booking__upload-box:hover {
-  border-color: rgba(184, 150, 62, 0.7);
-}
-
-.booking__upload-text {
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 14px;
-  color: #7A685B;
-}
-
-.booking__browse {
-  color: #5C0A20;
-  text-decoration: underline;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.booking__upload-hint {
-  display: block;
-  font-family: 'Josefin Sans', 'Lato', sans-serif;
-  font-size: 10px;
-  color: #A08C7D;
-  margin-top: 4px;
-  letter-spacing: 0.05em;
-}
-
-.booking__file-input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
-/* Submit button */
-.booking__btn-submit {
-  width: 100%;
-  padding: 16px;
-  background: #3D0613;
-  color: #FAF7F2;
-  border: none;
-  border-radius: 8px;
-  font-family: 'Josefin Sans', 'Lato', sans-serif;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  margin-top: 6px;
-}
-
-.booking__btn-submit:hover {
-  background: #5C0A20;
-  transform: translateY(-2px);
-}
-
-.booking__subtext {
-  text-align: center;
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 13px;
-  color: #8C786A;
-  margin-top: -8px;
-}
-
-/* Success state */
-.booking__success {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.booking__success h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  color: #5C0A20;
-  margin-bottom: 12px;
-}
-
-.booking__success p {
-  font-family: 'EB Garamond', 'Georgia', serif;
-  font-size: 14px;
-  color: #5A4A3E;
-  margin-bottom: 24px;
-}
-
-@media (max-width: 768px) {
-  .booking__inner { padding: 0 20px; }
-  .booking__card { padding: 28px 20px; }
-  .booking__types { grid-template-columns: 1fr 1fr; }
-  .booking__row { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  #book {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
 }

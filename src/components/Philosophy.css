@@ -1,85 +1,41 @@
-.philosophy {
-  background: var(--cream-dark);
-  padding: 90px 0;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
 }
 
-.philosophy__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.philosophy__content {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.philosophy__label {
-  color: var(--gold-dark);
-  margin-bottom: 16px;
-}
-
-.philosophy__title {
-  color: var(--text-dark);
-  line-height: 1.1;
-}
-
-.philosophy__title em {
-  color: var(--maroon);
-}
-
-.philosophy__divider {
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  margin-bottom: 24px;
-}
-
-.philosophy__text {
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--text-mid);
-  margin-bottom: 16px;
-}
-
-.philosophy__stats {
-  display: flex;
-  gap: 40px;
-  margin-top: 36px;
-  padding-top: 30px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
-
-.philosophy__stat {
+/* ── Section background ── */
+.ph-page-bg {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
+  align-self: stretch;
+  background: linear-gradient(180deg, #0C0A06 0%, #0F0F10 40%, #0A0806 100%);
+  box-sizing: border-box;
 }
 
-.philosophy__stat-num {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--maroon);
-  line-height: 1;
-  font-style: italic;
+/* ── Stat number gold gradient clip-text ── */
+.ph-stat-gradient {
+  background: linear-gradient(135deg, #B8952A 0%, #D4AF37 40%, #F0D060 70%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-.philosophy__stat-label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--text-light);
-  text-transform: uppercase;
+#about {
+  box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
-  .philosophy__content { grid-template-columns: 1fr; gap: 30px; }
-  .philosophy__inner { padding: 0 30px; }
-  .philosophy__stats { gap: 24px; }
+/* ── Responsive: tighten padding on mobile ── */
+@media (max-width: 640px) {
+  #about > div {
+    padding-top: 56px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }

@@ -1,65 +1,141 @@
-import React from 'react';
+import React from "react";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#3E1122] py-10 md:py-12 px-4 sm:px-6 text-white">
-      <div className="max-w-[1152px] mx-auto flex flex-col items-center">
-        {/* Top footer row matching 19.png & figma.tsx lines 2834-2908 */}
-        <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 w-full">
-            {/* Brand column matching figma.tsx lines 2836-2848 */}
-            <div className="flex flex-col items-start">
-              <p className="font-cormorantGaramond text-white text-3xl leading-9 tracking-[0.2em] uppercase">
-                AURUMM
-              </p>
-              <p className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-[22.75px] pt-3 max-w-[320px]">
-                Bespoke jewellery crafted for your story. Every piece is designed with intention, made with mastery.
-              </p>
-            </div>
+    <footer
+      id="footer"
+      className="ft-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
+    >
+      {/* ── Inner container — max-w-[1509.445px], px-[31px], pt-[85px] ── */}
+      <div
+        className="mx-auto w-full flex flex-col items-start"
+        style={{ maxWidth: "1509.445px", padding: "85px 31px 0" }}
+      >
+        {/* ── 4-Column Grid ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-10 lg:gap-0">
 
-            {/* OUR STORY column matching figma.tsx lines 2849-2877 */}
-            <div className="flex flex-col items-start">
-              <p className="font-inter text-[#C5A882] text-xs leading-4 tracking-[0.1em] uppercase mb-4">
-                OUR STORY
-              </p>
-              <div className="flex flex-col items-start gap-2">
-                <a href="#about" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  About Aurumm
-                </a>
-                <a href="#founder" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Meet the Founder
-                </a>
-                <a href="#process" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Our Process
-                </a>
-                <a href="#gallery" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Gallery
-                </a>
-              </div>
-            </div>
+          {/* Column 1 — Brand (left-0) */}
+          <div className="flex flex-col items-start" style={{ maxWidth: "305px" }}>
+            <p
+              className="text-[#FAF7F0] font-cinzel leading-[41.93px] w-fit"
+              style={{ fontSize: "31px", letterSpacing: "0.25em" }}
+            >
+              Aurumm
+            </p>
+            <p
+              className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] w-[305px]"
+              style={{ paddingTop: "21px" }}
+            >
+              Bespoke jewellery crafted for your legacy. Every piece, a story.
+            </p>
+          </div>
 
-            {/* SERVICES column matching figma.tsx lines 2878-2906 */}
-            <div className="flex flex-col items-start">
-              <p className="font-inter text-[#C5A882] text-xs leading-4 tracking-[0.1em] uppercase mb-4">
-                Services
-              </p>
-              <div className="flex flex-col items-start gap-2">
-                <a href="#custom" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Custom Jewellery
+          {/* Column 2 — Services (left-[357px]) */}
+          <div className="flex flex-col items-start">
+            <p
+              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
+              style={{ letterSpacing: "0.3em" }}
+            >
+              Services
+            </p>
+            <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
+              {["Custom Design", "Heritage Redesign", "Gemstone Consultation", "Book a Session"].map(
+                (item, i) => (
+                  <p
+                    key={i}
+                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors cursor-pointer"
+                    style={i > 0 ? { paddingTop: "10px" } : {}}
+                  >
+                    {item}
+                  </p>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Column 3 — Collection (left-[715px]) */}
+          <div className="flex flex-col items-start">
+            <p
+              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
+              style={{ letterSpacing: "0.3em" }}
+            >
+              Collection
+            </p>
+            <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
+              {["Engagement", "Statement", "Everyday Luxury", "Heirloom"].map(
+                (item, i) => (
+                  <p
+                    key={i}
+                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors cursor-pointer"
+                    style={i > 0 ? { paddingTop: "10px" } : {}}
+                  >
+                    {item}
+                  </p>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Column 4 — Connect (left-[1072px]) */}
+          <div className="flex flex-col items-start">
+            <p
+              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
+              style={{ letterSpacing: "0.3em" }}
+            >
+              Connect
+            </p>
+            <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
+              {[
+                { label: "Instagram", href: "https://instagram.com/aurumm.jewellery" },
+                { label: "Pinterest", href: "https://pinterest.com" },
+                { label: "Email Us", href: "mailto:hello@aurumm.com" },
+                { label: "WhatsApp", href: "https://wa.me/919876543210" },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors"
+                  style={i > 0 ? { paddingTop: "10px", display: "block" } : { display: "block" }}
+                >
+                  {item.label}
                 </a>
-                <a href="#heritage" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Heritage Redesign
-                </a>
-                <a href="#gemstone" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Gemstone Consultation
-                </a>
-                <a href="#book" className="font-inter text-[rgba(255,255,255,0.60)] text-sm leading-5 hover:text-[#C5A882] transition-colors">
-                  Book a Consultation
-                </a>
-              </div>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* ── Copyright Bar — pt-[63px] then inner pt-[42px] border-t ── */}
+        <div className="flex flex-col items-center w-full" style={{ paddingTop: "63px" }}>
+          <div
+            className="flex flex-col sm:flex-row pt-[42px] justify-between items-center w-full gap-4 border-t-[1.31px] border-t-[rgba(212,175,55,0.18)]"
+          >
+            <div className="flex flex-col items-start w-fit">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit">
+                © 2024 Aurumm. All rights reserved.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-[5px] w-fit">
+              <p className="text-[#D4AF37] font-montserrat text-base leading-[20.96px]">✦</p>
+              <p className="text-[#D4AF37] font-montserrat text-base leading-[20.96px]">✦</p>
+              <p className="text-[#D4AF37] font-montserrat text-base leading-[20.96px]">✦</p>
+            </div>
+
+            <div className="flex flex-col items-start w-fit">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit">
+                Handcrafted with care
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

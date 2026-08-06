@@ -1,79 +1,155 @@
-import React from 'react';
+import React from "react";
+import "./HeritageRedesign.css";
 
-const FEATURES = [
-  'Full assessment & valuation of your heirloom',
-  'Hand-drawn redesign concepts for your approval',
-  'Careful stone extraction and reuse',
-  'Photographic documentation throughout',
-  'Certificate of provenance with finished piece',
+const listItems = [
+  "Full assessment & valuation of your heirloom",
+  "Hand-drawn redesign concepts for your approval",
+  "Careful stone extraction and reuse",
+  "Photographic documentation throughout",
+  "Certificate of provenance with finished piece",
 ];
 
 export default function HeritageRedesign() {
   return (
-    <section id="heritage" className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[rgba(251,239,171,0.30)]">
-      <div className="max-w-[1152px] w-full flex gap-10 lg:gap-16 flex-wrap lg:flex-nowrap">
-        {/* Left Side matching 10.png & figma.tsx lines 829-940 */}
-        <div className="flex flex-col items-start w-full lg:w-[544px]">
-          <p className="text-[#9C7C5E] font-inter text-xs leading-4 tracking-[0.35em] uppercase mb-2">
-            Heritage Redesign
-          </p>
+    <section
+      id="heritage"
+      className="hr-page-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
+    >
+      {/* ── Inner container — matches Figma: max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      <div
+        className="w-full mx-auto px-[clamp(20px,2vw,31px)] py-[clamp(60px,8vw,126px)]"
+        style={{ maxWidth: "1509.445px" }}
+      >
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 items-start"
+          style={{ gap: "clamp(40px,5.5vw,83.858px)" }}
+        >
+          {/* ── LEFT COLUMN ── */}
+          <div className="flex flex-col items-start w-full">
+            {/* Eyebrow */}
+            <p className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] tracking-[0.3333em] uppercase">
+              Heritage Redesign
+            </p>
 
-          <h2 className="text-[#40312A] font-serif text-[clamp(20px,4.2vw,38px)] leading-tight lg:leading-[48px] mb-4">
-            <span className="sm:whitespace-nowrap inline-block">
-              <span className="swash">H</span>ONOURING THE <span className="swash">P</span>AST,
-            </span>
-            <br />
-            <span className="sm:whitespace-nowrap inline-block">
-              <span className="swash">R</span>EIMAGINING THE <span className="swash">F</span>UTURE
-            </span>
-          </h2>
+            {/* Heading */}
+            <div className="flex pt-[21px] flex-col items-start w-full" style={{ maxWidth: "647px" }}>
+              <h2
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit"
+                style={{
+                  fontSize: "clamp(28px,3.5vw,47px)",
+                  lineHeight: "64.86px",
+                  letterSpacing: "0.025em",
+                }}
+              >
+                Honouring the Past, Reimagining the Future
+              </h2>
+            </div>
 
-          <div className="flex items-center gap-4 w-full my-4">
-            <div className="bg-[rgba(197,168,130,0.40)] flex-1 h-px"></div>
-            <span className="text-[#C5A882] text-sm">✦</span>
-            <div className="bg-[rgba(197,168,130,0.40)] flex-1 h-px"></div>
+            {/* Gold Divider */}
+            <div className="flex items-center gap-[21px] w-full max-w-[647px] py-4">
+              <div
+                className="flex-1 h-px"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
+                }}
+              />
+              <p className="text-[#D4AF37] font-montserrat text-base leading-[23.59px]">
+                ✦
+              </p>
+              <div
+                className="flex-1 h-px"
+                style={{
+                  background:
+                    "linear-gradient(270deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
+                }}
+              />
+            </div>
+
+            {/* Paragraphs */}
+            <div className="flex flex-col items-start w-full gap-[21px]" style={{ maxWidth: "647px" }}>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                Your grandmother's brooch. A mother's ring. A gift from someone no
+                longer here. These pieces carry histories too precious to leave
+                unworn in a drawer.
+              </p>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                We carefully disassemble heirloom jewellery, preserve every
+                original gemstone, and craft entirely new settings that bring
+                those stones into your present life — while honouring their past.
+              </p>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                The result is jewellery that bridges generations: a wearable
+                legacy for you, and eventually, for those who come after.
+              </p>
+            </div>
+
+            {/* Bullet List */}
+            <div
+              className="flex pt-[42px] flex-col items-start w-full gap-4"
+              style={{ maxWidth: "647px" }}
+            >
+              {listItems.map((item, i) => (
+                <div key={i} className="flex items-start gap-4 w-full">
+                  <p className="text-[#D4AF37] font-montserrat text-lg leading-[26.21px] shrink-0 pt-[3px]">
+                    ✦
+                  </p>
+                  <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[26.21px]">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Enquire Now Button */}
+            <div className="flex pt-[42px] flex-col items-start w-full">
+              <a
+                href="#book"
+                className="cursor-pointer inline-flex justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+                style={{ width: "259px", height: "71px" }}
+              >
+                <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] text-center tracking-[0.1429em]">
+                  Enquire Now
+                </p>
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-4 text-[#6B5348] font-inter text-[15px] leading-[24.38px] my-2">
-            <p>
-              Your grandmother's brooch. A mother's ring. A gift from someone no longer here. These pieces carry histories too precious to leave unworn in a drawer.
-            </p>
-            <p>
-              We carefully disassemble heirloom jewellery, preserve every original gemstone, and craft entirely new settings that bring those stones into your present life — while honouring their past.
-            </p>
-            <p>
-              The result is jewellery that bridges generations: a wearable legacy for you, and eventually, for those who come after.
-            </p>
-          </div>
+          {/* ── RIGHT COLUMN ── */}
+          <div className="flex flex-col items-start w-full gap-[21px]">
+            {/* Top Cards (Offset Layout) */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-[21px] w-full items-start">
+              {/* Left Card */}
+              <div
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full"
+                style={{ height: "393px" }}
+              />
+              {/* Right Card (Top Offset 42px) */}
+              <div
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full mt-[42px]"
+                style={{ height: "393px" }}
+              />
+            </div>
 
-          <div className="flex flex-col gap-3 my-6">
-            {FEATURES.map((feat) => (
-              <div key={feat} className="flex items-start gap-3">
-                <span className="text-[#4A0612] font-inter text-base leading-6 mt-0.5">✦</span>
-                <p className="text-[#6B5348] font-inter text-sm leading-5">{feat}</p>
+            {/* Before & After Caption Card */}
+            <div className="flex pt-[21px] flex-col items-start w-full">
+              <div className="flex p-[21px] flex-col items-start rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#171717] w-full text-center">
+                <div className="flex flex-col items-center w-full">
+                  <p className="text-[#FAF7F0] font-cinzel text-[21px] font-medium leading-[31.45px] w-fit">
+                    Before &amp; After
+                  </p>
+                </div>
+                <div className="flex pt-[5px] flex-col items-center w-full">
+                  <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit">
+                    Transformations that honour your story
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
-
-          <div className="pt-4 w-full sm:w-auto">
-            <a href="#book" className="inline-flex justify-center items-center gap-2 bg-[#4A0612] text-white font-inter text-sm px-6 py-3 rounded hover:bg-[#3E1122] transition-colors tracking-[0.1em] uppercase w-full sm:w-auto text-center">
-              Enquire Now →
-            </a>
-          </div>
-        </div>
-
-        {/* Right Side Cards matching 11.png & figma.tsx lines 1051-1068 (Fully responsive on mobile) */}
-        <div className="flex flex-col justify-center items-start gap-5 w-full lg:w-auto flex-1 relative min-h-[350px] sm:min-h-[500px]">
-          <div className="flex gap-4 sm:gap-5 w-full">
-            {/* Plain cement box bg-[#C4C4C4] matching figma.tsx line 1052 */}
-            <div className="rounded-2xl bg-[#C4C4C4] flex-1 h-[240px] sm:h-[352px] shadow-sm"></div>
-            {/* Plain cement box bg-[#C4C4C4] matching figma.tsx line 1055 */}
-            <div className="rounded-2xl bg-[#C4C4C4] flex-1 h-[240px] sm:h-[352px] mt-6 sm:mt-8 shadow-sm"></div>
-          </div>
-          {/* Before & After badge box matching figma.tsx line 1057-1067 */}
-          <div className="p-4 rounded-[14px] bg-[#40312A] w-full text-center text-white shadow-md">
-            <p className="font-androgyDemo text-2xl text-white">Before &amp; After</p>
-            <p className="font-inter text-xs text-[rgba(255,255,255,0.70)] mt-1">Transformations that honour your story</p>
+            </div>
           </div>
         </div>
       </div>

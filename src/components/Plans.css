@@ -9,7 +9,7 @@
 }
 
 /* ── Section background ── */
-.fs-page-bg {
+.pl-page-bg {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,22 +18,32 @@
   box-sizing: border-box;
 }
 
-/* ── Photo Card background — Figma 145deg gradient + 2deg rotation ── */
-.fs-photo-card {
-  background: linear-gradient(145deg, #2A2520 6.17%, #1E1C14 58.77%, #252018 93.83%);
-  box-shadow:
-    0 31.447px 83.858px 0 rgba(0, 0, 0, 0.60),
-    0 0 52.411px 0 rgba(212, 175, 55, 0.03);
-  transform: rotate(2deg);
+/* ── Standard card (Discovery / Heritage) — Figma: 145deg gradient ── */
+.pl-card-standard {
+  background: linear-gradient(145deg, #242420 6.17%, #1E1C14 93.83%);
 }
 
-#founder {
+/* ── Featured card (Creation) — Figma: 145deg gold-warm gradient + shadow ── */
+.pl-card-featured {
+  background: linear-gradient(145deg, #2A2416 6.17%, #1F1C10 50%, #252010 93.83%);
+  box-shadow:
+    0 0 62.894px rgba(212, 175, 55, 0.09),
+    inset 0 1.31px 0 rgba(212, 175, 55, 0.13);
+}
+
+/* ── Most Popular badge — gold gradient pill ── */
+.pl-badge {
+  background: linear-gradient(135deg, #B8952A 0%, #D4AF37 40%, #F0D060 70%, #C9A227 100%);
+  box-shadow: 0 2.621px 15.723px rgba(212, 175, 55, 0.25);
+}
+
+#plans {
   box-sizing: border-box;
 }
 
 /* ── Responsive: tighten padding on mobile ── */
 @media (max-width: 640px) {
-  #founder > div {
+  #plans > div {
     padding-top: 56px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;

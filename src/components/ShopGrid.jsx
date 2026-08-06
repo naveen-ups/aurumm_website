@@ -1,56 +1,166 @@
-import React from 'react';
+import React from "react";
+import "./ShopGrid.css";
 
-const products = [
-  { id: 1, name: 'Gold Gold Earrings', price: '£3,900' },
-  { id: 2, name: 'Gold Gold Earrings', price: '£3,900' },
-  { id: 3, name: 'Gold Gold Earrings', price: '£3,900' },
-  { id: 4, name: 'Gold Gold Earrings', price: '£3,900' },
+import imgEngagementRings from "../assets/images/shopGrid/Engagement Rings.png";
+import imgStatementNecklaces from "../assets/images/shopGrid/Statement Necklaces.png";
+import imgHeirloomPieces from "../assets/images/shopGrid/Heirloom Pieces.png";
+import imgEverydayLuxury from "../assets/images/shopGrid/Everyday Luxury.png";
+import imgGemstoneCuffs from "../assets/images/shopGrid/Gemstone Cuffs.png";
+
+const collections = [
+  {
+    id: "engagement-rings",
+    title: "Engagement Rings",
+    description: "Sacred promises set in gold",
+    image: imgEngagementRings,
+    fallbackImage: "/F29500df0f134fdca798ef1264d2f4e81.png",
+  },
+  {
+    id: "statement-necklaces",
+    title: "Statement Necklaces",
+    description: "Command any room",
+    image: imgStatementNecklaces,
+    fallbackImage: "/Ec36ffe9c0a54ffbaa3dee174e566f501.png",
+  },
+  {
+    id: "heirloom-pieces",
+    title: "Heirloom Pieces",
+    description: "Redesigned with reverence",
+    image: imgHeirloomPieces,
+    fallbackImage: "/E191636c97a44d9aad07a57b832c22fc1.png",
+  },
+  {
+    id: "everyday-luxury",
+    title: "Everyday Luxury",
+    description: "Refined for daily wear",
+    image: imgEverydayLuxury,
+    fallbackImage: "/Daaf5e7b50664745a32a76da359a51821.png",
+  },
+  {
+    id: "gemstone-cuffs",
+    title: "Gemstone Cuffs",
+    description: "Astrologically guided",
+    image: imgGemstoneCuffs,
+    fallbackImage: "/D7015141f20d490c96681afe1d1715d11.png",
+  },
 ];
 
 export default function ShopGrid() {
   return (
-    <section className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[#FEFEFE]" id="shop">
-      <div className="max-w-[1152px] flex flex-col items-center w-full">
-        <h2 className="text-[#40312A] font-serif text-[clamp(22px,5vw,48px)] leading-tight text-center mb-10 md:mb-14">
-          <span className="swash">S</span>HOP THE COLLECTION
-        </h2>
-
-        {/* 4 Product Cards in a row — 1 col mobile, 2 col tablet, 4 col desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
-          {products.map((p) => (
-            <div key={p.id} className="flex flex-col items-start rounded-[11px] bg-white overflow-hidden group cursor-pointer">
-              <div className="rounded-[11px] bg-[#F8F2EC] w-full h-[180px] sm:h-[240px] md:h-[297px] flex items-center justify-center relative p-4 sm:p-6">
-                <button className="absolute top-3 right-3 z-10 p-1.5 rounded-full hover:bg-white transition-colors" aria-label="Add to wishlist">
-                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none">
-                    <path d="M10 16.5s-7.5-5.3-7.5-10.1A4.4 4.4 0 016.9 2c1.4 0 2.6.7 3.1 1.9C10.5 2.7 11.7 2 13.1 2A4.4 4.4 0 0117.5 6.4c0 4.8-7.5 10.1-7.5 10.1z" stroke="#676062" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                <img
-                  src="/earRings.png"
-                  alt={p.name}
-                  className="w-[100px] sm:w-[130px] md:w-[157px] h-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                  onError={e => {
-                    e.target.src = '/Image(4).png';
-                  }}
-                />
-              </div>
-
-              <div className="pt-3 px-2 sm:px-1 flex flex-col items-start pb-3">
-                <p className="text-[#676062] font-serif text-lg sm:text-2xl leading-7 truncate w-full">
-                  {p.name}
-                </p>
-                <p className="text-[#676062] font-serif text-base sm:text-xl leading-7">
-                  {p.price}
-                </p>
-              </div>
-            </div>
-          ))}
+    <section
+      id="shop"
+      className="sg-page-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
+    >
+      {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      <div
+        className="mx-auto w-full flex flex-col items-center"
+        style={{
+          maxWidth: "1509.445px",
+          padding:
+            "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
+        }}
+      >
+        {/* Eyebrow */}
+        <div className="flex flex-col items-center w-full">
+          <p
+            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+            style={{ letterSpacing: "0.3333em" }}
+          >
+            Curated for you
+          </p>
         </div>
 
-        {/* Button matching 3.png */}
-        <div className="pt-10 md:pt-14 flex justify-center w-full">
-          <a href="#contact" className="inline-flex justify-center items-center gap-2 bg-[#4A0612] text-white font-body text-xs font-semibold py-3.5 px-8 rounded hover:bg-[#3E1122] transition-colors tracking-[0.15em] uppercase w-full sm:w-auto text-center">
-            VIEW FULL GALLERY →
+        {/* Heading */}
+        <div className="flex pt-[21px] flex-col items-center w-full">
+          <h2
+            className="text-[#FAF7F0] font-cinzel w-fit"
+            style={{
+              fontSize: "clamp(28px,3.5vw,47px)",
+              lineHeight: "52.41px",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Shop The Collection
+          </h2>
+        </div>
+
+        {/* Gold Divider */}
+        <div className="flex pt-2.5 items-center gap-[21px] w-full py-4 max-w-5xl">
+          <div
+            className="flex-1 h-px shrink-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
+            }}
+          />
+          <p className="text-[#D4AF37] font-montserrat text-base leading-[23.59px] w-fit">
+            ✦
+          </p>
+          <div
+            className="flex-1 h-px shrink-0"
+            style={{
+              background:
+                "linear-gradient(270deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
+            }}
+          />
+        </div>
+
+        {/* ── 5-Column Grid ── */}
+        <div className="flex pt-[63px] flex-col items-start w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-[21px] w-full items-start">
+            {collections.map((item) => (
+              <a
+                key={item.id}
+                href="#custom"
+                className="group flex flex-col items-start w-full text-left focus:outline-none"
+              >
+                {/* Image Container — 259px height */}
+                <div className="flex flex-col items-start rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[259px] overflow-hidden transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#D4AF37]/50 shadow-xl">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center opacity-[85%] transition-opacity duration-300 group-hover:opacity-100"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = item.fallbackImage;
+                    }}
+                  />
+                </div>
+
+                {/* Title */}
+                <div className="flex pt-4 flex-col items-start w-full">
+                  <p
+                    className="text-[#FAF7F0] font-cinzel text-base font-medium leading-[20.96px] w-fit group-hover:text-[#D4AF37] transition-colors"
+                    style={{ letterSpacing: "0.1em" }}
+                  >
+                    {item.title}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <div className="flex pt-[5px] flex-col items-start w-full">
+                  <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit">
+                    {item.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* View All Pieces Button */}
+        <div className="flex pt-[63px] justify-center items-center w-full">
+          <a
+            href="#custom"
+            className="cursor-pointer text-nowrap inline-flex py-[21px] px-[42px] justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+          >
+            <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] text-center tracking-[0.1429em]">
+              View All Pieces
+            </p>
           </a>
         </div>
       </div>

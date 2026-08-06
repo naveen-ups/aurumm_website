@@ -1,60 +1,160 @@
-import React from 'react';
+import React from "react";
+import "./CustomJewellery.css";
 
-const CATEGORIES = [
-  { title: 'Engagement & Wedding', desc: "Rings, bands, and bridal sets crafted to mark life's most sacred promises." },
-  { title: 'Statement Pieces', desc: "Bold necklaces, chandelier earrings, and cuffs designed to command attention." },
-  { title: 'Everyday Luxury', desc: "Refined pieces for daily wear — elegant enough for any occasion." },
+import imgEngagementWedding from "../assets/images/custom Jwellery/Engagement & Wedding.png";
+import imgStatementPieces from "../assets/images/custom Jwellery/Statement Pieces.png";
+import imgEverydayLuxury from "../assets/images/custom Jwellery/Everyday Luxury.png";
+
+const categories = [
+  {
+    title: "Engagement & Wedding",
+    description:
+      "Rings, bands, and bridal sets crafted to mark life's most sacred promises.",
+    image: imgEngagementWedding,
+    fallbackImage: "/Cd3bf4f4b48e4f8792cfa0703cca56611.png",
+  },
+  {
+    title: "Statement Pieces",
+    description:
+      "Bold necklaces, chandelier earrings, and cuffs designed to command attention.",
+    image: imgStatementPieces,
+    fallbackImage: "/D1c40afb368f4acea472d37cf48167b71.png",
+  },
+  {
+    title: "Everyday Luxury",
+    description:
+      "Refined pieces for daily wear — elegant enough for any occasion.",
+    image: imgEverydayLuxury,
+    fallbackImage: "/D7be44f70c2a42af9a76f28acaa5c06a1.png",
+  },
 ];
 
 export default function CustomJewellery() {
   return (
-    <section id="custom" className="py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center w-full bg-[#F8F3E9]">
-      <div className="max-w-[1152px] flex flex-col items-center w-full">
-        {/* Header matching 6.png & figma.tsx lines 269-284 */}
-        <p className="section-label mb-2 text-center">CRAFTED FOR YOU ALONE</p>
-        <h2 className="text-[#40312A] font-serif text-[clamp(22px,5vw,48px)] leading-tight text-center mb-4">
-          <span className="swash">C</span>USTOM <span className="swash">J</span>EWELLERY
-        </h2>
-        <p className="font-inter text-[#6B5348] text-[15px] leading-[24.38px] max-w-[672px] text-center mb-10 md:mb-14">
-          From a first sketch to the final polish, your bespoke piece is an entirely personal journey — shaped by your vision and perfected by our craft.
-        </p>
+    <section
+      id="custom"
+      className="cj-page-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
+    >
+      {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      <div
+        className="mx-auto w-full flex flex-col items-center"
+        style={{
+          maxWidth: "1509.445px",
+          padding:
+            "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
+        }}
+      >
+        {/* Eyebrow */}
+        <div className="flex flex-col items-center w-full">
+          <p
+            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+            style={{ letterSpacing: "0.3333em" }}
+          >
+            Crafted for you alone
+          </p>
+        </div>
 
-        {/* 3 Category Cards matching 6.png & figma.tsx lines 287-320 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
-          {CATEGORIES.map((cat) => (
-            <div
-              key={cat.title}
-              className="flex flex-col items-center rounded-[20px] bg-[#F8F2EC] p-5 sm:p-6 md:p-7 shadow-xs w-full"
-            >
-              {/* Square Image Placeholder matching 6.png */}
-              <div className="bg-[#C4C4C4] w-full aspect-square rounded-md overflow-hidden shadow-xs"></div>
+        {/* Heading */}
+        <div className="flex pt-[21px] flex-col items-center w-full">
+          <h2
+            className="text-[#FAF7F0] font-cinzel w-fit"
+            style={{
+              fontSize: "clamp(28px,3.5vw,47px)",
+              lineHeight: "52.41px",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Custom Jewellery
+          </h2>
+        </div>
 
-              {/* White Text Card Box matching 6.png — width matches image width exactly */}
-              <div className="bg-white w-full rounded-xl p-4 sm:p-5 mt-4 sm:mt-5 flex flex-col items-start gap-1.5 shadow-xs">
-                <h3 className="font-timesNewNormal text-[#40312A] text-base sm:text-lg md:text-xl leading-6 font-medium">
-                  {cat.title}
+        {/* Subtitle */}
+        <div className="flex pt-2.5 flex-col items-center w-full">
+          <p
+            className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] text-center"
+            style={{ maxWidth: "671px" }}
+          >
+            From a first sketch to the final polish, your bespoke piece is an
+            entirely personal journey — shaped by your vision and perfected by our
+            craft.
+          </p>
+        </div>
+
+        {/* ── 3 Category Cards Grid ── */}
+        <div className="flex pt-[63px] flex-col items-start w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-[31.447px] w-full items-stretch">
+            {categories.map((cat, i) => (
+              <div
+                key={i}
+                className="cj-card-bg flex flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full overflow-hidden transition-transform duration-300 hover:scale-[1.01] shadow-xl"
+              >
+                {/* Image Container — 341px height */}
+                <div className="w-full h-[341px] overflow-hidden bg-[#1E1E1E]">
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = cat.fallbackImage;
+                    }}
+                  />
+                </div>
+
+                {/* Card Text Content */}
+                <div className="flex p-[31px] flex-col items-start w-full flex-1 justify-between">
+                  <div className="flex flex-col items-start w-full">
+                    <p
+                      className="text-[#FAF7F0] font-cinzel text-2xl leading-[36.69px] w-fit"
+                      style={{ letterSpacing: "0.025em" }}
+                    >
+                      {cat.title}
+                    </p>
+                  </div>
+                  <div className="flex pt-2.5 flex-col items-start w-full">
+                    <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
+                      {cat.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Bottom CTA Banner ── */}
+        <div className="flex pt-[84px] flex-col items-center w-full">
+          <div className="cj-cta-banner flex p-8 lg:p-[73px] flex-col lg:flex-row items-center justify-between gap-[31px] rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.19)] w-full">
+            {/* Left Text */}
+            <div className="flex flex-col items-start w-full max-w-[926px]">
+              <div className="flex flex-col items-start w-full">
+                <h3
+                  className="text-[#FAF7F0] font-cinzel text-2xl sm:text-[31px] leading-[41.93px] w-fit"
+                  style={{ letterSpacing: "0.025em" }}
+                >
+                  Ready to create something extraordinary?
                 </h3>
-                <p className="font-inter text-[#6B5348] text-xs sm:text-sm leading-relaxed">
-                  {cat.desc}
+              </div>
+              <div className="flex pt-2.5 flex-col items-start w-full">
+                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base sm:text-lg leading-[26.21px] w-full">
+                  Book a design consultation with Kashissh and take the first step
+                  toward a piece that is entirely, unmistakably yours.
                 </p>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Dark Burgundy CTA Banner matching 6.png */}
-        <div className="mt-12 md:mt-16 w-full">
-          <div className="flex p-6 sm:p-10 md:p-14 items-center justify-between gap-6 md:gap-8 rounded-2xl bg-[#4A0612] text-white flex-col sm:flex-row text-center sm:text-left shadow-md">
-            <div className="flex flex-col items-center sm:items-start flex-1">
-              <h3 className="font-timesNewNormal text-white text-xl sm:text-2xl md:text-3xl leading-snug sm:leading-9">
-                Ready to create something extraordinary?
-              </h3>
-              <p className="font-inter text-[rgba(255,255,255,0.80)] text-sm leading-[22.75px] mt-2 xl:whitespace-nowrap">
-                Book a design consultation with Kashissh and take the first step toward a piece that is entirely, unmistakably yours.
-              </p>
-            </div>
-            <a href="#book" className="shrink-0 py-3.5 px-8 rounded bg-white text-[#4A0612] font-inter text-xs font-semibold tracking-[0.1em] hover:bg-[#F8F3E9] transition-colors uppercase w-full sm:w-auto text-center">
-              START DESIGNING
+            {/* Right Button */}
+            <a
+              href="#book"
+              className="cursor-pointer text-nowrap inline-flex py-[21px] px-[42px] justify-center items-center rounded-[15.7px] bg-gradient-to-r from-[#B8952A] via-[#D4AF37] to-[#F0D060] shadow-[0_0_18.344px_rgba(212,175,55,0.14),0_2.621px_10.482px_rgba(0,0,0,0.30)] hover:brightness-110 transition-all duration-300 shrink-0"
+            >
+              <span className="text-[#0A0800] font-montserrat text-lg font-medium leading-[26.21px] tracking-[0.1429em] uppercase whitespace-nowrap">
+                Start Designing
+              </span>
             </a>
           </div>
         </div>

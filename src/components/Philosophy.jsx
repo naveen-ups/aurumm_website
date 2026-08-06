@@ -1,93 +1,140 @@
-import React from 'react';
+import React from "react";
+import "./Philosophy.css";
+import philosophyImg from "../assets/images/philosophy.png";
+
+const stats = [
+  { value: "500+", label: "Bespoke Pieces Created" },
+  { value: "100%", label: "Ethically Sourced Gems" },
+  { value: "15+", label: "Countries Served" },
+  { value: "5★", label: "Client Satisfaction" },
+];
 
 export default function Philosophy() {
   return (
-    <section id="about" className="flex py-12 md:py-20 px-4 sm:px-6 flex-col items-center w-full bg-[#F8F3E9]">
-      <div className="flex max-w-[1152px] justify-center items-center gap-10 lg:gap-16 w-full flex-wrap lg:flex-nowrap">
-        {/* Left Container: Plain light cement box without image matching figma.tsx & 4.png */}
-        <div className="flex flex-col items-start shrink-0 w-full lg:w-[544px]">
-          <div className="rounded-2xl w-full h-[360px] sm:h-[480px] lg:h-[680px] overflow-hidden bg-[#C4C4C4] shadow-xs">
-          </div>
-        </div>
+    <section
+      id="about"
+      className="ph-page-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
+    >
+      {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      <div
+        className="mx-auto w-full flex flex-col items-center"
+        style={{
+          maxWidth: "1509.445px",
+          padding:
+            "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
+        }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-[83.858px] w-full">
+          
+          {/* ── LEFT COLUMN — Image Frame + Decorative Accent Box ── */}
+          <div className="relative w-full max-w-[647px] mx-auto lg:mx-0 pr-6 pb-6">
+            <div className="relative rounded-[21px] border-[5.24px] border-[#D4AF37] w-full h-[420px] sm:h-[540px] lg:h-[632px] overflow-hidden shadow-2xl bg-[#121212]">
+              <img
+                src={philosophyImg}
+                alt="Aurumm Philosophy — Crafting luxury jewellery"
+                className="w-full h-full object-cover rounded-[16px]"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/Container.png";
+                }}
+              />
+            </div>
 
-        {/* Right Content Column matching figma.tsx & 4.png */}
-        <div className="flex flex-col items-start shrink-0 w-full lg:w-[544px]">
-          <p className="text-[#9C7C5E] font-inter text-xs leading-4 tracking-[0.35em] uppercase">
-            Our Philosophy
-          </p>
-
-          <div className="pt-4 w-full">
-            <h2 className="text-[#40312A] font-timesNewNormal text-3xl sm:text-4xl lg:text-[45px] leading-tight lg:leading-[55px] font-normal tracking-[0.03em] block">
-              <span className="whitespace-nowrap inline-block">
-                <span className="mr-3 lg:mr-4 select-none">WHERE</span>
-                <span className="font-androgyDemo text-[1.25em] inline-block align-baseline leading-none text-[#40312A] mr-[-0.05em]">A</span>RTISTRY MEETS
-              </span>
-              <br />
-              <span className="font-androgyDemo text-[1.25em] inline-block align-baseline leading-none text-[#40312A] mr-[-0.05em]">M</span>EANING
-            </h2>
-          </div>
-
-          {/* Star Divider matching figma.tsx lines 29-37 */}
-          <div className="flex pt-6 items-center gap-4 shrink-0 w-full h-11">
-            <div className="bg-[rgba(197,168,130,0.40)] flex-1 h-px"></div>
-            <p className="text-[#C5A882] font-inter text-sm leading-5">
-              ✦
-            </p>
-            <div className="bg-[rgba(197,168,130,0.40)] flex-1 h-px"></div>
-          </div>
-
-          {/* Paragraphs matching figma.tsx lines 38-60 */}
-          <div className="flex pt-6 flex-col items-start w-full gap-5">
-            <p className="text-[#6B5348] font-inter text-[15px] leading-[24.38px]">
-              Jewellery is more than precious metal and gemstones. It is an expression of identity, love, heritage and legacy.
-            </p>
-            <p className="text-[#6B5348] font-inter text-[15px] leading-[24.38px]">
-              At Aurumm, we believe every piece should be as unique as the person wearing it. Our design philosophy blends timeless elegance with contemporary aesthetics, creating jewellery that is deeply personal and beautifully enduring.
-            </p>
-            <p className="text-[#6B5348] font-inter text-[15px] leading-[24.38px]">
-              Jewellery is more than precious metal and gemstones. It is an expression of identity, love, heritage and legacy.
-            </p>
+            {/* Rotated decorative accent box from Figma specs */}
+            <div
+              className="absolute -right-[20px] -bottom-[20px] sm:-right-[35px] sm:-bottom-[35px] rounded-[10.5px] border-[1.31px] border-[rgba(212,175,55,0.19)] w-[90px] h-[90px] sm:w-[126px] sm:h-[126px] pointer-events-none z-20"
+            />
           </div>
 
-          {/* 2x2 Stats Grid matching figma.tsx lines 61-112 */}
-          <div className="pt-10 w-full">
-            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-6 w-full">
-              <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
-                  500+
-                </p>
-                <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
-                  Bespoke Pieces Created
-                </p>
-              </div>
+          {/* ── RIGHT COLUMN — Content ── */}
+          <div className="flex flex-col items-start w-full gap-[31px]">
+            {/* Eyebrow */}
+            <div className="flex flex-col items-start w-full">
+              <p
+                className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+                style={{ letterSpacing: "0.3333em" }}
+              >
+                Our Philosophy
+              </p>
+            </div>
 
-              <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
-                  100%
-                </p>
-                <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
-                  Ethically Sourced Gems
-                </p>
-              </div>
+            {/* Heading */}
+            <div className="flex flex-col items-start w-full" style={{ maxWidth: "647px" }}>
+              <h2
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit"
+                style={{
+                  fontSize: "clamp(28px,3.5vw,47px)",
+                  lineHeight: "64.86px",
+                  letterSpacing: "0.025em",
+                }}
+              >
+                Where Artistry Meets Meaning
+              </h2>
+            </div>
 
-              <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
-                  15+
-                </p>
-                <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
-                  Countries Served
-                </p>
-              </div>
+            {/* Diamond Accent Divider */}
+            <div className="flex items-center justify-center gap-[21px] w-full max-w-[647px] py-1">
+              <div
+                className="flex-1 h-px shrink-0"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.31) 100%)",
+                }}
+              />
+              <div className="w-4 h-4 rotate-45 border-[1.31px] border-[rgba(212,175,55,0.50)] shrink-0" />
+              <div
+                className="flex-1 h-px shrink-0"
+                style={{
+                  background:
+                    "linear-gradient(270deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.31) 100%)",
+                }}
+              />
+            </div>
 
-              <div className="flex pl-4 flex-col items-start border-l-[1.48px] border-l-[#4A0612]">
-                <p className="text-[#40312A] font-appleGaramond text-2xl sm:text-3xl font-bold leading-9">
-                  5★
-                </p>
-                <p className="text-[#6B5348] font-inter text-xs leading-4 tracking-[0.025em]">
-                  Client Satisfaction
-                </p>
+            {/* Paragraphs */}
+            <div className="flex flex-col items-start w-full gap-[21px]" style={{ maxWidth: "647px" }}>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                Jewellery is more than precious metal and gemstones. It is an
+                expression of identity, love, heritage and legacy.
+              </p>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                At Aurumm, we believe every piece should be as unique as the
+                person wearing it. Our design philosophy blends timeless elegance
+                with contemporary aesthetics, creating jewellery that is deeply
+                personal and beautifully enduring.
+              </p>
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+                Jewellery is more than precious metal and gemstones. It is an
+                expression of identity, love, heritage and legacy.
+              </p>
+            </div>
+
+            {/* 2x2 Stats Grid */}
+            <div className="pt-3 w-full max-w-[647px]">
+              <div className="grid grid-cols-2 gap-y-8 gap-x-[31px] w-full">
+                {stats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-start border-l-[1.97px] border-l-[#D4AF37] pl-[21px]"
+                  >
+                    <p className="ph-stat-gradient font-cinzel text-[31px] font-semibold leading-[41.93px]">
+                      {stat.value}
+                    </p>
+                    <p
+                      className="text-[#E7D3A4] font-montserrat text-base leading-[20.96px] pt-[5px]"
+                      style={{ letterSpacing: "0.025em" }}
+                    >
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>

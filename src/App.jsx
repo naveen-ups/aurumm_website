@@ -8,11 +8,10 @@ import CustomJewellery from './components/CustomJewellery';
 import OurProcess from './components/OurProcess';
 import HeritageRedesign from './components/HeritageRedesign';
 import GemstoneConsultation from './components/GemstoneConsultation';
-import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
+import Plans from './components/Plans';
+import TeamConsultants from './components/TeamConsultants';
 import BookConsultation from './components/BookConsultation';
-import ConnectWithUs from './components/ConnectWithUs';
 import Footer from './components/Footer';
 
 function App() {
@@ -28,11 +27,10 @@ function App() {
         <OurProcess />
         <HeritageRedesign />
         <GemstoneConsultation />
-        <Gallery />
         <Testimonials />
-        <FAQ />
+        <Plans />
+        <TeamConsultants />
         <BookConsultation />
-        <ConnectWithUs />
       </main>
       <Footer />
     </>

@@ -32,7 +32,7 @@ export default function Philosophy() {
           
           {/* ── LEFT COLUMN — Image Frame + Decorative Accent Box ── */}
           <div className="relative w-full max-w-[647px] mx-auto lg:mx-0 pr-6 pb-6">
-            <div className="relative rounded-[21px] border-[5.24px] border-[#D4AF37] w-full h-[420px] sm:h-[540px] lg:h-[632px] overflow-hidden shadow-2xl bg-[#121212]">
+            <div className="relative rounded-[21px] border-[5.24px] border-[#D4AF37] w-full h-[280px] sm:h-[450px] lg:h-[632px] overflow-hidden shadow-2xl bg-[#121212]">
               <img
                 src={philosophyImg}
                 alt="Aurumm Philosophy — Crafting luxury jewellery"
@@ -46,16 +46,16 @@ export default function Philosophy() {
 
             {/* Rotated decorative accent box from Figma specs */}
             <div
-              className="absolute -right-[20px] -bottom-[20px] sm:-right-[35px] sm:-bottom-[35px] rounded-[10.5px] border-[1.31px] border-[rgba(212,175,55,0.19)] w-[90px] h-[90px] sm:w-[126px] sm:h-[126px] pointer-events-none z-20"
+              className="absolute right-1 -bottom-[20px] sm:-right-[35px] sm:-bottom-[35px] rounded-[10.5px] border-[1.31px] border-[rgba(212,175,55,0.19)] w-[90px] h-[90px] sm:w-[126px] sm:h-[126px] pointer-events-none z-20"
             />
           </div>
 
           {/* ── RIGHT COLUMN — Content ── */}
-          <div className="flex flex-col items-start w-full gap-[31px]">
+          <div className="flex flex-col items-center lg:items-start w-full gap-[31px] text-center lg:text-left">
             {/* Eyebrow */}
-            <div className="flex flex-col items-start w-full">
+            <div className="flex flex-col items-center lg:items-start w-full">
               <p
-                className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+                className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit mx-auto lg:mx-0"
                 style={{ letterSpacing: "0.3333em" }}
               >
                 Our Philosophy
@@ -63,12 +63,12 @@ export default function Philosophy() {
             </div>
 
             {/* Heading */}
-            <div className="flex flex-col items-start w-full" style={{ maxWidth: "647px" }}>
+            <div className="flex flex-col items-center lg:items-start w-full" style={{ maxWidth: "647px" }}>
               <h2
-                className="text-[#FAF7F0] font-cinzel font-normal w-fit"
+                className="text-[#FAF7F0] font-cinzel font-normal w-full text-center lg:text-left"
                 style={{
                   fontSize: "clamp(28px,3.5vw,47px)",
-                  lineHeight: "64.86px",
+                  lineHeight: "1.3",
                   letterSpacing: "0.025em",
                 }}
               >
@@ -97,35 +97,35 @@ export default function Philosophy() {
 
             {/* Paragraphs */}
             <div className="flex flex-col items-start w-full gap-[21px]" style={{ maxWidth: "647px" }}>
-              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] text-left">
                 Jewellery is more than precious metal and gemstones. It is an
                 expression of identity, love, heritage and legacy.
               </p>
-              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] text-left">
                 At Aurumm, we believe every piece should be as unique as the
                 person wearing it. Our design philosophy blends timeless elegance
                 with contemporary aesthetics, creating jewellery that is deeply
                 personal and beautifully enduring.
               </p>
-              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] text-left">
                 Jewellery is more than precious metal and gemstones. It is an
                 expression of identity, love, heritage and legacy.
               </p>
             </div>
 
             {/* 2x2 Stats Grid */}
-            <div className="pt-3 w-full max-w-[647px]">
+            <div className="pt-3 w-full max-w-[647px] mx-auto lg:mx-0">
               <div className="grid grid-cols-2 gap-y-8 gap-x-[31px] w-full">
                 {stats.map((stat, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-start border-l-[1.97px] border-l-[#D4AF37] pl-[21px]"
+                    className="flex flex-col items-start border-l-[1.97px] border-l-[#D4AF37] pl-[21px] text-left"
                   >
-                    <p className="ph-stat-gradient font-cinzel text-[31px] font-semibold leading-[41.93px]">
+                    <p className="ph-stat-gradient font-cinzel text-[clamp(24px,4vw,31px)] font-semibold leading-[1.2]">
                       {stat.value}
                     </p>
                     <p
-                      className="text-[#E7D3A4] font-montserrat text-base leading-[20.96px] pt-[5px]"
+                      className="text-[#E7D3A4] font-montserrat text-[clamp(13px,2vw,16px)] leading-[1.3] pt-[5px]"
                       style={{ letterSpacing: "0.025em" }}
                     >
                       {stat.label}

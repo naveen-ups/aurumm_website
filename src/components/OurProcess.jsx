@@ -82,7 +82,7 @@ export default function OurProcess() {
         {/* Eyebrow */}
         <div className="flex flex-col items-center w-full">
           <p
-            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit mx-auto"
             style={{ letterSpacing: "0.3333em" }}
           >
             The Journey
@@ -92,10 +92,10 @@ export default function OurProcess() {
         {/* Heading — Gold Gradient */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <h2
-            className="op-heading-gradient font-cinzel w-fit"
+            className="op-heading-gradient font-cinzel w-fit text-center"
             style={{
               fontSize: "clamp(32px,4.5vw,63px)",
-              lineHeight: "62.89px",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >
@@ -104,7 +104,7 @@ export default function OurProcess() {
         </div>
 
         {/* Gold Divider */}
-        <div className="flex pt-[21px] items-center gap-[21px] w-full py-4 max-w-4xl">
+        <div className="flex pt-[21px] items-center gap-[21px] w-full py-4 max-w-4xl justify-center">
           <div
             className="flex-1 h-px shrink-0"
             style={{
@@ -125,9 +125,9 @@ export default function OurProcess() {
         </div>
 
         {/* Subtitle */}
-        <div className="flex pt-[21px] flex-col items-center w-full">
+        <div className="flex pt-[21px] flex-col items-start md:items-center w-full">
           <p
-            className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[26.21px] text-center"
+            className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[26.21px] text-left md:text-center w-full"
             style={{ maxWidth: "671px" }}
           >
             A considered, unhurried journey — from your first idea to a finished
@@ -141,29 +141,27 @@ export default function OurProcess() {
             {processSteps.map((step, index) => (
               <div
                 key={step.stepNum}
-                className="flex p-[42px] flex-col items-start op-card-bg w-full h-full justify-between border-b md:border-b-0 border-[#d4af37]/[0.18] lg:border-r"
-                style={{
-                  borderRight:
-                    (index + 1) % 3 === 0 ? "none" : "1.31px solid rgba(212,175,55,0.18)",
-                  borderBottom:
-                    index < 3 ? "1.31px solid rgba(212,175,55,0.18)" : "none",
-                }}
+                className={`flex p-6 sm:p-[42px] flex-col items-start op-card-bg w-full h-full justify-between border-[rgba(212,175,55,0.18)] border-b last:border-b-0 ${
+                  index < 3 ? "md:border-b-[1.31px]" : "md:border-b-0"
+                } ${
+                  (index + 1) % 3 !== 0 ? "md:border-r-[1.31px]" : "md:border-r-0"
+                }`}
               >
                 <div className="w-full">
                   {/* Top row: step number + symbol */}
-                  <div className="flex pb-[31px] justify-between items-start w-full">
-                    <p className="text-[#D4AF37] font-cinzel text-[79px] font-light leading-[78.62px] opacity-30">
+                  <div className="flex pb-4 sm:pb-[31px] justify-between items-start w-full">
+                    <p className="text-[#D4AF37] font-cinzel text-[58px] sm:text-[79px] font-light leading-[1.1] sm:leading-[78.62px] opacity-30">
                       {step.stepNum}
                     </p>
-                    <p className="text-[#D4AF37] font-montserrat text-[31px] leading-[41.93px]">
+                    <p className="text-[#D4AF37] font-montserrat text-[24px] sm:text-[31px] leading-none sm:leading-[41.93px]">
                       {step.symbol}
                     </p>
                   </div>
 
                   {/* Title */}
-                  <div className="flex pb-4 flex-col items-start w-full">
+                  <div className="flex pb-2 sm:pb-4 flex-col items-center md:items-start w-full">
                     <p
-                      className="text-[#FAF7F0] font-cinzel text-2xl leading-[36.69px] w-fit"
+                      className="text-[#FAF7F0] font-cinzel text-2xl leading-[36.69px] w-full text-center md:text-left"
                       style={{ letterSpacing: "0.025em" }}
                     >
                       {step.title}
@@ -171,17 +169,17 @@ export default function OurProcess() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] w-full">
+                  <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] w-full text-left">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Badge Row */}
-                <div className="flex pt-[21px] flex-col items-start w-full mt-4">
-                  <div className="flex pt-[26px] items-center border-t-[1.31px] border-t-[rgba(212,175,55,0.18)] w-full">
+                <div className="flex pt-3 sm:pt-[21px] flex-col items-start w-full mt-2 sm:mt-4">
+                  <div className="flex pt-4 sm:pt-[26px] items-center border-t-[1.31px] border-t-[rgba(212,175,55,0.18)] w-full">
                     <div className="flex py-1.5 px-4 items-center rounded-full bg-[rgba(212,175,55,0.07)] max-w-full">
                       <p
-                        className="text-[#F4E6C1] font-montserrat text-[13px] leading-[19.65px] tracking-[0.1em] uppercase whitespace-nowrap overflow-hidden text-ellipsis"
+                        className="text-[#F4E6C1] font-montserrat text-[13px] leading-[19.65px] tracking-[0.1em] uppercase sm:whitespace-nowrap whitespace-normal overflow-hidden text-ellipsis"
                       >
                         {step.badge}
                       </p>
@@ -195,30 +193,40 @@ export default function OurProcess() {
 
         {/* ── Timeline Bar ── */}
         <div className="flex pt-[84px] flex-col items-center w-full">
-          <div className="flex p-[31px] flex-col md:flex-row items-center justify-between rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.14)] op-timeline-bg w-full gap-6 md:gap-0">
+          <div className="flex py-6 px-4 md:p-[31px] flex-col md:flex-row items-center justify-between rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.14)] op-timeline-bg w-full">
             {timelineSteps.map((step, idx) => (
               <React.Fragment key={idx}>
-                <div className="flex items-center w-full md:w-auto flex-1">
-                  <div className="flex flex-col items-center gap-[5px] w-full">
+                <div className="flex items-center w-full md:w-auto flex-1 justify-center">
+                  <div className="flex flex-col items-center justify-center gap-[5px] w-full text-center">
                     <div
-                      className="rounded-full w-[13px] h-[13px]"
+                      className="hidden md:block rounded-full w-[13px] h-[13px] shrink-0"
                       style={{ backgroundColor: step.color }}
                     />
-                    <p
-                      className="font-montserrat text-[13px] leading-[19.65px] tracking-[0.1em] uppercase"
-                      style={{ color: step.color }}
-                    >
-                      {step.label}
-                    </p>
-                    <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-[13px] leading-[19.65px]">
-                      {step.sublabel}
-                    </p>
+                    <div className="flex flex-row md:flex-col items-center justify-center gap-1.5 md:gap-0 text-center w-full">
+                      <p
+                        className="font-montserrat text-[13px] leading-[19.65px] tracking-[0.1em] uppercase"
+                        style={{ color: step.color }}
+                      >
+                        {step.label}
+                      </p>
+                      <span className="md:hidden text-[rgba(250,247,240,0.40)] font-montserrat text-[13px] leading-[19.65px]">-</span>
+                      <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-[13px] leading-[19.65px]">
+                        {step.sublabel}
+                      </p>
+                    </div>
                   </div>
                 </div>
                 {idx < timelineSteps.length - 1 && (
-                  <div className="hidden md:flex px-2.5 items-center flex-1">
-                    <div className="bg-[rgba(255,255,255,0.10)] h-px w-full" />
-                  </div>
+                  <>
+                    {/* Desktop Divider */}
+                    <div className="hidden md:flex px-2.5 items-center flex-1">
+                      <div className="bg-[rgba(255,255,255,0.10)] h-px w-full" />
+                    </div>
+                    {/* Mobile Vertical Divider */}
+                    <div className="flex md:hidden justify-center items-center py-3 w-full">
+                      <div className="bg-[rgba(255,255,255,0.15)] w-px h-8" />
+                    </div>
+                  </>
                 )}
               </React.Fragment>
             ))}

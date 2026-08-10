@@ -77,10 +77,10 @@ export default function ShopGrid() {
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <h2
-            className="text-[#FAF7F0] font-cinzel w-fit"
+            className="text-[#FAF7F0] font-cinzel w-fit text-center"
             style={{
               fontSize: "clamp(28px,3.5vw,47px)",
-              lineHeight: "52.41px",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >
@@ -116,7 +116,7 @@ export default function ShopGrid() {
               <a
                 key={item.id}
                 href="#custom"
-                className="group flex flex-col items-start w-full text-left focus:outline-none"
+                className="group flex flex-col items-center sm:items-start w-full text-center sm:text-left focus:outline-none"
               >
                 {/* Image Container — 259px height */}
                 <div className="flex flex-col items-start rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[259px] overflow-hidden transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#D4AF37]/50 shadow-xl">
@@ -132,7 +132,7 @@ export default function ShopGrid() {
                 </div>
 
                 {/* Title */}
-                <div className="flex pt-4 flex-col items-start w-full">
+                <div className="flex pt-4 flex-col items-center sm:items-start w-full">
                   <p
                     className="text-[#FAF7F0] font-cinzel text-base font-medium leading-[20.96px] w-fit group-hover:text-[#D4AF37] transition-colors"
                     style={{ letterSpacing: "0.1em" }}
@@ -142,7 +142,7 @@ export default function ShopGrid() {
                 </div>
 
                 {/* Description */}
-                <div className="flex pt-[5px] flex-col items-start w-full">
+                <div className="flex pt-[5px] flex-col items-center sm:items-start w-full">
                   <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit">
                     {item.description}
                   </p>

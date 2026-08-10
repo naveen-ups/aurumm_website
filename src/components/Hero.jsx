@@ -16,7 +16,7 @@ export default function Hero() {
     <main className="w-full overflow-hidden bg-[#0f0f10]">
       <section
         aria-labelledby="hero-title"
-        className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-24 pt-[clamp(100px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
+        className="relative flex min-h-[75vh] sm:min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-12 sm:pb-24 pt-[clamp(80px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
         style={{
           borderImage:
             "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
@@ -40,7 +40,7 @@ export default function Hero() {
 
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center w-full max-w-7xl mx-auto">
-          <p className="mb-[clamp(12px,2vw,20px)] text-center font-medium tracking-[clamp(3px,0.5vw,5.24px)] text-[#e7d3a4] font-['Montserrat',sans-serif] text-[clamp(10px,1.2vw,15.7px)] uppercase whitespace-nowrap">
+          <p className="mb-[clamp(12px,2vw,20px)] text-center font-medium tracking-[clamp(1.5px,0.5vw,5.24px)] text-[#e7d3a4] font-['Montserrat',sans-serif] text-[clamp(10px,1.2vw,15.7px)] uppercase sm:whitespace-nowrap whitespace-normal">
             Bespoke · Timeless · Personal
           </p>
           
@@ -48,11 +48,11 @@ export default function Hero() {
             id="hero-title"
             className="flex flex-col items-center font-normal font-['Cinzel',serif] w-full"
           >
-            <span className="text-center tracking-[clamp(3px,0.5vw,6.29px)] text-[#faf7f0] text-[clamp(40px,8vw,115.3px)] leading-[1.1] whitespace-nowrap">
+            <span className="text-center tracking-[clamp(2px,0.5vw,6.29px)] text-[#faf7f0] text-[clamp(28px,8vw,115.3px)] leading-[1.1] sm:whitespace-nowrap whitespace-normal">
               DESIGNED FOR
             </span>
             <span
-              className={`text-center tracking-[clamp(3px,0.5vw,6.29px)] text-[clamp(40px,8vw,115.3px)] leading-[1.1] text-transparent bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] whitespace-nowrap ${goldGradient}`}
+              className={`text-center tracking-[clamp(2px,0.5vw,6.29px)] text-[clamp(28px,8vw,115.3px)] leading-[1.1] text-transparent bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] sm:whitespace-nowrap whitespace-normal ${goldGradient}`}
             >
               YOUR LEGACY
             </span>
@@ -90,7 +90,7 @@ export default function Hero() {
         <a
           href="#collection"
           aria-label="Scroll to the collection"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-[clamp(8px,1vw,10.48px)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37]"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-[clamp(8px,1vw,10.48px)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37]"
         >
           <span className="text-center font-normal tracking-[clamp(3px,0.5vw,5.24px)] text-[#d4af3760] font-['Montserrat',sans-serif] text-[clamp(11px,1.2vw,15.7px)]">
             SCROLL

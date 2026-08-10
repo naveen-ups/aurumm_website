@@ -18,7 +18,7 @@ function ListItem({ label }) {
 /* ── Discovery Card (standard border) ── */
 function DiscoveryCard() {
   return (
-    <div className="pl-card-standard flex p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
+    <div className="pl-card-standard flex p-6 sm:p-8 md:p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
       {/* Plan label */}
       <div className="flex pb-2.5 flex-col items-start w-full">
         <p
@@ -68,7 +68,7 @@ function DiscoveryCard() {
 /* ── Creation Card (featured / gold fill) ── */
 function CreationCard() {
   return (
-    <div className="relative pl-card-featured flex p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.44)] w-full h-full transition-transform duration-300 hover:scale-[1.01]">
+    <div className="relative pl-card-featured flex p-6 sm:p-8 md:p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.44)] w-full h-full transition-transform duration-300 hover:scale-[1.01]">
       {/* Most Popular badge */}
       <div
         className="pl-badge absolute -top-3.5 flex py-[5px] px-[21px] flex-col items-start rounded-[131px] w-fit"
@@ -140,7 +140,7 @@ function CreationCard() {
 /* ── Heritage Card (standard border) ── */
 function HeritageCard() {
   return (
-    <div className="pl-card-standard flex p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
+    <div className="pl-card-standard flex p-6 sm:p-8 md:p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
       {/* Plan label */}
       <div className="flex pb-2.5 flex-col items-start w-full">
         <p
@@ -221,10 +221,10 @@ export default function Plans() {
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <p
-            className="text-[#FAF7F0] font-cinzel w-fit"
+            className="text-[#FAF7F0] font-cinzel w-fit text-center"
             style={{
               fontSize: "clamp(28px,3.5vw,47px)",
-              lineHeight: "52.41px",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >

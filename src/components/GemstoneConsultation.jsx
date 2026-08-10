@@ -1,6 +1,13 @@
 import React from "react";
 import "./GemstoneConsultation.css";
 
+import imgBlueSapphire from "../assets/images/gemstones/blue-sapphire.png";
+import imgRuby from "../assets/images/gemstones/ruby.png";
+import imgEmerald from "../assets/images/gemstones/emerald.png";
+import imgYellowSapphire from "../assets/images/gemstones/yellow-sapphire.png";
+import imgAmethyst from "../assets/images/gemstones/amethyst.png";
+import imgAquamarine from "../assets/images/gemstones/aquamarine.png";
+
 /* ── Gemstone radial colour map ── */
 const gemstones = [
   { name: "Blue Sapphire", planet: "Saturn",  color: "#3498DB", size: "lg" },
@@ -160,27 +167,27 @@ export default function GemstoneConsultation() {
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
               style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full" style={{ width: "84px", height: "84px", flexShrink: 0, background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #3498DB 100%)" }} />
+              <img src={imgBlueSapphire} alt="Blue Sapphire" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-2xl leading-[35.38px] w-fit text-center">Blue Sapphire</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Saturn</p>
             </div>
 
-            {/* [0,1] Emerald — small card, h-[235.851px] */}
+            {/* [0,1] Emerald — small card */}
             <div
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px", height: "235.851px" }}
+              style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full shrink-0" style={{ width: "58px", height: "58px", background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #2ECC71 100%)" }} />
-              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit">Emerald</p>
+              <img src={imgEmerald} alt="Emerald" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Emerald</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Mercury</p>
             </div>
 
-            {/* [0,2] Yellow Sapphire — small card, h-[235.851px] */}
+            {/* [0,2] Yellow Sapphire — small card */}
             <div
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px", height: "235.851px" }}
+              style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full shrink-0" style={{ width: "58px", height: "58px", background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #F1C40F 100%)" }} />
+              <img src={imgYellowSapphire} alt="Yellow Sapphire" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] text-center" style={{ width: "144px" }}>Yellow Sapphire</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Jupiter</p>
             </div>
@@ -191,28 +198,28 @@ export default function GemstoneConsultation() {
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
               style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full" style={{ width: "84px", height: "84px", flexShrink: 0, background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #E74C3C 100%)" }} />
+              <img src={imgRuby} alt="Ruby" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-2xl leading-[35.38px] w-fit text-center">Ruby</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Sun</p>
             </div>
 
-            {/* [1,1] Amethyst — small card, h-[235.851px] */}
+            {/* [1,1] Amethyst — small card */}
             <div
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px", height: "235.851px" }}
+              style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full shrink-0" style={{ width: "58px", height: "58px", background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #9B59B6 100%)" }} />
-              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit">Amethyst</p>
+              <img src={imgAmethyst} alt="Amethyst" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Amethyst</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Saturn</p>
             </div>
 
-            {/* [1,2] Aquamarine — small card, h-[235.851px] to match siblings */}
+            {/* [1,2] Aquamarine — small card to match siblings */}
             <div
               className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px", height: "235.851px" }}
+              style={{ gap: "15.723px" }}
             >
-              <div className="rounded-full shrink-0" style={{ width: "58px", height: "58px", background: "radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, #1ABC9C 100%)" }} />
-              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit">Aquamarine</p>
+              <img src={imgAquamarine} alt="Aquamarine" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Aquamarine</p>
               <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Moon</p>
             </div>
           </div>
@@ -220,15 +227,20 @@ export default function GemstoneConsultation() {
           {/* Mobile: 2-col grid */}
           <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
             {[
-              { name: "Blue Sapphire", planet: "Saturn",  color: "#3498DB", lg: true },
-              { name: "Emerald",       planet: "Mercury", color: "#2ECC71", lg: false },
-              { name: "Yellow Sapphire", planet: "Jupiter", color: "#F1C40F", lg: false },
-              { name: "Ruby",          planet: "Sun",     color: "#E74C3C", lg: true },
-              { name: "Amethyst",      planet: "Saturn",  color: "#9B59B6", lg: false },
-              { name: "Aquamarine",    planet: "Moon",    color: "#1ABC9C", lg: false },
+              { name: "Blue Sapphire", planet: "Saturn",  color: "#3498DB", lg: true, image: imgBlueSapphire },
+              { name: "Emerald",       planet: "Mercury", color: "#2ECC71", lg: false, image: imgEmerald },
+              { name: "Yellow Sapphire", planet: "Jupiter", color: "#F1C40F", lg: false, image: imgYellowSapphire },
+              { name: "Ruby",          planet: "Sun",     color: "#E74C3C", lg: true, image: imgRuby },
+              { name: "Amethyst",      planet: "Saturn",  color: "#9B59B6", lg: false, image: imgAmethyst },
+              { name: "Aquamarine",    planet: "Moon",    color: "#1ABC9C", lg: false, image: imgAquamarine },
             ].map((gem, i) => (
               <div key={i} className="gc-gem-card flex p-[24px] flex-col items-center gap-3 rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)]">
-                <div className="rounded-full shrink-0" style={{ width: gem.lg ? "64px" : "48px", height: gem.lg ? "64px" : "48px", background: `radial-gradient(91.92% 91.92% at 35% 35%, #FFFFFF 0%, ${gem.color} 100%)` }} />
+                <img
+                  src={gem.image}
+                  alt={gem.name}
+                  className="rounded-full object-cover shrink-0"
+                  style={{ width: "64px", height: "64px" }}
+                />
                 <p className="text-[#FAF7F0] font-cinzel text-base text-center w-full">{gem.name}</p>
                 <p className="text-[#E7D3A4] font-montserrat text-xs w-fit" style={{ letterSpacing: "0.2em" }}>{gem.planet}</p>
               </div>

@@ -31,7 +31,7 @@ export default function BookConsultation() {
     >
       {/* ── Inner container — matches Figma: left-[31px] top-[126px], max-w-[1509px], grid 646.62px+646.62px gap-[83.858px] ── */}
       <div
-        className="w-full mx-auto px-[clamp(20px,2vw,31px)] py-[clamp(60px,8vw,126px)]"
+        className="w-full mx-auto px-[clamp(20px,2vw,31px)] py-6 sm:py-[clamp(60px,8vw,126px)]"
         style={{ maxWidth: "1509.445px" }}
       >
         <div
@@ -50,10 +50,10 @@ export default function BookConsultation() {
             {/* Heading */}
             <div className="flex pt-[21px] flex-col items-start w-full">
               <h2
-                className="text-[#FAF7F0] font-cinzel font-normal w-fit"
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit text-left"
                 style={{
                   fontSize: "clamp(28px,3.5vw,47px)",
-                  lineHeight: "52.41px",
+                  lineHeight: "1.2",
                   letterSpacing: "0.025em",
                 }}
               >
@@ -95,7 +95,7 @@ export default function BookConsultation() {
 
             {/* Contact Info Rows */}
             <div
-              className="flex pt-[42px] flex-col items-start w-full gap-[21px]"
+              className="grid grid-cols-2 lg:flex lg:flex-col pt-8 lg:pt-[42px] items-start w-full gap-6 lg:gap-[21px]"
             >
               {/* Studio */}
               <div className="flex flex-col items-start w-full">
@@ -150,7 +150,7 @@ export default function BookConsultation() {
             </div>
 
             {/* Bottom Card (map / studio placeholder) */}
-            <div className="flex pt-[42px] flex-col items-start w-full">
+            <div className="hidden lg:flex pt-[42px] flex-col items-start w-full">
               <div
                 className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full flex items-center justify-center"
                 style={{ height: "262px" }}
@@ -216,8 +216,7 @@ export default function BookConsultation() {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors"
-                    style={{ height: "60px" }}
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 
@@ -235,8 +234,7 @@ export default function BookConsultation() {
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors"
-                    style={{ height: "60px" }}
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 
@@ -254,8 +252,7 @@ export default function BookConsultation() {
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors"
-                    style={{ height: "60px" }}
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 
@@ -272,8 +269,7 @@ export default function BookConsultation() {
                     placeholder="Tell us about the piece you have in mind..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors resize-none"
-                    style={{ height: "165px" }}
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors resize-none h-[120px] sm:h-[165px]"
                   />
                 </div>
 

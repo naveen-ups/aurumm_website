@@ -46,11 +46,10 @@ function StarRating() {
 
 function TestimonialCard({ image, quote, name, location }) {
   return (
-    <div className="tm-card flex p-[42px] flex-col items-start gap-[21px] rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
+    <div className="tm-card flex p-6 sm:p-8 md:p-[42px] flex-col items-start gap-[21px] rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full h-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
       {/* Image — exact Figma: w-[351px] h-[300px] */}
       <div
-        className="w-full rounded-[13px] overflow-hidden shrink-0 bg-[#1E1E1E]"
-        style={{ height: "300px" }}
+        className="w-full rounded-[13px] overflow-hidden shrink-0 bg-[#1E1E1E] h-[200px] sm:h-[260px] md:h-[300px]"
       >
         <img
           src={image}
@@ -64,7 +63,7 @@ function TestimonialCard({ image, quote, name, location }) {
       <StarRating />
 
       {/* Quote */}
-      <div className="flex flex-col items-start w-full" style={{ minHeight: "178px" }}>
+      <div className="flex flex-col items-start w-full min-h-0 md:min-h-[178px]">
         <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
           &ldquo;{quote}&rdquo;
         </p>
@@ -122,10 +121,10 @@ export default function Testimonials() {
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <p
-            className="text-[#FAF7F0] font-cinzel w-fit"
+            className="text-[#FAF7F0] font-cinzel w-fit text-center"
             style={{
               fontSize: "clamp(28px,3.5vw,47px)",
-              lineHeight: "52.41px",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >

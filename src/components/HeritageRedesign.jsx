@@ -38,10 +38,10 @@ export default function HeritageRedesign() {
             {/* Heading */}
             <div className="flex pt-[21px] flex-col items-start w-full" style={{ maxWidth: "647px" }}>
               <h2
-                className="text-[#FAF7F0] font-cinzel font-normal w-fit"
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit text-left"
                 style={{
                   fontSize: "clamp(28px,3.5vw,47px)",
-                  lineHeight: "64.86px",
+                  lineHeight: "1.2",
                   letterSpacing: "0.025em",
                 }}
               >
@@ -106,11 +106,11 @@ export default function HeritageRedesign() {
             </div>
 
             {/* Enquire Now Button */}
-            <div className="flex pt-[42px] flex-col items-start w-full">
+            <div className="flex pt-[42px] flex-col items-start w-full sm:w-auto">
               <a
                 href="#book"
-                className="cursor-pointer inline-flex justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
-                style={{ width: "259px", height: "71px" }}
+                className="cursor-pointer inline-flex justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors w-full sm:w-[259px]"
+                style={{ height: "71px" }}
               >
                 <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] text-center tracking-[0.1429em]">
                   Enquire Now
@@ -125,13 +125,11 @@ export default function HeritageRedesign() {
             <div className="grid grid-cols-2 gap-4 sm:gap-[21px] w-full items-start">
               {/* Left Card */}
               <div
-                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full"
-                style={{ height: "393px" }}
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[200px] sm:h-[300px] lg:h-[393px]"
               />
               {/* Right Card (Top Offset 42px) */}
               <div
-                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full mt-[42px]"
-                style={{ height: "393px" }}
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full mt-[42px] h-[200px] sm:h-[300px] lg:h-[393px]"
               />
             </div>
 

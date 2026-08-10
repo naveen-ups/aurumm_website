@@ -21,7 +21,7 @@ const teamMembers = [
 
 function TeamCard({ name, role, specialty }) {
   return (
-    <div className="tc-card-bg flex p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
+    <div className="tc-card-bg flex p-6 sm:p-8 md:p-[42px] flex-col items-start rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] w-full transition-transform duration-300 hover:scale-[1.01] shadow-xl">
       {/* Avatar */}
       <div className="flex flex-col items-center w-full">
         <div className="rounded-full border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#1E1E1E] w-[105px] h-[105px] flex items-center justify-center text-[#D4AF37] font-cinzel text-xl font-semibold">
@@ -90,10 +90,10 @@ export default function TeamConsultants() {
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <p
-            className="text-[#FAF7F0] font-cinzel w-fit"
+            className="text-[#FAF7F0] font-cinzel w-fit text-center"
             style={{
               fontSize: "clamp(32px,3.5vw,47px)",
-              lineHeight: "52.41px",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >

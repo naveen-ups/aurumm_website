@@ -13,14 +13,14 @@ export default function Footer() {
     >
       {/* ── Inner container — max-w-[1509.445px], px-[31px], pt-[85px] ── */}
       <div
-        className="mx-auto w-full flex flex-col items-start"
-        style={{ maxWidth: "1509.445px", padding: "85px 31px 0" }}
+        className="mx-auto w-full flex flex-col items-start px-[clamp(20px,2vw,31px)] pt-6 sm:pt-[clamp(40px,6vw,85px)]"
+        style={{ maxWidth: "1509.445px" }}
       >
         {/* ── 4-Column Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-10 lg:gap-0">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-8 lg:gap-0">
 
-          {/* Column 1 — Brand (left-0) */}
-          <div className="flex flex-col items-start" style={{ maxWidth: "305px" }}>
+          {/* Column 1 — Brand */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-[305px] pb-6 lg:pb-0">
             <p
               className="text-[#FAF7F0] font-cinzel leading-[41.93px] w-fit"
               style={{ fontSize: "31px", letterSpacing: "0.25em" }}
@@ -28,15 +28,15 @@ export default function Footer() {
               Aurumm
             </p>
             <p
-              className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] w-[305px]"
-              style={{ paddingTop: "21px" }}
+              className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] max-w-[305px] w-full"
+              style={{ paddingTop: "12px" }}
             >
               Bespoke jewellery crafted for your legacy. Every piece, a story.
             </p>
           </div>
 
-          {/* Column 2 — Services (left-[357px]) */}
-          <div className="flex flex-col items-start">
+          {/* Column 2 — Services */}
+          <div className="flex flex-col items-start col-span-1">
             <p
               className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
               style={{ letterSpacing: "0.3em" }}
@@ -46,20 +46,26 @@ export default function Footer() {
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {["Custom Design", "Heritage Redesign", "Gemstone Consultation", "Book a Session"].map(
                 (item, i) => (
-                  <p
+                  <a
                     key={i}
-                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors cursor-pointer"
-                    style={i > 0 ? { paddingTop: "10px" } : {}}
+                    href={
+                      item === "Custom Design" ? "#custom" :
+                      item === "Heritage Redesign" ? "#heritage" :
+                      item === "Gemstone Consultation" ? "#gemstone" :
+                      "#book"
+                    }
+                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors"
+                    style={i > 0 ? { paddingTop: "10px", display: "block" } : { display: "block" }}
                   >
                     {item}
-                  </p>
+                  </a>
                 )
               )}
             </div>
           </div>
 
-          {/* Column 3 — Collection (left-[715px]) */}
-          <div className="flex flex-col items-start">
+          {/* Column 3 — Collection */}
+          <div className="flex flex-col items-start col-span-1">
             <p
               className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
               style={{ letterSpacing: "0.3em" }}
@@ -69,20 +75,21 @@ export default function Footer() {
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {["Engagement", "Statement", "Everyday Luxury", "Heirloom"].map(
                 (item, i) => (
-                  <p
+                  <a
                     key={i}
-                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors cursor-pointer"
-                    style={i > 0 ? { paddingTop: "10px" } : {}}
+                    href="#shop"
+                    className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors"
+                    style={i > 0 ? { paddingTop: "10px", display: "block" } : { display: "block" }}
                   >
                     {item}
-                  </p>
+                  </a>
                 )
               )}
             </div>
           </div>
 
-          {/* Column 4 — Connect (left-[1072px]) */}
-          <div className="flex flex-col items-start">
+          {/* Column 4 — Connect */}
+          <div className="flex flex-col items-start col-span-2 sm:col-span-1 pt-6 sm:pt-0">
             <p
               className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
               style={{ letterSpacing: "0.3em" }}

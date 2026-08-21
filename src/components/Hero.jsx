@@ -86,20 +86,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <a
-          href="#collection"
-          aria-label="Scroll to the collection"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-[clamp(8px,1vw,10.48px)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4af37]"
-        >
-          <span className="text-center font-normal tracking-[clamp(3px,0.5vw,5.24px)] text-[#d4af3760] font-['Montserrat',sans-serif] text-[clamp(11px,1.2vw,15.7px)]">
-            SCROLL
-          </span>
-          <span
-            aria-hidden="true"
-            className="h-[clamp(30px,3vw,41.93px)] w-[1.31px] bg-[linear-gradient(180deg,rgba(212,175,55,0.38)_0%,rgba(212,175,55,0)_100%)]"
-          />
-        </a>
       </section>
 
       {/* Hidden SEO text */}

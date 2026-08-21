@@ -113,10 +113,10 @@ export default function BookConsultation() {
                   Email
                 </p>
                 <a
-                  href="mailto:hello@aurumm.com"
+                  href="mailto:aurumm.designstudio@gmail.com"
                   className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
                 >
-                  hello@aurumm.com
+                  aurumm.designstudio@gmail.com
                 </a>
               </div>
 
@@ -126,10 +126,10 @@ export default function BookConsultation() {
                   Phone
                 </p>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+91 9315574332"
                   className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
                 >
-                  +91 98765 43210
+                  +91 9315574332
                 </a>
               </div>
 
@@ -139,12 +139,12 @@ export default function BookConsultation() {
                   Instagram
                 </p>
                 <a
-                  href="https://instagram.com/aurumm.jewellery"
+                  href="https://www.instagram.com/kashissh.garg?igsh=MXY1ZXl6ZWQ3cTN1YQ%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
                   className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
                 >
-                  @aurumm.jewellery
+                  @kashissh.garg
                 </a>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function BookConsultation() {
                     type="tel"
                     name="phone"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 9315574332"
                     value={formData.phone}
                     onChange={handleChange}
                     className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"

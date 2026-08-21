@@ -18,12 +18,7 @@ export default function FounderSection() {
           "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
       }}
     >
-      {/* ── Background Watermark Text "AURUMM" ── */}
-      <span
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 lg:left-[15%] lg:translate-x-0 -translate-y-1/2 font-cinzel text-[clamp(44px,14vw,250px)] font-normal text-[#faf7f0]/[0.025] uppercase whitespace-nowrap pointer-events-none select-none tracking-[0.08em] z-0"
-      >
-        AURUMM
-      </span>
+
 
       {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
       <div

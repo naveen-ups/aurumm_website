@@ -30,7 +30,7 @@ export default function HeritageRedesign() {
         className="w-full mx-auto px-4 md:px-[31px] py-[60px] md:py-[126px] relative z-10 flex justify-center"
         style={{ maxWidth: "1509.445px" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[646.62px_646.62px] gap-10 lg:gap-[83.858px] items-start w-full lg:w-fit">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] items-start w-full max-w-[1377px] mx-auto">
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col items-start w-full">
             {/* Eyebrow */}
@@ -79,21 +79,21 @@ export default function HeritageRedesign() {
             {/* Paragraphs */}
             <div className="flex flex-col items-start w-full">
               <div className="flex flex-col items-start w-full">
-                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
+                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full max-w-[647px]">
                   Your grandmother's brooch. A mother's ring. A gift from someone no<br className="hidden lg:block" />
                   longer here. These pieces carry histories too precious to leave unworn<br className="hidden lg:block" />
                   in a drawer.
                 </p>
               </div>
               <div className="flex pt-[21px] flex-col items-start w-full">
-                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
+                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full max-w-[647px]">
                   We carefully disassemble heirloom jewellery, preserve every original<br className="hidden lg:block" />
                   gemstone, and craft entirely new settings that bring those stones into<br className="hidden lg:block" />
                   your present life — while honouring their past.
                 </p>
               </div>
               <div className="flex pt-[21px] flex-col items-start w-full">
-                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
+                <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full max-w-[647px]">
                   The result is jewellery that bridges generations: a wearable legacy for<br className="hidden lg:block" />
                   you, and eventually, for those who come after.
                 </p>

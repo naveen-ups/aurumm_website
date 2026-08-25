@@ -34,8 +34,7 @@ export default function BookConsultation() {
         style={{ maxWidth: "1509.445px" }}
       >
         <div
-          className="grid grid-cols-1 lg:inline-grid lg:grid-cols-[646.62px_646.62px] w-full items-start"
-          style={{ gap: "clamp(40px,5.5vw,83.858px)" }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] w-full max-w-[1377px] mx-auto items-start"
         >
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col items-start w-full">

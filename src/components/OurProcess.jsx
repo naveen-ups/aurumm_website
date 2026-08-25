@@ -8,8 +8,8 @@ const processSteps = [
     title: "Initial Consultation",
     description: (
       <>
-        We meet to understand your vision, lifestyle,<br className="hidden xl:block" />
-        occasion, and the story you want this piece to<br className="hidden xl:block" />
+        We meet to understand your vision, lifestyle, <br className="hidden xl:block" />
+        occasion, and the story you want this piece to <br className="hidden xl:block" />
         carry.
       </>
     ),
@@ -21,8 +21,8 @@ const processSteps = [
     title: "Design & Sketching",
     description: (
       <>
-        Kashissh creates bespoke hand-drawn<br className="hidden xl:block" />
-        sketches followed by detailed 3D renders for<br className="hidden xl:block" />
+        Kashissh creates bespoke hand-drawn <br className="hidden xl:block" />
+        sketches followed by detailed 3D renders for <br className="hidden xl:block" />
         your approval.
       </>
     ),
@@ -34,8 +34,8 @@ const processSteps = [
     title: "Gemstone Selection",
     description: (
       <>
-        We present a curated edit of ethically sourced<br className="hidden xl:block" />
-        stones, with astrological guidance where<br className="hidden xl:block" />
+        We present a curated edit of ethically sourced <br className="hidden xl:block" />
+        stones, with astrological guidance where <br className="hidden xl:block" />
         desired.
       </>
     ),
@@ -47,8 +47,8 @@ const processSteps = [
     title: "Master Crafting",
     description: (
       <>
-        Your design is brought to life by master<br className="hidden xl:block" />
-        goldsmiths using traditional hand-finishing<br className="hidden xl:block" />
+        Your design is brought to life by master <br className="hidden xl:block" />
+        goldsmiths using traditional hand-finishing <br className="hidden xl:block" />
         techniques.
       </>
     ),
@@ -60,8 +60,8 @@ const processSteps = [
     title: "Quality Review",
     description: (
       <>
-        Every piece is personally inspected by Kashissh<br className="hidden xl:block" />
-        against the approved design before it leaves<br className="hidden xl:block" />
+        Every piece is personally inspected by Kashissh <br className="hidden xl:block" />
+        against the approved design before it leaves <br className="hidden xl:block" />
         the studio.
       </>
     ),
@@ -73,7 +73,7 @@ const processSteps = [
     title: "Delivery & Aftercare",
     description: (
       <>
-        Your piece arrives in bespoke packaging with a<br className="hidden xl:block" />
+        Your piece arrives in bespoke packaging with a <br className="hidden xl:block" />
         certificate of creation and a lifetime care guide.
       </>
     ),
@@ -218,12 +218,12 @@ export default function OurProcess() {
 
         {/* ── Timeline Bar ── */}
         <div className="flex pt-[84px] flex-col items-center w-full">
-          <div className="flex py-6 px-4 md:p-[31px] flex-col md:flex-row items-center justify-between rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.14)] op-timeline-bg w-full">
+          <div className="flex py-6 px-4 md:p-[31px] flex-col lg:flex-row items-center justify-between rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.14)] op-timeline-bg w-full">
             {timelineSteps.map((step, idx) => (
               <React.Fragment key={idx}>
                 {/* Desktop: Step + Divider in one row (except last) */}
                 {idx < timelineSteps.length - 1 ? (
-                  <div className="hidden md:flex items-center w-full">
+                  <div className="hidden lg:flex items-center w-full">
                     <div className="flex flex-col items-center gap-[5px] w-full">
                       <div className="rounded-full w-[13px] h-[13px]" style={{ backgroundColor: step.color }}></div>
                       <p className="font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.1em] uppercase" style={{ color: step.color }}>
@@ -238,7 +238,7 @@ export default function OurProcess() {
                     </div>
                   </div>
                 ) : (
-                  <div className="hidden md:flex flex-col items-center gap-[5px] w-full">
+                  <div className="hidden lg:flex flex-col items-center gap-[5px] w-full">
                     <div className="rounded-full w-[13px] h-[13px]" style={{ backgroundColor: step.color }}></div>
                     <p className="font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.1em] uppercase" style={{ color: step.color }}>
                       {step.label}
@@ -250,7 +250,7 @@ export default function OurProcess() {
                 )}
 
                 {/* Mobile: Step + Vertical Divider */}
-                <div className="flex md:hidden flex-col items-center w-full">
+                <div className="flex lg:hidden flex-col items-center w-full">
                   <div className="flex flex-row items-center justify-center gap-1.5 text-center w-full">
                     <p className="font-montserrat text-[13px] leading-[19.65px] tracking-[0.1em] uppercase" style={{ color: step.color }}>
                       {step.label}

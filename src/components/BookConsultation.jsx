@@ -23,10 +23,9 @@ export default function BookConsultation() {
   return (
     <section
       id="book"
-      className="bc-page-bg border-t-[1.31px] border-[#c8a431] relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden border-t-[1.31px] border-t-[#C8A431]"
       style={{
-        borderImage:
-          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+        background: "linear-gradient(160deg, #1E1E1E 8.49%, #1A1610 41.7%, #1C1A10 58.3%, #1E1E1E 91.51%)"
       }}
     >
       {/* ── Inner container — matches Figma: left-[31px] top-[126px], max-w-[1509px], grid 646.62px+646.62px gap-[83.858px] ── */}
@@ -35,28 +34,21 @@ export default function BookConsultation() {
         style={{ maxWidth: "1509.445px" }}
       >
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 items-start"
+          className="grid grid-cols-1 lg:inline-grid lg:grid-cols-[646.62px_646.62px] w-full items-start"
           style={{ gap: "clamp(40px,5.5vw,83.858px)" }}
         >
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col items-start w-full">
             {/* Eyebrow */}
-            <p
-              className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] tracking-[0.3333em] uppercase"
-            >
-              Reach Out
-            </p>
+            <div className="flex flex-col items-start w-full">
+              <p className="text-[#D4AF37] font-montserrat text-base font-medium leading-[20.96px] w-fit tracking-[0.3333em] uppercase">
+                Reach Out
+              </p>
+            </div>
 
             {/* Heading */}
-            <div className="flex pt-[21px] flex-col items-start w-full">
-              <h2
-                className="text-[#FAF7F0] font-cinzel font-normal w-fit text-left"
-                style={{
-                  fontSize: "clamp(28px,3.5vw,47px)",
-                  lineHeight: "1.2",
-                  letterSpacing: "0.025em",
-                }}
-              >
+            <div className="flex pt-[21px] flex-col items-start w-full lg:h-[73px]">
+              <h2 className="text-[#FAF7F0] font-cinzel text-[47px] leading-[52.41px] w-fit tracking-[0.025em]">
                 Begin a Conversation
               </h2>
             </div>
@@ -84,98 +76,89 @@ export default function BookConsultation() {
 
             {/* Description */}
             <div className="flex flex-col items-start w-full">
-              <p
-                className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px]"
-                style={{ maxWidth: "647px" }}
-              >
-                We would love to hear your story. Reach out to begin the journey
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full lg:w-[647px]">
+                We would love to hear your story. Reach out to begin the journey<br className="hidden lg:block" />
                 toward a piece that is entirely yours.
               </p>
             </div>
 
             {/* Contact Info Rows */}
-            <div
-              className="grid grid-cols-2 lg:flex lg:flex-col pt-8 lg:pt-[42px] items-start w-full gap-6 lg:gap-[21px]"
-            >
+            <div className="flex pt-8 lg:pt-[42px] flex-col items-start shrink-0 w-full lg:w-[647px]">
               {/* Studio */}
               <div className="flex flex-col items-start w-full">
-                <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                  Studio
-                </p>
-                <p className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px]">
-                  By appointment only
-                </p>
-              </div>
-
-              {/* Email */}
-              <div className="flex flex-col items-start w-full">
-                <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                  Email
-                </p>
-                <a
-                  href="mailto:aurumm.designstudio@gmail.com"
-                  className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
-                >
-                  aurumm.designstudio@gmail.com
-                </a>
-              </div>
-
-              {/* Phone */}
-              <div className="flex flex-col items-start w-full">
-                <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                  Phone
-                </p>
-                <a
-                  href="tel:+91 9315574332"
-                  className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
-                >
-                  +91 9315574332
-                </a>
-              </div>
-
-              {/* Instagram */}
-              <div className="flex flex-col items-start w-full">
-                <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                  Instagram
-                </p>
-                <a
-                  href="https://www.instagram.com/kashissh.garg?igsh=MXY1ZXl6ZWQ3cTN1YQ%3D%3D&utm_source=qr"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="pt-[5px] text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] hover:text-[#D4AF37] transition-colors"
-                >
-                  @kashissh.garg
-                </a>
-              </div>
-            </div>
-
-            {/* Bottom Card (map / studio placeholder) */}
-            <div className="hidden lg:flex pt-[42px] flex-col items-start w-full">
-              <div
-                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full flex items-center justify-center"
-                style={{ height: "262px" }}
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-[#D4AF37] text-2xl"></span>
-                  <p className="font-cinzel text-[#FAF7F0] text-lg">
-                    
+                <div className="flex flex-col items-start w-full">
+                  <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                    Studio
                   </p>
-                  <p className="font-montserrat text-sm text-[#FAF7F0]/60">
-                    
+                </div>
+                <div className="flex pt-[5px] flex-col items-start w-full lg:h-[31px]">
+                  <p className="text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] w-fit">
+                    By appointment only
                   </p>
                 </div>
               </div>
+
+              {/* Email */}
+              <div className="flex pt-[21px] flex-col items-start shrink-0 w-full lg:h-[72px]">
+                <div className="flex flex-col items-start w-full">
+                  <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                    Email
+                  </p>
+                </div>
+                <div className="flex pt-[5px] flex-col items-start shrink-0 w-full lg:h-[31px]">
+                  <a
+                    href="mailto:aurumm.designstudio@gmail.com"
+                    className="text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] w-fit hover:text-[#D4AF37] transition-colors"
+                  >
+                    aurumm.designstudio@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex pt-[21px] flex-col items-start shrink-0 w-full lg:h-[72px]">
+                <div className="flex flex-col items-start w-full">
+                  <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                    Phone
+                  </p>
+                </div>
+                <div className="flex pt-[5px] flex-col items-start shrink-0 w-full lg:h-[31px]">
+                  <a
+                    href="tel:+91 9315574332"
+                    className="text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] w-fit hover:text-[#D4AF37] transition-colors"
+                  >
+                    +91 9315574332
+                  </a>
+                </div>
+              </div>
+
+              {/* Instagram */}
+              <div className="flex pt-[21px] flex-col items-start shrink-0 w-full lg:h-[72px]">
+                <div className="flex flex-col items-start w-full">
+                  <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                    Instagram
+                  </p>
+                </div>
+                <div className="flex pt-[5px] flex-col items-start shrink-0 w-full lg:h-[31px]">
+                  <a
+                    href="https://www.instagram.com/kashissh.garg?igsh=MXY1ZXl6ZWQ3cTN1YQ%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[#FAF7F0] font-montserrat text-lg leading-[26.21px] w-fit hover:text-[#D4AF37] transition-colors"
+                  >
+                    @kashissh.garg
+                  </a>
+                </div>
+              </div>
             </div>
+
           </div>
 
           {/* ── RIGHT COLUMN — Send a Message ── */}
           <div className="flex flex-col items-start gap-[21px] w-full">
             {/* Form heading */}
             <div className="flex flex-col items-start w-full">
-              <h3
-                className="text-[#FAF7F0] font-cinzel font-normal text-2xl leading-[36.69px] w-fit"
-                style={{ letterSpacing: "0.025em" }}
-              >
+              <h3 className="text-[#FAF7F0] font-cinzel text-2xl leading-[36.69px] w-fit tracking-[0.025em]">
                 Send a Message
               </h3>
             </div>
@@ -205,71 +188,75 @@ export default function BookConsultation() {
                 {/* Name */}
                 <div className="flex flex-col items-start w-full">
                   <div className="flex pb-2.5 flex-col items-start w-full">
-                    <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                      name
-                    </p>
+                    <div className="flex flex-col items-start w-full">
+                      <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                        name
+                      </p>
+                    </div>
                   </div>
                   <input
                     type="text"
                     name="name"
                     required
-                    placeholder="Your name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col items-start w-full">
                   <div className="flex pb-2.5 flex-col items-start w-full">
-                    <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                      email
-                    </p>
+                    <div className="flex flex-col items-start w-full">
+                      <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                        email
+                      </p>
+                    </div>
                   </div>
                   <input
                     type="email"
                     name="email"
                     required
-                    placeholder="your@email.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
                   />
                 </div>
 
                 {/* Phone */}
                 <div className="flex flex-col items-start w-full">
                   <div className="flex pb-2.5 flex-col items-start w-full">
-                    <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                      phone
-                    </p>
+                    <div className="flex flex-col items-start w-full">
+                      <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                        phone
+                      </p>
+                    </div>
                   </div>
                   <input
                     type="tel"
                     name="phone"
                     required
-                    placeholder="+91 9315574332"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="flex flex-col items-start w-full">
                   <div className="flex pb-2.5 flex-col items-start w-full">
-                    <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] tracking-[0.3em] uppercase">
-                      Message
-                    </p>
+                    <div className="flex flex-col items-start w-full">
+                      <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                        Message
+                      </p>
+                    </div>
                   </div>
                   <textarea
                     name="message"
                     required
-                    placeholder="Tell us about the piece you have in mind..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors resize-none h-[120px] sm:h-[165px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors resize-none lg:h-[165px] h-[120px]"
                   />
                 </div>
 
@@ -284,7 +271,7 @@ export default function BookConsultation() {
                       "0 0 18.344px rgba(212,175,55,0.14), 0 2.621px 10.482px rgba(0,0,0,0.30)",
                   }}
                 >
-                  <p className="text-[#0A0800] font-montserrat text-lg font-medium leading-[26.21px] tracking-[0.1429em]">
+                  <p className="text-[#0A0800] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em] uppercase">
                     Send Enquiry
                   </p>
                 </button>

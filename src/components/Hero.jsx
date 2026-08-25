@@ -85,7 +85,17 @@ export default function Hero() {
             </button>
           </div>
         </div>
-
+        {/* Scroll Indicator */}
+        <a
+          href="#collection"
+          aria-label="Scroll to the collection"
+          className="flex flex-col items-center gap-[10.48px] absolute left-1/2 -translate-x-1/2 bottom-[52px] z-10 hover:opacity-80 transition-opacity"
+        >
+          <p className="text-[#D4AF37] font-['Montserrat',sans-serif] text-base font-medium leading-[20.96px] tracking-[0.333em] uppercase">
+            SCROLL
+          </p>
+          <div className="bg-[linear-gradient(180deg,#D4AF37_0%,rgba(212,175,55,0)_100%)] w-px h-[42px]"></div>
+        </a>
       </section>
 
       {/* Hidden SEO text */}

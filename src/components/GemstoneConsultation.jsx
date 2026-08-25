@@ -21,15 +21,31 @@ const gemstones = [
 const featureCards = [
   {
     title: "Astrological Guidance",
-    body: "Stones chosen based on your Vedic birth chart for resonance and harmony.",
+    body: (
+      <>
+        Stones chosen based on your Vedic<br className="hidden lg:block" />
+        birth chart for resonance and harmony.
+      </>
+    ),
   },
   {
     title: "GIA Certification",
-    body: "Every gemstone comes with independent certification of quality and authenticity.",
+    body: (
+      <>
+        Every gemstone comes with<br className="hidden lg:block" />
+        independent certification of quality and<br className="hidden lg:block" />
+        authenticity.
+      </>
+    ),
   },
   {
     title: "Ethical Sourcing",
-    body: "Conflict-free, responsibly mined stones selected with full traceability.",
+    body: (
+      <>
+        Conflict-free, responsibly mined stones<br className="hidden lg:block" />
+        selected with full traceability.
+      </>
+    ),
   },
 ];
 
@@ -76,17 +92,14 @@ function FeatureCard({ title, body }) {
       {/* Gold accent line */}
       <div className="bg-[#D4AF37] w-[42px] h-px" />
       {/* Title */}
-      <div className="flex pt-[21px] flex-col items-start w-full">
-        <p
-          className="text-[#FAF7F0] font-cinzel w-fit"
-          style={{ fontSize: "21px", lineHeight: "31.45px", letterSpacing: "0.025em" }}
-        >
+      <div className="flex pt-[21px] flex-col items-start w-full lg:w-[373px] h-auto lg:h-[52px]">
+        <p className="text-[#FAF7F0] font-cinzel text-[21px] leading-[31.45px] w-fit tracking-[0.025em] uppercase">
           {title}
         </p>
       </div>
       {/* Body */}
-      <div className="flex pt-2.5 flex-col items-start w-full">
-        <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full">
+      <div className="flex pt-2.5 flex-col items-start w-full lg:w-[373px]">
+        <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[29.81px] w-full lg:w-[373px]">
           {body}
         </p>
       </div>
@@ -116,7 +129,7 @@ export default function GemstoneConsultation() {
         {/* Eyebrow */}
         <div className="flex flex-col items-center w-full">
           <p
-            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
+            className="text-[#D4AF37] font-montserrat text-base font-medium leading-[20.96px] w-fit text-center uppercase"
             style={{ letterSpacing: "0.3333em" }}
           >
             Guided by the Stars
@@ -126,7 +139,7 @@ export default function GemstoneConsultation() {
         {/* Heading — gold gradient text */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <p
-            className="gc-heading-gradient font-cinzel w-fit"
+            className="gc-heading-gradient font-cinzel w-fit text-center uppercase"
             style={{
               fontSize: "clamp(28px,3.5vw,47px)",
               lineHeight: "52.41px",
@@ -140,11 +153,10 @@ export default function GemstoneConsultation() {
         {/* Description */}
         <div className="flex pt-[21px] flex-col items-center w-full">
           <p
-            className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[26.21px] text-center"
-            style={{ maxWidth: "671px" }}
+            className="text-[rgba(250,247,240,0.70)] font-montserrat text-lg leading-[26.21px] text-center w-full lg:w-[671px]"
           >
-            Kashissh combines her gemological expertise with deep knowledge of
-            Vedic astrology to recommend stones that resonate with your unique
+            Kashissh combines her gemological expertise with deep knowledge of<br className="hidden lg:block" />
+            Vedic astrology to recommend stones that resonate with your unique<br className="hidden lg:block" />
             cosmic blueprint.
           </p>
         </div>
@@ -164,63 +176,63 @@ export default function GemstoneConsultation() {
             {/* ── Row 1 ── */}
             {/* [0,0] Blue Sapphire — large card, auto height */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
               <img src={imgBlueSapphire} alt="Blue Sapphire" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-2xl leading-[35.38px] w-fit text-center">Blue Sapphire</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Saturn</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Saturn</p>
             </div>
 
             {/* [0,1] Emerald — small card */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full h-[236px]"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
-              <img src={imgEmerald} alt="Emerald" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <img src={imgEmerald} alt="Emerald" className="rounded-full object-cover shrink-0" style={{ width: "58px", height: "58px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Emerald</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Mercury</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Mercury</p>
             </div>
 
             {/* [0,2] Yellow Sapphire — small card */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full h-[236px]"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
-              <img src={imgYellowSapphire} alt="Yellow Sapphire" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
-              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] text-center" style={{ width: "144px" }}>Yellow Sapphire</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Jupiter</p>
+              <img src={imgYellowSapphire} alt="Yellow Sapphire" className="rounded-full object-cover shrink-0" style={{ width: "58px", height: "58px" }} />
+              <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] text-center w-36">Yellow Sapphire</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Jupiter</p>
             </div>
 
             {/* ── Row 2 ── */}
             {/* [1,0] Ruby — large card, auto height */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
               <img src={imgRuby} alt="Ruby" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-2xl leading-[35.38px] w-fit text-center">Ruby</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Sun</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Sun</p>
             </div>
 
             {/* [1,1] Amethyst — small card */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full h-[236px]"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
-              <img src={imgAmethyst} alt="Amethyst" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <img src={imgAmethyst} alt="Amethyst" className="rounded-full object-cover shrink-0" style={{ width: "58px", height: "58px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Amethyst</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Saturn</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Saturn</p>
             </div>
 
             {/* [1,2] Aquamarine — small card to match siblings */}
             <div
-              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02]"
-              style={{ gap: "15.723px" }}
+              className="gc-gem-card flex p-[31px] flex-col items-center rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)] transition-transform duration-300 hover:scale-[1.02] w-full h-[236px]"
+              style={{ gap: "15.723px", background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}
             >
-              <img src={imgAquamarine} alt="Aquamarine" className="rounded-full object-cover shrink-0" style={{ width: "84px", height: "84px" }} />
+              <img src={imgAquamarine} alt="Aquamarine" className="rounded-full object-cover shrink-0" style={{ width: "58px", height: "58px" }} />
               <p className="text-[#FAF7F0] font-cinzel text-xl leading-[29.48px] w-fit text-center">Aquamarine</p>
-              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit" style={{ letterSpacing: "0.2em" }}>Moon</p>
+              <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit uppercase" style={{ letterSpacing: "0.2em" }}>Moon</p>
             </div>
           </div>
 
@@ -234,7 +246,7 @@ export default function GemstoneConsultation() {
               { name: "Amethyst",      planet: "Saturn",  color: "#9B59B6", lg: false, image: imgAmethyst },
               { name: "Aquamarine",    planet: "Moon",    color: "#1ABC9C", lg: false, image: imgAquamarine },
             ].map((gem, i) => (
-              <div key={i} className="gc-gem-card flex p-[24px] flex-col items-center gap-3 rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)]">
+              <div key={i} className="gc-gem-card flex p-[24px] flex-col items-center gap-3 rounded-[21px] border-[1.31px] border-[rgba(212,175,55,0.18)]" style={{ background: "linear-gradient(145deg, #252320 6.17%, #1E1C14 93.83%)" }}>
                 <img
                   src={gem.image}
                   alt={gem.name}
@@ -242,7 +254,7 @@ export default function GemstoneConsultation() {
                   style={{ width: "64px", height: "64px" }}
                 />
                 <p className="text-[#FAF7F0] font-cinzel text-base text-center w-full">{gem.name}</p>
-                <p className="text-[#E7D3A4] font-montserrat text-xs w-fit" style={{ letterSpacing: "0.2em" }}>{gem.planet}</p>
+                <p className="text-[#E7D3A4] font-montserrat text-xs w-fit uppercase" style={{ letterSpacing: "0.2em" }}>{gem.planet}</p>
               </div>
             ))}
           </div>

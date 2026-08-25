@@ -1,15 +1,12 @@
 import React from "react";
 import "./Footer.css";
+import Logo from "../assets/images/Logo.png";
 
 export default function Footer() {
   return (
     <footer
       id="footer"
-      className="ft-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
-      style={{
-        borderImage:
-          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
-      }}
+      className="ft-bg border-t-[1.31px] border-t-[rgba(212,175,55,0.18)] w-full overflow-hidden"
     >
       {/* ── Inner container — max-w-[1509.445px], px-[31px], pt-[85px] ── */}
       <div
@@ -17,32 +14,31 @@ export default function Footer() {
         style={{ maxWidth: "1509.445px" }}
       >
         {/* ── 4-Column Grid ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-8 lg:gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:inline-grid lg:grid-cols-[304.97px_304.97px_304.97px_304.97px] w-full gap-8 lg:gap-[52.411px] justify-center lg:justify-start">
 
           {/* Column 1 — Brand */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-[305px] pb-6 lg:pb-0">
-            <p
-              className="text-[#FAF7F0] font-cinzel leading-[41.93px] w-fit"
-              style={{ fontSize: "31px", letterSpacing: "0.25em" }}
-            >
-              Aurumm
-            </p>
-            <p
-              className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] max-w-[305px] w-full"
-              style={{ paddingTop: "12px" }}
-            >
-              Bespoke jewellery crafted for your legacy. Every piece, a story.
-            </p>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-[305px] pb-6 lg:pb-0">
+            <div className="flex flex-col items-start w-full">
+              <img
+                src={Logo}
+                className="w-[167px] h-[56px] max-w-none object-contain mx-auto lg:mx-0"
+                alt="Aurumm"
+              />
+            </div>
+            <div className="flex pt-[21px] flex-col items-start w-full lg:w-[304.97px]">
+              <p className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[25.55px] w-full">
+                Bespoke jewellery crafted for your<br className="hidden lg:block" /> legacy. Every piece, a story.
+              </p>
+            </div>
           </div>
 
           {/* Column 2 — Services */}
           <div className="flex flex-col items-start col-span-1">
-            <p
-              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
-              style={{ letterSpacing: "0.3em" }}
-            >
-              Services
-            </p>
+            <div className="flex flex-col items-start w-full">
+              <p className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                Services
+              </p>
+            </div>
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {["Custom Design", "Heritage Redesign", "Gemstone Consultation", "Book a Session"].map(
                 (item, i) => (
@@ -66,12 +62,11 @@ export default function Footer() {
 
           {/* Column 3 — Collection */}
           <div className="flex flex-col items-start col-span-1">
-            <p
-              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
-              style={{ letterSpacing: "0.3em" }}
-            >
-              Collection
-            </p>
+            <div className="flex flex-col items-start w-full">
+              <p className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                Collection
+              </p>
+            </div>
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {["Engagement", "Statement", "Everyday Luxury", "Heirloom"].map(
                 (item, i) => (
@@ -89,13 +84,12 @@ export default function Footer() {
           </div>
 
           {/* Column 4 — Connect */}
-          <div className="flex flex-col items-start col-span-2 sm:col-span-1 pt-6 sm:pt-0">
-            <p
-              className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit"
-              style={{ letterSpacing: "0.3em" }}
-            >
-              Connect
-            </p>
+          <div className="flex flex-col items-start col-span-1">
+            <div className="flex flex-col items-start w-full">
+              <p className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
+                Connect
+              </p>
+            </div>
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {[
                 { label: "Instagram", href: "https://instagram.com/aurumm.jewellery" },

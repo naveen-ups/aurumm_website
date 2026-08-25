@@ -66,47 +66,27 @@ export default function ShopGrid() {
       >
         {/* Eyebrow */}
         <div className="flex flex-col items-center w-full">
-          <p
-            className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit"
-            style={{ letterSpacing: "0.3333em" }}
-          >
+          <p className="text-[#D4AF37] font-montserrat text-base font-medium leading-[20.96px] w-fit text-center tracking-[0.3333em] uppercase">
             Curated for you
           </p>
         </div>
 
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full">
-          <h2
-            className="text-[#FAF7F0] font-cinzel w-fit text-center"
-            style={{
-              fontSize: "clamp(28px,3.5vw,47px)",
-              lineHeight: "1.2",
-              letterSpacing: "0.05em",
-            }}
-          >
+          <h2 className="text-[#FAF7F0] font-cinzel text-[clamp(28px,3.5vw,47px)] font-normal leading-[52.41px] w-fit text-center tracking-[0.05em] uppercase">
             Shop The Collection
           </h2>
         </div>
 
         {/* Gold Divider */}
-        <div className="flex pt-2.5 items-center gap-[21px] w-full py-4 max-w-5xl">
-          <div
-            className="flex-1 h-px shrink-0"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
-            }}
-          />
-          <p className="text-[#D4AF37] font-montserrat text-base leading-[23.59px] w-fit">
-            ✦
-          </p>
-          <div
-            className="flex-1 h-px shrink-0"
-            style={{
-              background:
-                "linear-gradient(270deg, rgba(212,175,55,0.00) 0%, rgba(212,175,55,0.25) 100%)",
-            }}
-          />
+        <div className="flex pt-2.5 items-center gap-[21px] w-full max-w-[1377px]">
+          <div className="shrink-0 bg-[#D4AF37] h-px flex-1"></div>
+          <div className="flex flex-col items-start w-fit">
+            <p className="text-[#D4AF37] font-montserrat text-base leading-[23.59px] w-fit">
+              ✦
+            </p>
+          </div>
+          <div className="shrink-0 bg-[#D4AF37] h-px flex-1"></div>
         </div>
 
         {/* ── 5-Column Grid ── */}
@@ -133,10 +113,7 @@ export default function ShopGrid() {
 
                 {/* Title */}
                 <div className="flex pt-4 flex-col items-center sm:items-start w-full">
-                  <p
-                    className="text-[#FAF7F0] font-cinzel text-base font-medium leading-[20.96px] w-fit group-hover:text-[#D4AF37] transition-colors"
-                    style={{ letterSpacing: "0.1em" }}
-                  >
+                  <p className="text-[#FAF7F0] font-cinzel text-base font-medium leading-[20.96px] w-fit tracking-[0.1em] group-hover:text-[#D4AF37] transition-colors">
                     {item.title}
                   </p>
                 </div>
@@ -153,12 +130,12 @@ export default function ShopGrid() {
         </div>
 
         {/* View All Pieces Button */}
-        <div className="flex pt-[63px] justify-center items-center w-full">
+        <div className="flex pt-[63px] justify-center items-start w-full">
           <a
             href="#custom"
-            className="cursor-pointer text-nowrap inline-flex py-[21px] px-[42px] justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+            className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-fit hover:bg-[#D4AF37]/10 transition-colors"
           >
-            <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] text-center tracking-[0.1429em]">
+            <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em]">
               View All Pieces
             </p>
           </a>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from '../assets/images/Logo.png';
 
 const navigationItems = [
   { label: "COLLECTION", href: "#shop" },
@@ -28,9 +29,11 @@ export default function Navbar() {
         
         {/* Logo */}
         <a href="#top" aria-label="Aurumm home" className="flex items-center flex-shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] rounded-sm">
-          <span className="font-['Cinzel',serif] text-[#faf7f0] text-[clamp(20px,2vw,26.2px)] tracking-[clamp(4px,0.5vw,7.86px)] whitespace-nowrap">
-            AURUMM
-          </span>
+          <img
+            src={Logo}
+            alt="AURUMM"
+            className="w-[167px] h-[56px] object-cover"
+          />
         </a>
 
         {/* Desktop Navigation */}

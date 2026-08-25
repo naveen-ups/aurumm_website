@@ -1,6 +1,6 @@
 import React from "react";
 import "./Philosophy.css";
-import philosophyImg from "../assets/images/philosophy.png";
+import philosophyImg from "../assets/images/PHILOSOPHY_1.png";
 
 const stats = [
   { value: "500+", label: "Bespoke Pieces Created" },
@@ -13,10 +13,9 @@ export default function Philosophy() {
   return (
     <section
       id="about"
-      className="ph-page-bg border-t-[1.31px] border-[#c8a431] w-full overflow-hidden"
+      className="border-t-[1.31px] border-[#C8A431] w-full overflow-hidden"
       style={{
-        borderImage:
-          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+        background: "linear-gradient(170deg, #0F0F10 6.17%, #130E08 50%, #0F0F10 93.83%)",
       }}
     >
       {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
@@ -30,23 +29,16 @@ export default function Philosophy() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-[83.858px] w-full">
           
-          {/* ── LEFT COLUMN — Image Frame + Decorative Accent Box ── */}
-          <div className="relative w-full max-w-[647px] mx-auto lg:mx-0 pr-6 pb-6">
-            <div className="relative rounded-[21px] border-[5.24px] border-[#D4AF37] w-full h-[280px] sm:h-[450px] lg:h-[632px] overflow-hidden shadow-2xl bg-[#121212]">
-              <img
-                src={philosophyImg}
-                alt="Aurumm Philosophy — Crafting luxury jewellery"
-                className="w-full h-full object-cover rounded-[16px]"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/Container.png";
-                }}
-              />
-            </div>
-
-            {/* Rotated decorative accent box from Figma specs */}
-            <div
-              className="absolute right-1 -bottom-[20px] sm:-right-[35px] sm:-bottom-[35px] rounded-[10.5px] border-[1.31px] border-[rgba(212,175,55,0.19)] w-[90px] h-[90px] sm:w-[126px] sm:h-[126px] pointer-events-none z-20"
+          {/* ── LEFT COLUMN — Image Frame ── */}
+          <div className="flex flex-col items-center lg:items-start w-full">
+            <img
+              src={philosophyImg}
+              alt="Aurumm Philosophy — Crafting luxury jewellery"
+              className="w-full max-w-[647px] h-auto object-contain shrink-0"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/Container.png";
+              }}
             />
           </div>
 
@@ -54,25 +46,15 @@ export default function Philosophy() {
           <div className="flex flex-col items-center lg:items-start w-full gap-[31px] text-center lg:text-left">
             {/* Eyebrow */}
             <div className="flex flex-col items-center lg:items-start w-full">
-              <p
-                className="text-[#E7D3A4] font-montserrat text-base font-medium leading-[20.96px] w-fit mx-auto lg:mx-0"
-                style={{ letterSpacing: "0.3333em" }}
-              >
+              <p className="text-[#D4AF37] font-montserrat text-base font-medium leading-[20.96px] w-fit mx-auto lg:mx-0 tracking-[0.3333em] uppercase">
                 Our Philosophy
               </p>
             </div>
 
             {/* Heading */}
-            <div className="flex flex-col items-center lg:items-start w-full" style={{ maxWidth: "647px" }}>
-              <h2
-                className="text-[#FAF7F0] font-cinzel font-normal w-full text-center lg:text-left"
-                style={{
-                  fontSize: "clamp(28px,3.5vw,47px)",
-                  lineHeight: "1.3",
-                  letterSpacing: "0.025em",
-                }}
-              >
-                Where Artistry Meets Meaning
+            <div className="flex pt-[21px] flex-col items-center lg:items-start shrink-0 w-full" style={{ maxWidth: "647px" }}>
+              <h2 className="text-[#FAF7F0] font-cinzel font-normal w-full text-center lg:text-left text-[clamp(28px,3.5vw,47px)] leading-[1.3] lg:leading-[64.86px] tracking-[0.025em] uppercase">
+                Where Artistry <br className="hidden lg:block" /> Meets Meaning
               </h2>
             </div>
 
@@ -121,13 +103,17 @@ export default function Philosophy() {
                     key={i}
                     className="flex flex-col items-start border-l-[1.97px] border-l-[#D4AF37] pl-[21px] text-left"
                   >
-                    <p className="ph-stat-gradient font-cinzel text-[clamp(24px,4vw,31px)] font-semibold leading-[1.2]">
+                    <p
+                      className="font-cinzel text-[clamp(24px,4vw,31px)] font-semibold leading-[41.93px]"
+                      style={{
+                        background: "linear-gradient(135deg, #B8952A 0%, #D4AF37 40%, #F0D060 70%, #C9A227 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                    >
                       {stat.value}
                     </p>
-                    <p
-                      className="text-[#E7D3A4] font-montserrat text-[clamp(13px,2vw,16px)] leading-[1.3] pt-[5px]"
-                      style={{ letterSpacing: "0.025em" }}
-                    >
+                    <p className="text-[#E7D3A4] font-montserrat text-[clamp(13px,2vw,16px)] lg:text-base leading-[20.96px] pt-[5px] tracking-[0.025em]">
                       {stat.label}
                     </p>
                   </div>

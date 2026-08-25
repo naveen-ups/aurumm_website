@@ -14,10 +14,10 @@ export default function Footer() {
         style={{ maxWidth: "1509.445px" }}
       >
         {/* ── 4-Column Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:inline-grid lg:grid-cols-[304.97px_304.97px_304.97px_304.97px] w-full gap-8 lg:gap-[52.411px] justify-center lg:justify-start">
+        <div className="grid grid-cols-2 lg:inline-grid lg:grid-cols-[304.97px_304.97px_304.97px_304.97px] w-full gap-8 lg:gap-[52.411px] justify-center lg:justify-start">
 
           {/* Column 1 — Brand */}
-          <div className="col-span-1 sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-[305px] pb-6 lg:pb-0">
+          <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-[305px] pb-6 lg:pb-0">
             <div className="flex flex-col items-start w-full">
               <img
                 src={Logo}
@@ -92,10 +92,10 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
               {[
-                { label: "Instagram", href: "https://instagram.com/aurumm.jewellery" },
+                { label: "Instagram", href: "https://www.instagram.com/kashissh.garg?igsh=MXY1ZXl6ZWQ3cTN1YQ%3D%3D&utm_source=qr" },
                 { label: "Pinterest", href: "https://pinterest.com" },
-                { label: "Email Us", href: "mailto:hello@aurumm.com" },
-                { label: "WhatsApp", href: "https://wa.me/919876543210" },
+                { label: "Email Us", href: "mailto:aurumm.designstudio@gmail.com" },
+                { label: "WhatsApp", href: "https://wa.me/919315574332" },
               ].map((item, i) => (
                 <a
                   key={i}

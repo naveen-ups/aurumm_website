@@ -32,7 +32,7 @@ export default function Navbar() {
           <img
             src={Logo}
             alt="AURUMM"
-            className="w-[167px] h-[56px] object-cover"
+            className="w-[120px] sm:w-[167px] h-auto max-h-[56px] object-contain"
           />
         </a>
 

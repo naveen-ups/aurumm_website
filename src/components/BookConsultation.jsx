@@ -48,7 +48,13 @@ export default function BookConsultation() {
 
             {/* Heading */}
             <div className="flex pt-[21px] flex-col items-start w-full lg:h-[73px]">
-              <h2 className="text-[#FAF7F0] font-cinzel text-[47px] leading-[52.41px] w-fit tracking-[0.025em]">
+              <h2 
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit tracking-[0.025em]"
+                style={{
+                  fontSize: "clamp(28px,3.5vw,47px)",
+                  lineHeight: "1.2",
+                }}
+              >
                 Begin a Conversation
               </h2>
             </div>
@@ -200,7 +206,7 @@ export default function BookConsultation() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 
@@ -219,7 +225,7 @@ export default function BookConsultation() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 
@@ -238,7 +244,7 @@ export default function BookConsultation() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[60px]"
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
                   />
                 </div>
 

@@ -41,10 +41,16 @@ export default function HeritageRedesign() {
             </div>
 
             {/* Heading */}
-            <div className="flex pt-[21px] flex-col items-start shrink-0 w-full">
-              <p className="text-[#FAF7F0] font-cinzel text-3xl md:text-[47px] md:leading-[64.86px] w-fit tracking-[0.025em]">
+            <div className="flex pt-[21px] flex-col items-start w-full">
+              <h2
+                className="text-[#FAF7F0] font-cinzel font-normal w-fit text-left tracking-[0.025em]"
+                style={{
+                  fontSize: "clamp(28px,3.5vw,47px)",
+                  lineHeight: "1.2",
+                }}
+              >
                 Honouring the Past, <br className="hidden lg:block" />Reimagining the Future
-              </p>
+              </h2>
             </div>
 
             {/* Gold Divider */}
@@ -111,42 +117,31 @@ export default function HeritageRedesign() {
             </div>
 
             {/* Enquire Now Button */}
-            <div className="flex pt-[42px] flex-col items-start w-full">
-              <div className="flex pt-0 md:pr-[387px] pb-0 pl-0 items-center w-full h-[71px]">
-                <a
-                  href="#enquire"
-                  className="cursor-pointer text-nowrap flex pt-[23px] pr-[45px] pb-[21px] pl-[47px] justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-[259px] h-[71px] hover:bg-[#D4AF37]/10 transition-colors"
-                >
-                  <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] w-[167px] h-[27px] text-center tracking-[0.1429em] uppercase">
-                    Enquire Now
-                  </p>
-                </a>
-              </div>
+            <div className="flex pt-[42px] flex-col items-start w-full sm:w-auto">
+              <a
+                href="#enquire"
+                className="cursor-pointer inline-flex justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors w-full sm:w-[259px]"
+                style={{ height: "71px" }}
+              >
+                <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] text-center tracking-[0.1429em] uppercase">
+                  Enquire Now
+                </p>
+              </a>
             </div>
           </div>
 
           {/* ── RIGHT COLUMN ── */}
           <div className="flex flex-col items-start w-full relative">
             {/* Top Cards (Offset Layout) */}
-            <div 
-              className="hidden lg:grid w-full mb-[21px]"
-              style={{
-                gridTemplateColumns: "312.83px 312.83px",
-                gap: "20.965px"
-              }}
-            >
-              <div className="flex flex-col items-start w-full h-full">
-                <div className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[393px]"></div>
-              </div>
-              <div className="flex pt-[42px] flex-col items-start w-full h-full">
-                <div className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[393px]"></div>
-              </div>
-            </div>
-
-            {/* Mobile/Tablet Cards */}
-            <div className="flex lg:hidden flex-col sm:flex-row gap-4 w-full mb-[21px]">
-              <div className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full sm:w-1/2 h-[300px]" />
-              <div className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full sm:w-1/2 h-[300px] sm:mt-[42px]" />
+            <div className="grid grid-cols-2 gap-4 sm:gap-[21px] w-full items-start mb-[21px]">
+              {/* Left Card */}
+              <div
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full h-[200px] sm:h-[300px] lg:h-[393px]"
+              />
+              {/* Right Card (Top Offset 42px) */}
+              <div
+                className="rounded-[15.7px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] w-full mt-[21px] sm:mt-[42px] h-[200px] sm:h-[300px] lg:h-[393px]"
+              />
             </div>
 
             {/* Before & After Banner */}

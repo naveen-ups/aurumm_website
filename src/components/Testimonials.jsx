@@ -116,8 +116,10 @@ export default function Testimonials() {
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center shrink-0 w-full lg:h-[73px]">
           <p
-            className="text-[#FAF7F0] font-cinzel text-[47px] leading-[52.41px] w-fit text-center uppercase"
+            className="text-[#FAF7F0] font-cinzel font-normal w-fit text-center uppercase"
             style={{
+              fontSize: "clamp(28px,3.5vw,47px)",
+              lineHeight: "1.2",
               letterSpacing: "0.05em",
             }}
           >

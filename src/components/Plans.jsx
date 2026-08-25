@@ -55,11 +55,11 @@ function DiscoveryCard() {
       </div>
 
       {/* CTA — outlined gold */}
-      <button className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-full hover:bg-[#D4AF37]/10 transition-colors">
+      <a href="#book" className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-full hover:bg-[#D4AF37]/10 transition-colors">
         <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em] text-center uppercase">
           Book Free Session
         </p>
-      </button>
+      </a>
     </div>
   );
 }
@@ -122,7 +122,8 @@ function CreationCard() {
       </div>
 
       {/* CTA — solid gold */}
-      <button
+      <a
+        href="#book"
         className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] w-full hover:brightness-110 transition-all duration-300"
         style={{
           background: "linear-gradient(135deg, #B8952A 0%, #D4AF37 40%, #F0D060 70%, #C9A227 100%)",
@@ -132,7 +133,7 @@ function CreationCard() {
         <p className="text-[#0A0800] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em] text-center uppercase">
           Begin Creation
         </p>
-      </button>
+      </a>
     </div>
   );
 }
@@ -176,11 +177,11 @@ function HeritageCard() {
       </div>
 
       {/* CTA — outlined gold */}
-      <button className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-full hover:bg-[#D4AF37]/10 transition-colors">
+      <a href="#book" className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] border-[1.31px] border-[#D4AF37] w-full hover:bg-[#D4AF37]/10 transition-colors">
         <p className="text-[#D4AF37] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em] text-center uppercase">
           Enquire Now
         </p>
-      </button>
+      </a>
     </div>
   );
 }
@@ -213,7 +214,13 @@ export default function Plans() {
 
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center shrink-0 w-full lg:h-[73px]">
-          <p className="text-[#FAF7F0] font-cinzel text-[47px] leading-[52.41px] w-fit text-center tracking-[0.05em] uppercase">
+          <p 
+            className="text-[#FAF7F0] font-cinzel font-normal w-fit text-center tracking-[0.05em] uppercase"
+            style={{
+              fontSize: "clamp(28px,3.5vw,47px)",
+              lineHeight: "1.2",
+            }}
+          >
             Your Journey Begins Here
           </p>
         </div>

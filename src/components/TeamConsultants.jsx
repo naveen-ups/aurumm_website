@@ -87,7 +87,13 @@ export default function TeamConsultants() {
 
         {/* Heading */}
         <div className="flex pt-[21px] flex-col items-center w-full lg:h-[73px]">
-          <p className="text-[#FAF7F0] font-cinzel text-[47px] leading-[52.41px] w-fit tracking-[0.05em] uppercase text-center">
+          <p 
+            className="text-[#FAF7F0] font-cinzel font-normal w-fit tracking-[0.05em] uppercase text-center"
+            style={{
+              fontSize: "clamp(32px,3.5vw,47px)",
+              lineHeight: "1.2",
+            }}
+          >
             Our Team
           </p>
         </div>

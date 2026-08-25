@@ -25,6 +25,8 @@ export default function BookConsultation() {
       id="book"
       className="relative w-full overflow-hidden border-t-[1.31px] border-t-[#C8A431]"
       style={{
+        borderImage:
+          "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
         background: "linear-gradient(160deg, #1E1E1E 8.49%, #1A1610 41.7%, #1C1A10 58.3%, #1E1E1E 91.51%)"
       }}
     >

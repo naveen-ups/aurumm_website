@@ -15,6 +15,7 @@ export default function Philosophy() {
       id="about"
       className="border-t-[1.31px] border-[#C8A431] w-full overflow-hidden"
       style={{
+        borderImage: "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
         background: "linear-gradient(170deg, #0F0F10 6.17%, #130E08 50%, #0F0F10 93.83%)",
       }}
     >

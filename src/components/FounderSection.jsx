@@ -13,6 +13,10 @@ export default function FounderSection() {
     <section
       id="founder"
       className="bg-[#11100F] border-t-[1.31px] border-[#C8A431] relative w-full overflow-hidden"
+    
+      style={{
+        borderImage: "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
+      }}
     >
 
 

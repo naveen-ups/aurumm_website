@@ -35,6 +35,7 @@ export default function CustomJewellery() {
       id="custom"
       className="border-t-[1.31px] border-[#C8A431] relative w-full overflow-hidden"
       style={{
+        borderImage: "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
         background: "linear-gradient(180deg, #0F0F10 0%, #12100A 40%, #0F0F10 100%)",
       }}
     >

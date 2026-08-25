@@ -15,6 +15,7 @@ export default function HeritageRedesign() {
       id="heritage"
       className="border-t-[1.31px] border-t-[#C8A431] w-full overflow-hidden relative"
       style={{
+        borderImage: "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
         background: "linear-gradient(180deg, #0F0F10 0%, #110E08 50%, #0F0F10 100%)"
       }}
     >

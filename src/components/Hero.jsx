@@ -16,7 +16,7 @@ export default function Hero() {
     <main className="w-full overflow-hidden bg-[#0f0f10]">
       <section
         aria-labelledby="hero-title"
-        className="relative flex min-h-[75vh] sm:min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-12 sm:pb-24 pt-[clamp(80px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
+        className="relative flex min-h-[75vh] sm:min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-[120px] sm:pb-[180px] pt-[clamp(80px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
         style={{
           borderImage:
             "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",

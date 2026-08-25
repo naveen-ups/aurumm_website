@@ -197,11 +197,11 @@ export default function Plans() {
           "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
       }}
     >
-      {/* Inner container — max-w-[1509.445px], px-[31px], pt-[126px] */}
+      {/* Inner container — max-w-[1920px], px-[31px], pt-[126px] */}
       <div
         className="mx-auto w-full flex flex-col items-start"
         style={{
-          maxWidth: "1509.445px",
+          maxWidth: "1920px",
           padding: "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
         }}
       >

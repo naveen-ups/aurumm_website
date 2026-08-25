@@ -8,10 +8,10 @@ export default function Footer() {
       id="footer"
       className="ft-bg border-t-[1.31px] border-t-[rgba(212,175,55,0.18)] w-full overflow-hidden"
     >
-      {/* ── Inner container — max-w-[1509.445px], px-[31px], pt-[85px] ── */}
+      {/* ── Inner container — max-w-[1920px], px-[31px], pt-[85px] ── */}
       <div
         className="mx-auto w-full flex flex-col items-start px-[clamp(20px,2vw,31px)] pt-6 sm:pt-[clamp(40px,6vw,85px)]"
-        style={{ maxWidth: "1509.445px" }}
+        style={{ maxWidth: "1920px" }}
       >
         {/* ── 4-Column Grid ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 w-full gap-8 lg:gap-[52.411px] justify-center lg:justify-start lg:max-w-fit mx-auto">

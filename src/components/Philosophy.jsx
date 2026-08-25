@@ -19,11 +19,11 @@ export default function Philosophy() {
         background: "linear-gradient(170deg, #0F0F10 6.17%, #130E08 50%, #0F0F10 93.83%)",
       }}
     >
-      {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      {/* ── Inner container — max-w-[1920px], px-[31px], py-[126px] ── */}
       <div
         className="mx-auto w-full flex flex-col items-center"
         style={{
-          maxWidth: "1509.445px",
+          maxWidth: "1920px",
           padding:
             "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
         }}

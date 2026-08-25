@@ -42,11 +42,11 @@ export default function CustomJewellery() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-full h-full pointer-events-none z-0">
         <div className="shrink-0 rounded-[458.6px] w-[917px] h-[917px]" style={{ background: "radial-gradient(70.71% 70.71% at 50% 50%, rgba(212, 175, 55, 0.03) 0%, rgba(212, 175, 55, 0) 65%)" }}></div>
       </div>
-      {/* ── Inner container — max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      {/* ── Inner container — max-w-[1920px], px-[31px], py-[126px] ── */}
       <div
         className="relative z-10 mx-auto w-full flex flex-col items-center"
         style={{
-          maxWidth: "1509.445px",
+          maxWidth: "1920px",
           padding:
             "clamp(60px,8vw,126px) clamp(20px,2vw,31px) clamp(60px,6vw,100px)",
         }}

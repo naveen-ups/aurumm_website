@@ -33,10 +33,10 @@ export default function BookConsultation() {
       {/* ── Inner container — matches Figma: left-[31px] top-[126px], max-w-[1509px], grid 646.62px+646.62px gap-[83.858px] ── */}
       <div
         className="w-full mx-auto px-[clamp(20px,2vw,31px)] py-6 sm:py-[clamp(60px,8vw,126px)]"
-        style={{ maxWidth: "1509.445px" }}
+        style={{ maxWidth: "1920px" }}
       >
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] w-full max-w-[1377px] mx-auto items-start"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] w-full items-start"
         >
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col items-start w-full">

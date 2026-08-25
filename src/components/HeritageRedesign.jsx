@@ -26,12 +26,12 @@ export default function HeritageRedesign() {
         }}
       />
       
-      {/* ── Inner container — matches Figma: max-w-[1509.445px], px-[31px], py-[126px] ── */}
+      {/* ── Inner container — matches Figma: max-w-[1920px], px-[31px], py-[126px] ── */}
       <div
         className="w-full mx-auto px-4 md:px-[31px] py-[60px] md:py-[126px] relative z-10 flex justify-center"
-        style={{ maxWidth: "1509.445px" }}
+        style={{ maxWidth: "1920px" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] items-start w-full max-w-[1377px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[83.858px] items-start w-full">
           {/* ── LEFT COLUMN ── */}
           <div className="flex flex-col items-start w-full">
             {/* Eyebrow */}

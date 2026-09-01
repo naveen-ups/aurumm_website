@@ -283,3 +283,13 @@ html {
     min-height: 40px;
   }
 }
+
+/* ── Override Chrome Autofill styling for dark theme forms ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #222 inset !important;
+    -webkit-text-fill-color: #FAF7F0 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}

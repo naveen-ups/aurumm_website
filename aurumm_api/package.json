@@ -1,0 +1,14 @@
+{
+  "name": "aurumm_api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "nodemailer": "^9.1.0"
+  }
+}

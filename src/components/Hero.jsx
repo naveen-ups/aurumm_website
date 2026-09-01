@@ -6,17 +6,70 @@ const goldGradient =
 export default function Hero() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
-  const handleConsultationSubmit = (event) => {
+  const handleConsultationSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitted(true);
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
+      newErrors.name = "Name should contain only letters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      setErrors({});
+      setIsSubmitting(true);
+      setSubmitError(null);
+
+      try {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        const response = await fetch(`${API_URL}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: formData.name, email: formData.email }),
+        });
+
+        if (response.ok) {
+          setIsSubmitted(true);
+          setFormData({ name: "", email: "" });
+        } else {
+          const data = await response.json();
+          setSubmitError(data.error || 'Failed to request consultation.');
+        }
+      } catch (error) {
+        setSubmitError('Unable to connect to server. Please try again later.');
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   return (
     <main className="w-full overflow-hidden bg-[#0f0f10]">
       <section
         aria-labelledby="hero-title"
-        className="relative flex min-h-[75vh] sm:min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-[120px] sm:pb-[180px] pt-[clamp(80px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
+        className="relative flex min-h-[100dvh] sm:min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[linear-gradient(144deg,rgba(15,15,16,1)_0%,rgba(26,18,8,1)_40%,rgba(13,13,16,1)_70%,rgba(19,15,8,1)_100%)] px-[clamp(20px,4vw,50px)] pb-[160px] sm:pb-[180px] pt-[clamp(80px,10vw,125.79px)] border-b-[1.31px] border-[#c8a431]"
         style={{
           borderImage:
             "linear-gradient(90deg, #c8a431, #62501880, #c8a431, #62501880, #c8a431, #62501890, #c8a431, #62501880, #c8a431) 1",
@@ -89,7 +142,7 @@ export default function Hero() {
         <a
           href="#collection"
           aria-label="Scroll to the collection"
-          className="flex flex-col items-center gap-[10.48px] absolute left-1/2 -translate-x-1/2 bottom-[52px] z-10 hover:opacity-80 transition-opacity"
+          className="flex flex-col items-center gap-[10.48px] absolute left-1/2 -translate-x-1/2 bottom-0 sm:bottom-[52px] z-10 hover:opacity-80 transition-opacity"
         >
           <p className="text-[#D4AF37] font-['Montserrat',sans-serif] text-base font-medium leading-[20.96px] tracking-[0.333em] uppercase">
             SCROLL
@@ -149,7 +202,7 @@ export default function Hero() {
                 </button>
               </div>
             ) : (
-              <form className="space-y-5" onSubmit={handleConsultationSubmit}>
+              <form className="space-y-5" onSubmit={handleConsultationSubmit} noValidate>
                 <label className="block">
                   <span className="mb-2 block font-medium tracking-[1.5px] text-[#e7d3a4] font-['Montserrat',sans-serif] text-[clamp(10px,1.2vw,12px)]">
                     NAME
@@ -157,10 +210,13 @@ export default function Hero() {
                   <input
                     required
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     autoComplete="name"
-                    className="w-full rounded-lg border border-[#d4af3755] bg-[#ffffff08] px-4 py-3 md:py-4 text-[#faf7f0] placeholder-[#faf7f040] focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all outline-none"
+                    className={`w-full rounded-lg border ${errors.name ? 'border-[#D4AF37]' : 'border-[#d4af3755]'} bg-[#ffffff08] px-4 py-3 md:py-4 text-[#faf7f0] placeholder-[#faf7f040] focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all outline-none`}
                     placeholder="Enter your full name"
                   />
+                  {errors.name && <p className="text-[#D4AF37] font-montserrat text-xs mt-1.5">{errors.name}</p>}
                 </label>
                 <label className="block">
                   <span className="mb-2 block font-medium tracking-[1.5px] text-[#e7d3a4] font-['Montserrat',sans-serif] text-[clamp(10px,1.2vw,12px)]">
@@ -170,16 +226,29 @@ export default function Hero() {
                     required
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     autoComplete="email"
-                    className="w-full rounded-lg border border-[#d4af3755] bg-[#ffffff08] px-4 py-3 md:py-4 text-[#faf7f0] placeholder-[#faf7f040] focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all outline-none"
+                    className={`w-full rounded-lg border ${errors.email ? 'border-[#D4AF37]' : 'border-[#d4af3755]'} bg-[#ffffff08] px-4 py-3 md:py-4 text-[#faf7f0] placeholder-[#faf7f040] focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all outline-none`}
                     placeholder="Enter your email address"
                   />
+                  {errors.email && <p className="text-[#D4AF37] font-montserrat text-xs mt-1.5">{errors.email}</p>}
                 </label>
+                
+                {submitError && (
+                  <div className="w-full bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                    <p className="text-[#D4AF37] font-montserrat text-sm text-center">
+                      {submitError}
+                    </p>
+                  </div>
+                )}
+                
                 <button
                   type="submit"
-                  className={`mt-4 w-full rounded-xl px-6 py-4 font-medium tracking-[2px] text-[#0a0800] font-['Montserrat',sans-serif] text-sm transition-transform hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#faf7f0] ${goldGradient}`}
+                  disabled={isSubmitting}
+                  className={`mt-4 w-full rounded-xl px-6 py-4 font-medium tracking-[2px] text-[#0a0800] font-['Montserrat',sans-serif] text-sm transition-transform hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#faf7f0] disabled:opacity-70 disabled:cursor-not-allowed ${goldGradient}`}
                 >
-                  REQUEST CONSULTATION
+                  {isSubmitting ? 'SENDING...' : 'REQUEST CONSULTATION'}
                 </button>
               </form>
             )}

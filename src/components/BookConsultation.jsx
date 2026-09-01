@@ -8,16 +8,72 @@ export default function BookConsultation() {
     phone: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
+      newErrors.name = "Name should contain only letters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be exactly 10 digits";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (validate()) {
+      setIsSubmitting(true);
+      setSubmitError(null);
+
+      try {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        const response = await fetch(`${API_URL}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        } else {
+          const data = await response.json();
+          setSubmitError(data.error || 'Failed to send message. Please try again.');
+        }
+      } catch (error) {
+        setSubmitError('Unable to connect to the server. Please try again later.');
+        console.error("Submission error:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
   };
 
   return (
@@ -190,6 +246,7 @@ export default function BookConsultation() {
             ) : (
               <form
                 onSubmit={handleSubmit}
+                noValidate
                 className="flex flex-col items-start gap-[21px] w-full"
               >
                 {/* Name */}
@@ -207,8 +264,9 @@ export default function BookConsultation() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className={`rounded-[13.1px] border-[1.31px] ${errors.name ? 'border-[#D4AF37]' : 'border-[rgba(212,175,55,0.18)]'} bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]`}
                   />
+                  {errors.name && <p className="text-[#D4AF37] font-montserrat text-xs mt-1.5">{errors.name}</p>}
                 </div>
 
                 {/* Email */}
@@ -226,8 +284,9 @@ export default function BookConsultation() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className={`rounded-[13.1px] border-[1.31px] ${errors.email ? 'border-[#D4AF37]' : 'border-[rgba(212,175,55,0.18)]'} bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]`}
                   />
+                  {errors.email && <p className="text-[#D4AF37] font-montserrat text-xs mt-1.5">{errors.email}</p>}
                 </div>
 
                 {/* Phone */}
@@ -245,8 +304,9 @@ export default function BookConsultation() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]"
+                    className={`rounded-[13.1px] border-[1.31px] ${errors.phone ? 'border-[#D4AF37]' : 'border-[rgba(212,175,55,0.18)]'} bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base px-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[50px] sm:h-[60px]`}
                   />
+                  {errors.phone && <p className="text-[#D4AF37] font-montserrat text-xs mt-1.5">{errors.phone}</p>}
                 </div>
 
                 {/* Message */}
@@ -254,32 +314,34 @@ export default function BookConsultation() {
                   <div className="flex pb-2.5 flex-col items-start w-full">
                     <div className="flex flex-col items-start w-full">
                       <p className="text-[#E7D3A4] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
-                        Message
+                        message
                       </p>
                     </div>
                   </div>
                   <textarea
                     name="message"
-                    required
                     value={formData.message}
                     onChange={handleChange}
-                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors resize-none lg:h-[165px] h-[120px]"
-                  />
+                    className="rounded-[13.1px] border-[1.31px] border-[rgba(212,175,55,0.18)] bg-[#222] text-[#FAF7F0] placeholder-[rgba(250,247,240,0.40)] font-montserrat text-base p-4 w-full focus:outline-none focus:border-[#D4AF37] transition-colors h-[120px] resize-none"
+                  ></textarea>
                 </div>
 
-                {/* Send Enquiry Button */}
+                {submitError && (
+                  <div className="w-full bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                    <p className="text-[#D4AF37] font-montserrat text-sm text-center">
+                      {submitError}
+                    </p>
+                  </div>
+                )}
+
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="cursor-pointer text-nowrap flex py-[21px] px-[42px] flex-col justify-center items-center rounded-[15.7px] w-full hover:brightness-110 transition-all duration-300"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #B8952A 0%, #D4AF37 40%, #F0D060 70%, #C9A227 100%)",
-                    boxShadow:
-                      "0 0 18.344px rgba(212,175,55,0.14), 0 2.621px 10.482px rgba(0,0,0,0.30)",
-                  }}
+                  disabled={isSubmitting}
+                  className="mt-4 flex w-full h-[65.53px] items-center justify-center gap-[10.48px] px-[20.97px] py-[26.21px] rounded-[13.11px] bg-[linear-gradient(93deg,#B8952A_0%,#D4AF37_39.5%,#F0D060_69%,#C9A227_100%)] disabled:opacity-70 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
                 >
-                  <p className="text-[#0A0800] font-montserrat text-lg font-medium leading-[26.21px] w-fit tracking-[0.1429em] uppercase">
-                    Send Enquiry
+                  <p className="text-[#0A0800] font-montserrat font-medium text-[13px] leading-[19.65px] w-fit tracking-[0.2em] uppercase">
+                    {isSubmitting ? 'Sending...' : 'SEND ENQUIRY'}
                   </p>
                 </button>
               </form>

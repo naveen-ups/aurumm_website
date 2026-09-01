@@ -84,13 +84,13 @@ export default function Footer() {
           </div>
 
           {/* Column 4 — Connect */}
-          <div className="flex flex-col items-start col-span-1">
+          <div className="flex flex-col items-start col-span-2 lg:col-span-1 w-full">
             <div className="flex flex-col items-start w-full">
               <p className="text-[#D4AF37] font-montserrat text-[13px] leading-[19.65px] w-fit tracking-[0.3em] uppercase">
                 Connect
               </p>
             </div>
-            <div className="flex flex-col items-start" style={{ paddingTop: "21px" }}>
+            <div className="grid grid-cols-2 lg:grid-cols-1 w-full gap-y-[12px] gap-x-4" style={{ paddingTop: "21px" }}>
               {[
                 { label: "Instagram", href: "https://www.instagram.com/kashissh.garg?igsh=MXY1ZXl6ZWQ3cTN1YQ%3D%3D&utm_source=qr" },
                 { label: "Pinterest", href: "https://pinterest.com" },
@@ -103,7 +103,7 @@ export default function Footer() {
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                   className="text-[rgba(250,247,240,0.70)] font-montserrat text-base leading-[20.96px] w-fit hover:text-[#D4AF37] transition-colors"
-                  style={i > 0 ? { paddingTop: "10px", display: "block" } : { display: "block" }}
+                  style={{ display: "block" }}
                 >
                   {item.label}
                 </a>

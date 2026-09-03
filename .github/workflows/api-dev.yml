@@ -1,0 +1,371 @@
+name: Build & Deploy aurumm-api-dev (dev)
+
+permissions:
+  id-token: write
+  contents: write
+
+on:
+  push:
+    branches:
+      - v4-final-ecs-deployment
+      - dev
+    paths:
+      - aurumm_api/**
+      - docker/Dockerfile.api
+      - .github/workflows/api-dev.yml
+
+  workflow_dispatch:
+
+jobs:
+  build-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: ecs-dev-aurumm-api
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::656074853348:role/github-ecs-deployment
+          aws-region: ap-south-1
+
+      - uses: aws-actions/amazon-ecr-login@v2
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Fetch tags
+        run: git fetch --no-tags origin "refs/tags/dev-aurumm-api-v*:refs/tags/dev-aurumm-api-v*"
+
+      - name: Get Current Service Info
+        id: old-info
+        run: |
+          CURRENT_TASK_DEF_ARN=$(aws ecs describe-services \
+            --cluster dev-aurumm-cluster \
+            --services dev-aurumm-api-service \
+            --query 'services[0].taskDefinition' \
+            --output text)
+
+          CURRENT_REVISION=$(echo $CURRENT_TASK_DEF_ARN | awk -F':' '{print $NF}')
+          echo "OLD_REVISION=$CURRENT_REVISION" >> $GITHUB_ENV
+          echo "OLD_TASK_DEF=$CURRENT_TASK_DEF_ARN" >> $GITHUB_ENV
+
+          OLD_IMAGE=$(aws ecs describe-task-definition \
+            --task-definition $CURRENT_TASK_DEF_ARN \
+            --query 'taskDefinition.containerDefinitions[0].image' \
+            --output text)
+
+          echo "OLD_IMAGE=$OLD_IMAGE" >> $GITHUB_ENV
+
+          TASK_COUNT=$(aws ecs list-tasks \
+            --cluster dev-aurumm-cluster \
+            --service-name dev-aurumm-api-service \
+            --desired-status RUNNING \
+            --region ap-south-1 \
+            --query 'taskArns | length(@)' \
+            --output text)
+
+          echo "OLD_TASK_COUNT=$TASK_COUNT" >> $GITHUB_ENV
+
+          echo "Current Task Definition: $CURRENT_TASK_DEF_ARN (Revision: $CURRENT_REVISION)"
+          echo "Current Image: $OLD_IMAGE"
+          echo "Running Tasks: $TASK_COUNT"
+
+      - name: Determine Version
+        run: |
+          PREFIX="dev-aurumm-api"
+
+          LATEST=$(git tag -l "${PREFIX}-v*" | sort -V | tail -1)
+
+          if [[ -z "$LATEST" ]]; then
+            VERSION="0.0.0"
+          else
+            VERSION=${LATEST#${PREFIX}-v}
+          fi
+
+          IFS='.' read -r A B C <<< "$VERSION"
+          C=$((C+1))
+
+          TAG="${PREFIX}-v$A.$B.$C"
+          echo "SEMVER_TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Push Tag
+        run: |
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git tag "$SEMVER_TAG"
+          git push origin "$SEMVER_TAG"
+
+      - name: Build & Push Image
+        id: build-image
+        run: |
+          IMAGE_URI=656074853348.dkr.ecr.ap-south-1.amazonaws.com/dev-aurumm-api:$SEMVER_TAG
+          ECR_REPO=656074853348.dkr.ecr.ap-south-1.amazonaws.com/dev-aurumm-api
+
+          docker buildx build \
+            -f docker/Dockerfile.api \
+            -t $IMAGE_URI \
+            --push .
+
+          echo "IMAGE_URI=$IMAGE_URI" >> $GITHUB_ENV
+          echo "ECR_REPO=$ECR_REPO" >> $GITHUB_ENV
+          echo "ECR_IMAGE_TAG=$SEMVER_TAG" >> $GITHUB_ENV
+          echo "Image pushed: $IMAGE_URI"
+
+      - name: Get TaskDef
+        run: |
+          aws ecs describe-task-definition \
+            --task-definition dev-aurumm-api \
+            --query taskDefinition \
+            --output json > task.json
+
+      - name: Patch Image
+        run: |
+          jq --arg IMG "$IMAGE_URI" \
+          '.containerDefinitions |= map(
+            if .name=="dev-aurumm-api"
+            then .image=$IMG
+            else .
+            end)' task.json > new.json
+
+      - name: Register Revision
+        id: register-task
+        run: |
+          jq 'del(
+            .taskDefinitionArn,
+            .revision,
+            .status,
+            .requiresAttributes,
+            .compatibilities,
+            .registeredAt,
+            .registeredBy,
+            .deregisteredAt
+          )' new.json > final.json
+
+          NEW_TASK_DEF_ARN=$(aws ecs register-task-definition \
+            --cli-input-json file://final.json \
+            --query taskDefinition.taskDefinitionArn \
+            --output text)
+
+          NEW_REVISION=$(echo $NEW_TASK_DEF_ARN | awk -F':' '{print $NF}')
+
+          echo "NEW_REVISION=$NEW_REVISION" >> $GITHUB_ENV
+          echo "NEW_TASK_DEF_ARN=$NEW_TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "New Task Definition: $NEW_TASK_DEF_ARN (Revision: $NEW_REVISION)"
+
+      - name: Verify Image in Task Definition
+        id: verify-image
+        run: |
+          TASK_DEF_IMAGE=$(aws ecs describe-task-definition \
+            --task-definition $NEW_TASK_DEF_ARN \
+            --query 'taskDefinition.containerDefinitions[0].image' \
+            --output text)
+
+          echo "TASK_DEF_IMAGE=$TASK_DEF_IMAGE" >> $GITHUB_ENV
+          echo "ECR_IMAGE=$IMAGE_URI" >> $GITHUB_ENV
+
+          if [[ "$TASK_DEF_IMAGE" == "$IMAGE_URI" ]]; then
+            echo "✅ Image verification passed"
+            echo "image_verified=true" >> $GITHUB_OUTPUT
+            IMAGE_MATCH="✅ Yes - Exact match"
+          else
+            echo "❌ Image verification failed"
+            echo "image_verified=false" >> $GITHUB_OUTPUT
+            IMAGE_MATCH="❌ No - Mismatch"
+          fi
+
+          echo "IMAGE_MATCH_STATUS=$IMAGE_MATCH" >> $GITHUB_ENV
+
+          ECR_TAG_ONLY=$(echo $IMAGE_URI | cut -d':' -f2)
+          TASK_TAG_ONLY=$(echo $TASK_DEF_IMAGE | cut -d':' -f2)
+          echo "ECR_TAG_ONLY=$ECR_TAG_ONLY" >> $GITHUB_ENV
+          echo "TASK_TAG_ONLY=$TASK_TAG_ONLY" >> $GITHUB_ENV
+
+      - name: Deploy ECS
+        id: deploy
+        run: |
+          aws ecs update-service \
+            --cluster dev-aurumm-cluster \
+            --service dev-aurumm-api-service \
+            --task-definition "$NEW_TASK_DEF_ARN" \
+            --force-new-deployment
+
+      - name: Wait for Service to be Stable
+        id: wait-for-stability
+        run: |
+          echo "Waiting for service to be stable..."
+
+          if aws ecs wait services-stable \
+            --cluster dev-aurumm-cluster \
+            --services dev-aurumm-api-service; then
+            echo "Service is stable!"
+            echo "deployment_status=success" >> $GITHUB_OUTPUT
+          else
+            echo "Service failed to stabilize"
+            echo "deployment_status=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Get New Service Info
+        id: new-info
+        if: steps.wait-for-stability.outputs.deployment_status == 'success'
+        run: |
+          ACTUAL_TASK_DEF_ARN=$(aws ecs describe-services \
+            --cluster dev-aurumm-cluster \
+            --services dev-aurumm-api-service \
+            --query 'services[0].taskDefinition' \
+            --output text)
+
+          ACTUAL_REVISION=$(echo $ACTUAL_TASK_DEF_ARN | awk -F':' '{print $NF}')
+          echo "ACTUAL_REVISION=$ACTUAL_REVISION" >> $GITHUB_ENV
+
+          RUNNING_IMAGE=$(aws ecs describe-task-definition \
+            --task-definition $ACTUAL_TASK_DEF_ARN \
+            --query 'taskDefinition.containerDefinitions[0].image' \
+            --output text)
+          echo "RUNNING_IMAGE=$RUNNING_IMAGE" >> $GITHUB_ENV
+
+          NEW_TASK_COUNT=$(aws ecs list-tasks \
+            --cluster dev-aurumm-cluster \
+            --service-name dev-aurumm-api-service \
+            --desired-status RUNNING \
+            --region ap-south-1 \
+            --query 'taskArns | length(@)' \
+            --output text)
+          echo "NEW_TASK_COUNT=$NEW_TASK_COUNT" >> $GITHUB_ENV
+
+          echo "Actual Task Definition: $ACTUAL_TASK_DEF_ARN (Revision: $ACTUAL_REVISION)"
+          echo "Running Image: $RUNNING_IMAGE"
+          echo "New Running Tasks: $NEW_TASK_COUNT"
+
+      - name: Verify Running Tasks Image
+        id: verify-running-image
+        if: steps.wait-for-stability.outputs.deployment_status == 'success'
+        run: |
+          if [[ "$RUNNING_IMAGE" == "$IMAGE_URI" ]]; then
+            echo "✅ Running tasks have correct image"
+            echo "running_image_verified=true" >> $GITHUB_OUTPUT
+            RUNNING_IMAGE_MATCH="✅ Yes"
+          else
+            echo "❌ Running tasks have wrong image"
+            echo "running_image_verified=false" >> $GITHUB_OUTPUT
+            RUNNING_IMAGE_MATCH="❌ No"
+          fi
+          echo "RUNNING_IMAGE_MATCH=$RUNNING_IMAGE_MATCH" >> $GITHUB_ENV
+
+      - name: Verify All Tasks are Running
+        if: steps.wait-for-stability.outputs.deployment_status == 'success'
+        id: verify-tasks
+        run: |
+          SERVICE_INFO=$(aws ecs describe-services \
+            --cluster dev-aurumm-cluster \
+            --services dev-aurumm-api-service \
+            --query 'services[0].[desiredCount,runningCount]' \
+            --output text)
+
+          DESIRED_COUNT=$(echo $SERVICE_INFO | cut -d' ' -f1)
+          RUNNING_COUNT=$(echo $SERVICE_INFO | cut -d' ' -f2)
+
+          echo "Desired tasks: $DESIRED_COUNT, Running tasks: $RUNNING_COUNT"
+
+          if [ "$DESIRED_COUNT" -eq "$RUNNING_COUNT" ] && [ "$RUNNING_COUNT" -gt 0 ]; then
+            echo "✅ All tasks are running successfully"
+            echo "deployment_verified=true" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Tasks are not all running"
+            echo "deployment_verified=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Set Final Deployment Status
+        id: final-status
+        run: |
+          if [[ "${{ steps.wait-for-stability.outcome }}" == "success" ]] && \
+             [[ "${{ steps.verify-tasks.outcome }}" == "success" ]]; then
+            echo "final_status=success" >> $GITHUB_OUTPUT
+          else
+            echo "final_status=failed" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Calculate Revision Difference
+        id: calc-revision
+        run: |
+          REV_DIFF=$((ACTUAL_REVISION - OLD_REVISION))
+          echo "REV_DIFF=$REV_DIFF" >> $GITHUB_ENV
+
+      - name: Discord Notification
+        if: always()
+        run: |
+          if [[ "${{ steps.final-status.outputs.final_status }}" == "success" ]]; then
+            COLOR=3066993
+            TITLE="✅ Deployment Successful (dev-aurumm-api-service)"
+          else
+            COLOR=15158332
+            TITLE="❌ Deployment Failed (dev-aurumm-api-service)"
+          fi
+
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{
+              \"username\": \"Deploy Bot\",
+              \"embeds\": [{
+                \"title\": \"$TITLE\",
+                \"color\": $COLOR,
+                \"fields\": [
+                  {
+                    \"name\": \"📦 ECR Image\",
+                    \"value\": \"\`${{ env.SEMVER_TAG }}\`\nPushed: ✅\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"🔖 Git Tag\",
+                    \"value\": \"\`${{ env.SEMVER_TAG }}\`\nBy: ${{ github.actor }}\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"🔍 IMAGE VERIFICATION\",
+                    \"value\": \"ECR Tag: \`${{ env.ECR_TAG_ONLY }}\`\nTask Def Tag: \`${{ env.TASK_TAG_ONLY }}\`\nMatch: ${{ env.IMAGE_MATCH_STATUS }}\nRunning Match: ${{ env.RUNNING_IMAGE_MATCH }}\",
+                    \"inline\": false
+                  },
+                  {
+                    \"name\": \"🔄 TASK DEFINITION REVISIONS\",
+                    \"value\": \"**OLD Revision:** \`${{ env.OLD_REVISION }}\`\n**NEW Revision:** \`${{ env.ACTUAL_REVISION }}\`\n**Difference:** ⬆️ +${{ env.REV_DIFF }}\",
+                    \"inline\": false
+                  },
+                  {
+                    \"name\": \"📊 SERVICE STATUS - BEFORE DEPLOYMENT\",
+                    \"value\": \"• Revision: \`${{ env.OLD_REVISION }}\`\n• Tasks: ${{ env.OLD_TASK_COUNT }} running\n• Image: \`${{ env.OLD_IMAGE }}\`\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"📊 SERVICE STATUS - AFTER DEPLOYMENT\",
+                    \"value\": \"• Revision: \`${{ env.ACTUAL_REVISION }}\`\n• Tasks: ${{ env.NEW_TASK_COUNT }} running\n• Image: \`${{ env.RUNNING_IMAGE }}\`\n• Status: ✅ New tasks created\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"🌐 Region\",
+                    \"value\": \"ap-south-1\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"⚙️ Cluster/Service\",
+                    \"value\": \"\`dev-aurumm-cluster\` / \`dev-aurumm-api-service\`\",
+                    \"inline\": true
+                  },
+                  {
+                    \"name\": \"🔗 Workflow\",
+                    \"value\": \"[View Run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})\",
+                    \"inline\": false
+                  }
+                ],
+                \"footer\": {
+                  \"text\": \"Deployment Time: $(date -u '+%Y-%m-%d %H:%M:%S UTC')\"
+                }
+              }]
+            }" \
+            "https://discord.com/api/webhooks/1433719872063275108/ycFXIhb82-rI3pOMAJFMRgpMD72xadJJzW-t_3UohOZ_6bDIdLsIUOdX5_hxGA0oKvE_"

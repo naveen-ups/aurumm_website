@@ -53,19 +53,29 @@ export default function BookConsultation() {
       setSubmitError(null);
 
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-        const response = await fetch(`${API_URL}/api/contact`, {
+        const response = await fetch("https://formsubmit.co/ajax/tnavin989@gmail.com", {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            _subject: "New Consultation Request from Aurumm Website",
+            _captcha: "false" // Disables the formsubmit reCAPTCHA for seamless AJAX
+          }),
         });
 
-        if (response.ok) {
+        const data = await response.json();
+
+        if (data.success) {
           setSubmitted(true);
           setFormData({ name: "", email: "", phone: "", message: "" });
         } else {
-          const data = await response.json();
-          setSubmitError(data.error || 'Failed to send message. Please try again.');
+          setSubmitError(data.message || 'Failed to send message. Please try again.');
         }
       } catch (error) {
         setSubmitError('Unable to connect to the server. Please try again later.');
